@@ -8,7 +8,7 @@
 	<!-- for screenshotting -->
 </head>
 <body>
-	<form id="card-form" class="form-flex">
+	<div id="card-form" class="form-flex">
 		<div class=form-element>
 			<img class="img-btn" src="src/img/Monkey.png" alt="Monkey" onclick="onCardTypeMonkeyClick()"/>
 			<img class="img-btn" src="src/img/Bloon.png" alt="Bloon" onclick="onCardTypeBloonClick()"/>
@@ -34,7 +34,9 @@
 		<div class="form-element">
 			<label for="input-damage-text">Damage</label><br>
 			<input type="text" id="input-damage-text" name="input-damage-text" size="3"><br>
-			<label for="damage-checkbox">Deals Damage</label><br>
+		</div>
+		<div class="form-element">
+			<label for="damage-checkbox">Show?</label>
 			<input checked type="checkbox" class="damage-checkbox" name="damage-checkbox" id="damage-checkbox" onclick="monkeyIconVisiblityChange()">
 		</div>
 		<div class="form-element">
@@ -58,10 +60,13 @@
 			<img class="img-btn" src="src/img/Rarity5.png" alt="Ultra Rare" onclick="changeRarityImg(5)">
 		</div>
 		<div class="form-element">
+			<label>Select File</label><br>
 			<input type="file" name="img-upload" id="img-upload">
 		</div>
-	</form>	
-	<button id="download-btn" onclick="downloadImg()">Download Image</button>
+		<div class="form-element">
+			<button id="download-btn" onclick="downloadImg()">Download Image</button>
+		</div>
+	</div>
 	<div class="card-container" id="card-container">
 		<div class="card" id="card">
 			<!-- resize if to monkey or out of monkey-->

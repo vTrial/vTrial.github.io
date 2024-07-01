@@ -157,18 +157,19 @@
 	flex-wrap: wrap;
 }
 .img-btn {
-	max-width: 128px;
-	max-height: 128px;
+	max-width: 96px;
+	max-height: 96px;
+	cursor: pointer;
 }
 
 label {
-	margin: 1em;
-	font-size: 2em;
+	margin: 0.5em 1em;
+	font-size: 1.5em;
 }
 
 input[type="text"] {
-	margin: 1em;
-	font-size: 2em;
+	margin: 0.5em 1em;
+	font-size: 1.5em;
 	font-family: 'Source Sans 3 SemiBold';
 }
 body {
