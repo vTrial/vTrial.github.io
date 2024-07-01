@@ -169,6 +169,7 @@ label {
 input[type="text"] {
 	margin: 1em;
 	font-size: 2em;
+	font-family: 'Source Sans 3 SemiBold';
 }
 body {
 	font-family: 'Source Sans 3 SemiBold';
