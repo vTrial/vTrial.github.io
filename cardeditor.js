@@ -40,9 +40,9 @@ const monkeyIconVisiblityChange = () => {
 const onCardTypeMonkeyClick = () => {
   cardType = "monkey"
 
-  cardBorder.src = "src/MonkeyCardBorder.png"
+  cardBorder.src = "src/img/MonkeyCardBorder.png"
   cardBorderCircle.style.visibility = "hidden"
-  cardDamage.src = "src/MonkeyDamage.png"
+  cardDamage.src = "src/img/MonkeyDamage.png"
   cardImg.style.height = "100%"
   cardImg.style.borderRadius = "10%"
   cardImg.style.transform = "translate(-50%, 0%)"
@@ -55,10 +55,10 @@ const onCardTypeMonkeyClick = () => {
 const onCardTypeBloonClick = () => {
   cardType = "bloon"
 
-  cardBorder.src = "src/BloonCardBorder.png"
+  cardBorder.src = "src/img/BloonCardBorder.png"
   cardBorderCircle.style.visibility = "visible"
-  cardBorderCircle.src = "src/BloonCardBorderCircle.png"
-  cardDamage.src = "src/BloonDamage.png"
+  cardBorderCircle.src = "src/img/BloonCardBorderCircle.png"
+  cardDamage.src = "src/img/BloonDamage.png"
   cardImg.style.height = "55%"
   cardImg.style.transform = "translate(-50%, -7%)"
   cardImg.style.borderRadius = "50%"
@@ -71,9 +71,9 @@ const onCardTypeBloonClick = () => {
 const onCardTypePowerClick = () => {
   cardType = "power"
 
-  cardBorder.src = "src/PowerCardBorder.png"
+  cardBorder.src = "src/img/PowerCardBorder.png"
   cardBorderCircle.style.visibility = "visible"
-  cardBorderCircle.src = "src/PowerCardBorderCircle.png"
+  cardBorderCircle.src = "src/img/PowerCardBorderCircle.png"
   cardImg.style.height = "55%"
   cardImg.style.transform = "translate(-50%, -7%)"
   cardImg.style.borderRadius = "40%"
@@ -84,7 +84,7 @@ const onCardTypePowerClick = () => {
 }
 
 const changeRarityImg = (value) => {
-  rarityElement.src = `src/Rarity${value}.png`
+  rarityElement.src = `src/img/Rarity${value}.png`
 }
 // make text editable
 editCardTextEvent("title-text")

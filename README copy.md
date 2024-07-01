@@ -1,1 +1,0 @@
-# bcs-card-generator
