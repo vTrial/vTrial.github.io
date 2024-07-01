@@ -1,3 +1,17 @@
+@font-face {
+	font-family: 'Bloons TD';
+	src: url(src/BloonsTD-Regular.ttf);
+	font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+	font-family: 'Source Sans 3 SemiBold';
+	src: url(src/SourceSans3-Semibold.ttf);
+	font-weight: normal;
+    font-style: normal;
+}
+
 /* card image styles */
 .form-element {
 	border: 1px solid black;
