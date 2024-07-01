@@ -1,0 +1,160 @@
+/* card image styles */
+.form-element {
+	border: 1px solid black;
+}
+
+.card-img {
+	width: 100%;
+  	height: 100%;
+	transform: translate(-50%);
+	left: 50%;
+	object-fit: cover;
+	position: absolute;
+	border-radius: 10%;
+	z-index: -1;
+}
+.card-container {
+	width: 800px;
+	height: 1200px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.card {
+	max-width: 635px;
+	max-height: 888px;
+	position: relative;
+	user-select: none;
+	pointer-events: none;
+}
+.card-border-circle {
+	position: absolute;
+	transform: translate(-50%, -50%);
+	left: 50%;
+	top: 23%;
+	visibility: hidden;
+}
+.cost {
+	position: absolute;
+	transform: translate(-50%, -50%);
+	top: 4%
+}
+.coin1 {
+	left: 10%;
+	z-index: 2;
+}
+.coin2 {
+	left: 20%;
+	z-index: 1;
+}
+.coin3 {
+	left: 30%;
+}
+.damage {
+	position: absolute;
+	transform: translate(-50%, -50%);
+	left: 90%;
+	top: 4%
+}
+.ammo {
+	position: absolute;
+	transform: translate(-50%, -50%);
+	left: 90%;
+	top: 25%
+}
+.delay {
+	position: absolute;
+	transform: translate(-50%, -50%);
+	left: 90%;
+	top: 42%
+}
+.rarity {
+	position: absolute;
+	transform: translate(-50%, -50%);
+	left: 50%;
+	top: 100%
+}
+
+/* card text styles */
+.bold-text {
+	text-align: center;
+	color: white;
+	font-family: 'Bloons TD';
+	font-size: 5em;
+	text-shadow: -0.05em 0.1em 0.03em black, 0.05em 0.1em 0.03em black, -0.03em -0.02em 0.03em black, 0.03em -0.02em  0.03em black;
+	max-width: 80%;
+	word-wrap: break-word;
+	margin: 0;
+}
+.title-text {
+	position: absolute;
+	transform: translate(-50%, 0%);
+	font-size: 4em;
+	left: 50%;
+	top: 54%;
+	width: 80%;
+}
+.cost-text {
+	position: absolute;
+	transform: translate(-50%, -50%);
+	font-size: 6em;
+	left: 10%;
+	top: 4%;
+	z-index: 3;
+}
+.damage-text {
+	position: absolute;
+	transform: translate(-50%, -50%);
+	font-size: 6em;
+	left: 90%;
+	top: 4%;
+}
+.ammo-text {
+	position: absolute;
+	transform: translate(-50%, -50%);
+	font-size: 6em;
+	left: 90%;
+	top: 23%;
+}
+.delay-text {
+	position: absolute;
+	transform: translate(-50%, -50%);
+	font-size: 4em;
+	left: 90%;
+	top: 42%;
+}
+.description-text {
+	position: absolute;
+	transform: translate(-50%, -50%);
+	left: 50%;
+	top: 74%;
+	font-size: 3em;
+	color: white;
+	text-align: center;
+	width: 80%;
+}
+
+
+.form-flex {
+	display: flex;
+	grid-auto-flow: column;
+	flex-wrap: wrap;
+}
+.img-btn {
+	max-width: 128px;
+	max-height: 128px;
+}
+
+label {
+	margin: 1em;
+	font-size: 2em;
+}
+
+input[type="text"] {
+	margin: 1em;
+	font-size: 2em;
+}
+body {
+	font-family: 'Source Sans 3 SemiBold';
+	background-color: white;
+}

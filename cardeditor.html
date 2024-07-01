@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>BCS Cards</title>
+	<link rel="stylesheet" href="cardeditor.css">
+	<!-- for screenshotting -->
+</head>
+<body>
+	<form id="card-form" class="form-flex">
+		<div class=form-element>
+			<img class="img-btn" src="src/Monkey.png" alt="Monkey" onclick="onCardTypeMonkeyClick()"/>
+			<img class="img-btn" src="src/Bloon.png" alt="Bloon" onclick="onCardTypeBloonClick()"/>
+			<img class="img-btn" src="src/Power.png" alt="Power" onclick="onCardTypePowerClick()"/>
+		</div>
+		<div class="form-element">
+			<label for="input-title-text">Title</label><br>
+			<input type="text" id="input-title-text" name="input-title-text">
+		</div>
+		<div class="form-element">
+			<label for="input-cost-text">Cost</label><br>
+			<input type="text" id="input-cost-text" name="input-cost-text">
+		</div>
+		<div class="form-element">
+			<label>Copies</label><br>
+			<label for="copies1">1</label>
+			<input type="radio" id="copies1" name="copies" class="copies" value="1" onclick="setCoinQuantity(1)">
+			<label for="copies2">2</label>
+			<input type="radio" id="copies2" name="copies" class="copies" value="2" onclick="setCoinQuantity(2)">
+			<label for="copies3">3</label>
+			<input type="radio" id="copies3" name="copies" class="copies" value="3" onclick="setCoinQuantity(3)">
+		</div>
+		<div class="form-element">
+			<label for="input-damage-text">Damage</label><br>
+			<input type="text" id="input-damage-text" name="input-damage-text"><br>
+			<label for="damage-checkbox">Deals Damage</label><br>
+			<input checked type="checkbox" class="damage-checkbox" name="damage-checkbox" id="damage-checkbox" onclick="monkeyIconVisiblityChange()">
+		</div>
+		<div class="form-element">
+			<label for="input-ammo-text">Ammo</label><br>
+			<input type="text" id="input-ammo-text" name="input-ammo-text">
+		</div>
+		<div class="form-element">
+			<label for="input-delay-text">Delay</label><br>
+			<input type="text" id="input-delay-text" name="input-delay-text">
+		</div>
+		<div class="form-element">
+			<label for="input-description-text">Description</label><br>
+			<input type="text" id="input-description-text" name="input-description-text">
+		</div>
+		<div class="form-element">
+			<label>Rarity</label><br>
+			<img class="img-btn" src="src/Rarity1.png" alt="Common" onclick="changeRarityImg(1)">
+			<img class="img-btn" src="src/Rarity2.png" alt="Uncommon" onclick="changeRarityImg(2)">
+			<img class="img-btn" src="src/Rarity3.png" alt="Rare" onclick="changeRarityImg(3)">
+			<img class="img-btn" src="src/Rarity4.png" alt="Super Rare" onclick="changeRarityImg(4)">
+			<img class="img-btn" src="src/Rarity5.png" alt="Ultra Rare" onclick="changeRarityImg(5)">
+		</div>
+		<div class="form-element">
+			<input type="file" name="img-upload" id="img-upload">
+		</div>
+	</form>	
+	<button id="download-btn" onclick="downloadImg()">Download Image</button>
+	<div class="card-container" id="card-container">
+		<div class="card" id="card">
+			<!-- resize if to monkey or out of monkey-->
+			<img class="card-img" id="card-img">
+			<!-- can be Bloon/Monkey/SpellCardBorder -->
+			<img class="card-border" id="card-border" src="src/MonkeyCardBorder.png">
+			<!-- hidden unless bloon -->
+			<img class="card-border-circle" id="card-border-circle" src="src/BloonCardBorderCircle.png">
+			<img class="cost coin1" src="src/Coin.png">
+			<img class="cost coin2" src="src/Coin.png">
+			<img class="cost coin3" src="src/Coin.png">
+			<!-- Monkey/BloonDamage, hidden if spell, -->
+			<img class="damage" id="card-damage" src="src/MonkeyDamage.png">
+			<img class="ammo" id="card-ammo" src="src/Ammo.png">
+			<!-- hidden if spell -->
+			<img class="delay" id="card-delay" src="src/Delay.png">
+			<img class="rarity" src="src/Rarity1.png" id="rarity-img">
+			<p class="title-text bold-text" id="title-text"></p>
+			<p class="cost-text bold-text" id="cost-text"></p>
+			<!-- hidden unless bloon? -->
+			<!-- consider combine with monkey damage text? -->
+			<p class="damage-text bold-text" id="damage-text"></p>
+			<p class="ammo-text bold-text" id="ammo-text"></p>
+			<p class="delay-text bold-text" id="delay-text"></p>
+			<p class="description-text" id="description-text"></p>
+		</div>
+	</div>
+	<script src="src/html2canvas.min.js"></script>
+	<script src="cardeditor.js"></script>
+</body>
+</html>
