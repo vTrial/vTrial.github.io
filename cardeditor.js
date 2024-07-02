@@ -7,12 +7,15 @@ const editCardTextEvent = (element) => {
   })
 }
 
-const setCoinQuantity = (coin_count) => {
-  coins = document.getElementsByClassName("cost")
-  console.log(coins)
+const setCoinQuantity = () => {
+  const coins = document.getElementsByClassName("cost")
+  const copiesSlider = document.getElementById("copies-slider")
+  const coinCount = copiesSlider.value
+  const copiesText = document.getElementById("copies-label")
   for (let coin_i = 0; coin_i < coins.length; coin_i++) {
-    coins[coin_i].style.visibility = coin_i < coin_count ? "visible" : "hidden"
+    coins[coin_i].style.visibility = coin_i < coinCount ? "visible" : "hidden"
   }
+  copiesText.textContent = `Copies: ${coinCount}`
 }
 
 // right side of card has many parameters
