@@ -28,8 +28,8 @@
 	z-index: -1;
 }
 .card-container {
-	width: 800px;
-	height: 1200px;
+	width: 400px;
+	height: 525px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -40,6 +40,7 @@
 	position: relative;
 	user-select: none;
 	pointer-events: none;
+	transform: scale(50%);
 }
 .card-border-circle {
 	position: absolute;
@@ -152,8 +153,8 @@
 
 
 .form-flex {
+	height:fit-content;
 	display: flex;
-	grid-auto-flow: column;
 	flex-wrap: wrap;
 }
 .img-btn {
@@ -172,6 +173,17 @@ input[type="text"] {
 	font-size: 1.5em;
 	font-family: 'Source Sans 3 SemiBold';
 }
+
+.two-col {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 20px;
+}
+
+.two-col-item {
+	flex: 1 1 calc(50% - 10px); /* 50% width for each column minus gap */
+}
+
 body {
 	font-family: 'Source Sans 3 SemiBold';
 	background-color: white;
