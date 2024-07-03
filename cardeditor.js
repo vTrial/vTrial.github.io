@@ -18,110 +18,95 @@ const setCoinQuantity = () => {
   copiesText.textContent = `Copies: ${coinCount}`
 }
 
-// right side of card has many parameters
-// modifies if each one is visible
-const cardIconVisiblityChange = (damage_vis, ammo_vis, delay_vis) => {
-  cardDamage.style.visibility = damage_vis
-  cardDamageText.style.visibility = damage_vis
-  cardAmmo.style.visibility = ammo_vis
-  cardAmmoText.style.visibility = ammo_vis
-  cardDelay.style.visibility = delay_vis
-  cardDelayText.style.visibility = delay_vis
-}
+const toggleVisibility = (element, isVisible) => {
+  element.style.visibility = isVisible ? "visible" : "hidden";
+};
 
-const monkeyIconVisiblityChange = () => {
-  if (cardType == "monkey") {
-    if (damageCheckbox.checked) {
-      cardIconVisiblityChange("visible", "visible", "visible")
-    } else {
-      cardIconVisiblityChange("hidden", "hidden", "hidden")
-    }
+const cardTypes = {
+  monkey: {
+    borderSrc: "src/img/MonkeyCardBorder.png",
+    borderCircleVisible: false,
+    damageSrc: "src/img/MonkeyDamage.png",
+    imgHeight: "100%",
+    imgWidth: "100%",
+    imgTransform: "translate(-50%, 0%)",
+    imgBorderRadius: "10%",
+    imgObjectFit: "cover",
+    delayTop: "42%",
+    damageVisibility: true,
+    ammoVisibility: true,
+    delayVisibility: true
+  },
+  bloon: {
+    borderSrc: "src/img/BloonCardBorder.png",
+    borderCircleVisible: true,
+    circleSrc: "src/img/BloonCardBorderCircle.png",
+    damageSrc: "src/img/BloonDamage.png",
+    imgHeight: "55%",
+    imgWidth: "75%",
+    imgTransform: "translate(-50%, -7%)",
+    imgBorderRadius: "50%",
+    imgObjectFit: "fill",
+    delayTop: "25%",
+    damageVisibility: true,
+    ammoVisibility: false,
+    delayVisibility: true
+  },
+  power: {
+    borderSrc: "src/img/PowerCardBorder.png",
+    borderCircleVisible: true,
+    circleSrc: "src/img/PowerCardBorderCircle.png",
+    imgHeight: "55%",
+    imgWidth: "86%",
+    imgTransform: "translate(-51%, -8%)",
+    imgBorderRadius: "40%",
+    imgObjectFit: "fill",
+    damageVisibility: false,
+    ammoVisibility: false,
+    delayVisibility: false
   }
-}
+};
 
-// type buttons
-const onCardTypeMonkeyClick = () => {
-  cardType = "monkey"
+const updateCardLayout = (type) => {
 
-  cardBorder.src = "src/img/MonkeyCardBorder.png"
-  cardBorderCircle.style.visibility = "hidden"
-  cardDamage.src = "src/img/MonkeyDamage.png"
-  cardImg.style.height = "100%"
-  cardImg.style.width = "100%"
-  cardImg.style.borderRadius = "10%"
-  cardImg.style.transform = "translate(-50%, 0%)"
-  cardImg.style.objectFit = "cover"
+  const cardType = cardTypes[type];
 
-  cardDelay.style.top = "42%"
-  cardDelayText.style.top = "42%"
-  monkeyIconVisiblityChange()
-}
+  cardBorder.src = cardType.borderSrc;
+  cardBorderCircle.style.visibility = cardType.borderCircleVisible ? "visible" : "hidden";
+  if (cardType.circleSrc) cardBorderCircle.src = cardType.circleSrc;
+  if (cardType.damageSrc) cardDamage.src = cardType.damageSrc;
+  cardImg.style.height = cardType.imgHeight;
+  cardImg.style.width = cardType.imgWidth;
+  cardImg.style.transform = cardType.imgTransform;
+  cardImg.style.borderRadius = cardType.imgBorderRadius;
+  cardImg.style.objectFit = cardType.imgObjectFit;
+  cardDelay.style.top = cardType.delayTop;
+  cardDelayText.style.top = cardType.delayTop;
+  toggleVisibility(cardDamage, cardType.damageVisibility);
+  toggleVisibility(cardDamageText, cardType.damageVisibility);
+  toggleVisibility(cardAmmo, cardType.ammoVisibility);
+  toggleVisibility(cardAmmoText, cardType.ammoVisibility);
+  toggleVisibility(cardDelay, cardType.delayVisibility);
+  toggleVisibility(cardDelayText, cardType.delayVisibility);
+};
 
-const onCardTypeBloonClick = () => {
-  cardType = "bloon"
+const damageCheckboxClicked = () => {
+  const isVisible = damageCheckbox.checked;
+  cardTypes.monkey.damageVisibility = isVisible
+  cardTypes.monkey.ammoVisibility = isVisible
+  cardTypes.monkey.delayVisibility = isVisible
 
-  cardBorder.src = "src/img/BloonCardBorder.png"
-  cardBorderCircle.style.visibility = "visible"
-  cardBorderCircle.src = "src/img/BloonCardBorderCircle.png"
-  cardDamage.src = "src/img/BloonDamage.png"
-  cardImg.style.height = "55%"
-  cardImg.style.width = "75%"
-  cardImg.style.transform = "translate(-50%, -7%)"
-  cardImg.style.borderRadius = "50%"
-  cardImg.style.objectFit = "fill"
-
-  cardDelay.style.top = "25%"
-  cardDelayText.style.top = "25%"
-  cardIconVisiblityChange("visible", "hidden", "visible")
-}
-
-const onCardTypePowerClick = () => {
-  cardType = "power"
-
-  cardBorder.src = "src/img/PowerCardBorder.png"
-  cardBorderCircle.style.visibility = "visible"
-  cardBorderCircle.src = "src/img/PowerCardBorderCircle.png"
-  cardImg.style.height = "55%"
-  cardImg.style.width = "75%"
-  cardImg.style.transform = "translate(-50%, -7%)"
-  cardImg.style.borderRadius = "40%"
-  cardImg.style.objectFit = "fill"
-
-  cardAmmo.style.visibility = "hidden"
-  cardAmmoText.style.visibility = "hidden"
-  cardIconVisiblityChange("hidden", "hidden", "hidden")
-}
+  toggleVisibility(cardDamage, cardTypes.cardType.isVisible);
+  toggleVisibility(cardDamageText, cardTypes.cardType.isVisible);
+  toggleVisibility(cardAmmo, cardTypes.cardType.isVisible);
+  toggleVisibility(cardAmmoText, cardTypes.cardType.isVisible);
+  toggleVisibility(cardDelay, cardTypes.cardType.isVisible);
+  toggleVisibility(cardDelayText, cardTypes.cardType.isVisible);
+};
 
 const changeRarityImg = (value) => {
   rarityElement.src = `src/img/Rarity${value}.png`
 }
-// make text editable
-editCardTextEvent("title-text")
-editCardTextEvent("cost-text")
-editCardTextEvent("damage-text")
-editCardTextEvent("ammo-text")
-editCardTextEvent("delay-text")
-editCardTextEvent("description-text")
-
-let cardType = "monkey"
-const damageCheckbox = document.getElementById("damage-checkbox")
-
-const cardBorder = document.getElementById("card-border")
-const cardBorderCircle = document.getElementById("card-border-circle")
-const cardTypeButtons = document.querySelectorAll(".card-type-button")
-
-const cardDamage = document.getElementById("card-damage")
-const cardAmmo = document.getElementById("card-ammo")
-const cardDelay = document.getElementById("card-delay")
-const cardDamageText = document.getElementById("damage-text")
-const cardAmmoText = document.getElementById("ammo-text")
-const cardDelayText = document.getElementById("delay-text")
-
-const rarityButtons = document.querySelectorAll(".rarity-button")
-const rarityElement = document.getElementById("rarity-img")
-
-const imgUploadElement = document.getElementById("img-upload")
-const cardImg = document.getElementById("card-img")
 
 const resizeImage = (img, wantedWidth, wantedHeight) => {
   const canvas = document.createElement("canvas")
@@ -134,28 +119,24 @@ const resizeImage = (img, wantedWidth, wantedHeight) => {
   return canvas.toDataURL()
 }
 
-imgUploadElement.addEventListener(
-  "change",
-  function () {
-    const fileList = this.files
-    const firstFile = fileList[0]
-    const reader = new FileReader()
+const uploadImg = () => {
+  const fileList = this.files
+  const firstFile = fileList[0]
+  const reader = new FileReader()
 
-    reader.onload = function (event) {
-      // resize img
-      const newImg = document.createElement("img")
-      newImg.src = event.target.result
-      newImg.onload = function () {
-        const resizedDataUri = resizeImage(newImg, 512, 512)
-        document.getElementById("card-img").src = resizedDataUri
-      }
+  reader.onload = function (event) {
+    // resize img
+    const newImg = document.createElement("img")
+    newImg.src = event.target.result
+    newImg.onload = function () {
+      const resizedDataUri = resizeImage(newImg, 512, 512)
+      document.getElementById("card-img").src = resizedDataUri
     }
-    if (firstFile.type.startsWith("image/")) {
-      reader.readAsDataURL(firstFile)
-    }
-  },
-  false
-)
+  }
+  if (firstFile.type.startsWith("image/")) {
+    reader.readAsDataURL(firstFile)
+  }
+}
 
 const downloadImg = () => {
   var cardContainer = document.getElementById("card-container")
@@ -181,3 +162,54 @@ const downloadImg = () => {
     document.body.removeChild(downloadLink)
   })
 }
+
+let cardType = "monkey"
+const damageCheckbox = document.getElementById("damage-checkbox")
+
+const cardBorder = document.getElementById("card-border")
+const cardBorderCircle = document.getElementById("card-border-circle")
+const cardTypeButtons = document.querySelectorAll(".card-type-button")
+
+const cardDamage = document.getElementById("card-damage")
+const cardAmmo = document.getElementById("card-ammo")
+const cardDelay = document.getElementById("card-delay")
+const cardDamageText = document.getElementById("damage-text")
+const cardAmmoText = document.getElementById("ammo-text")
+const cardDelayText = document.getElementById("delay-text")
+
+const rarityButtons = document.querySelectorAll(".rarity-button")
+const rarityElement = document.getElementById("rarity-img")
+
+const imgUploadElement = document.getElementById("img-upload")
+const cardImg = document.getElementById("card-img")
+
+// make text editable
+editCardTextEvent("title-text")
+editCardTextEvent("cost-text")
+editCardTextEvent("damage-text")
+editCardTextEvent("ammo-text")
+editCardTextEvent("delay-text")
+editCardTextEvent("description-text")
+
+imgUploadElement.addEventListener(
+  "change",
+  function () {
+    const fileList = this.files
+    const firstFile = fileList[0]
+    const reader = new FileReader()
+
+    reader.onload = function (event) {
+      // resize img
+      const newImg = document.createElement("img")
+      newImg.src = event.target.result
+      newImg.onload = function () {
+        const resizedDataUri = resizeImage(newImg, 512, 512)
+        document.getElementById("card-img").src = resizedDataUri
+      }
+    }
+    if (firstFile.type.startsWith("image/")) {
+      reader.readAsDataURL(firstFile)
+    }
+  },
+  false
+)

@@ -16,9 +16,9 @@
 		<div id="card-form" class="form-flex two-col-item">
 			<div class=form-element>
 				<label>Card Type</label><br>
-				<img class="img-btn" src="src/img/Monkey.png" alt="Monkey" onclick="onCardTypeMonkeyClick()"/>
-				<img class="img-btn" src="src/img/Bloon.png" alt="Bloon" onclick="onCardTypeBloonClick()"/>
-				<img class="img-btn" src="src/img/Power.png" alt="Power" onclick="onCardTypePowerClick()"/>
+				<img class="img-btn" src="src/img/Monkey.png" alt="Monkey" onclick="updateCardLayout('monkey')"/>
+				<img class="img-btn" src="src/img/Bloon.png" alt="Bloon" onclick="updateCardLayout('bloon')"/>
+				<img class="img-btn" src="src/img/Power.png" alt="Power" onclick="updateCardLayout('power')"/>
 			</div>
 			<div class="form-element">
 				<label for="input-title-text">Title</label><br>
@@ -39,7 +39,7 @@
 			<!-- is this a not a farm? -->
 			<div class="form-element">
 				<label for="damage-checkbox">Damage?</label><br>
-				<input checked type="checkbox" class="damage-checkbox" name="damage-checkbox" id="damage-checkbox" onclick="monkeyIconVisiblityChange()">
+				<input checked type="checkbox" class="damage-checkbox" name="damage-checkbox" id="damage-checkbox" onclick="damageCheckboxClicked()">
 			</div>
 			<div class="form-element">
 				<label for="input-ammo-text">Ammo</label><br>
