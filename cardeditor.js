@@ -1,3 +1,4 @@
+// make text input affect card text
 const editCardTextEvent = (element) => {
   const inputCardText = document.getElementById(`input-${element}`)
   const cardText = document.getElementById(element)
@@ -5,11 +6,11 @@ const editCardTextEvent = (element) => {
   // ideally you would keep everything but that's a lot harder
   inputCardText.value = ""
   inputCardText.addEventListener("input", function (event) {
-    // Update the card title with the input value
     cardText.textContent = event.target.value
   })
 }
 
+// set as many coins visible
 const setCoinQuantity = () => {
   const coins = document.getElementsByClassName("cost")
   const copiesSlider = document.getElementById("copies-slider")
@@ -25,6 +26,15 @@ const toggleVisibility = (element, isVisible) => {
   element.style.visibility = isVisible ? "visible" : "hidden";
 };
 
+const toggleVisibilities = (cardTypeObj) => {
+  toggleVisibility(cardDamage, cardTypeObj.damageVisibility);
+  toggleVisibility(cardDamageText, cardTypeObj.damageVisibility);
+  toggleVisibility(cardAmmo, cardTypeObj.ammoVisibility);
+  toggleVisibility(cardAmmoText, cardTypeObj.ammoVisibility);
+  toggleVisibility(cardDelay, cardTypeObj.delayVisibility);
+  toggleVisibility(cardDelayText, cardTypeObj.delayVisibility);
+}
+// card art properties for every card type
 const cardTypes = {
   monkey: {
     borderSrc: "src/img/MonkeyCardBorder.png",
@@ -34,7 +44,7 @@ const cardTypes = {
     imgWidth: "100%",
     imgTransform: "translate(-50%, 0%)",
     imgBorderRadius: "10%",
-    imgObjectFit: "cover",
+    imgObjFit: "cover",
     delayTop: "42%",
     damageVisibility: true,
     ammoVisibility: true,
@@ -49,7 +59,7 @@ const cardTypes = {
     imgWidth: "75%",
     imgTransform: "translate(-50%, -7%)",
     imgBorderRadius: "50%",
-    imgObjectFit: "fill",
+    imgObjFit: "fill",
     delayTop: "25%",
     damageVisibility: true,
     ammoVisibility: false,
@@ -63,7 +73,7 @@ const cardTypes = {
     imgWidth: "86%",
     imgTransform: "translate(-51%, -8%)",
     imgBorderRadius: "40%",
-    imgObjectFit: "fill",
+    imgObjFit: "fill",
     damageVisibility: false,
     ammoVisibility: false,
     delayVisibility: false
@@ -71,39 +81,30 @@ const cardTypes = {
 };
 
 const updateCardLayout = (type) => {
-
-  const cardType = cardTypes[type];
-
-  cardBorder.src = cardType.borderSrc;
-  cardBorderCircle.style.visibility = cardType.borderCircleVisible ? "visible" : "hidden";
-  if (cardType.circleSrc) cardBorderCircle.src = cardType.circleSrc;
-  if (cardType.damageSrc) cardDamage.src = cardType.damageSrc;
-  cardImg.style.height = cardType.imgHeight;
-  cardImg.style.width = cardType.imgWidth;
-  cardImg.style.transform = cardType.imgTransform;
-  cardImg.style.borderRadius = cardType.imgBorderRadius;
-  cardImg.style.objectFit = cardType.imgObjectFit;
-  cardDelay.style.top = cardType.delayTop;
-  cardDelayText.style.top = cardType.delayTop;
-  toggleVisibility(cardDamage, cardType.damageVisibility);
-  toggleVisibility(cardDamageText, cardType.damageVisibility);
-  toggleVisibility(cardAmmo, cardType.ammoVisibility);
-  toggleVisibility(cardAmmoText, cardType.ammoVisibility);
-  toggleVisibility(cardDelay, cardType.delayVisibility);
-  toggleVisibility(cardDelayText, cardType.delayVisibility);
+  cardType = type
+  const cardTypeObj = cardTypes[type];
+  
+  cardBorder.src = cardTypeObj.borderSrc;
+  cardBorderCircle.style.visibility = cardTypeObj.borderCircleVisible ? "visible" : "hidden";
+  if (cardTypeObj.circleSrc) cardBorderCircle.src = cardTypeObj.circleSrc;
+  if (cardTypeObj.damageSrc) cardDamage.src = cardTypeObj.damageSrc;
+  cardImg.style.height = cardTypeObj.imgHeight;
+  cardImg.style.width = cardTypeObj.imgWidth;
+  cardImg.style.transform = cardTypeObj.imgTransform;
+  cardImg.style.borderRadius = cardTypeObj.imgBorderRadius;
+  cardImg.style.ObjFit = cardTypeObj.imgObjFit;
+  cardDelay.style.top = cardTypeObj.delayTop;
+  cardDelayText.style.top = cardTypeObj.delayTop;
+  toggleVisibilities(cardTypeObj)
 };
+
 
 const damageCheckboxClicked = () => {
   cardTypes.monkey.damageVisibility = damageCheckbox.checked
   cardTypes.monkey.ammoVisibility = damageCheckbox.checked
   cardTypes.monkey.delayVisibility = damageCheckbox.checked
   console.log(cardTypes[cardType])
-  toggleVisibility(cardDamage, cardTypes[cardType].damageVisibility);
-  toggleVisibility(cardDamageText, cardTypes[cardType].damageVisibility);
-  toggleVisibility(cardAmmo, cardTypes[cardType].ammoVisibility);
-  toggleVisibility(cardAmmoText, cardTypes[cardType].ammoVisibility);
-  toggleVisibility(cardDelay, cardTypes[cardType].delayVisibility);
-  toggleVisibility(cardDelayText, cardTypes[cardType].delayVisibility);
+  toggleVisibilities(cardTypes[cardType])
 };
 
 const changeRarityImg = (value) => {
