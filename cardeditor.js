@@ -156,10 +156,20 @@ const downloadImg = () => {
   html2canvas(cardContainer, {
     backgroundColor: null,
   }).then(function (canvas) {
+    const titleText = document.getElementById("title-text").textContent.trim();
+    
+    let sanitizedTitleText = titleText
+      // remove unsuitable characters
+      .replace(/[^\w\s]/gi, '')
+      // more consistent with rest of download name
+      .replace(/\s/, '-')
+      .toLowerCase()
+      // Example: limit to 50 characters
+      .substring(0, 50);
     let imageData = canvas.toDataURL("image/png")
     var downloadLink = document.createElement("a")
     downloadLink.href = imageData
-    downloadLink.download = "card.png" // Set the download file name
+    downloadLink.download = `bcs-${sanitizedTitleText}.png` // Set the download file name
     document.body.appendChild(downloadLink)
     downloadLink.click()
     document.body.removeChild(downloadLink)
