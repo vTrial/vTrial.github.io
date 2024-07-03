@@ -1,6 +1,9 @@
 const editCardTextEvent = (element) => {
   const inputCardText = document.getElementById(`input-${element}`)
   const cardText = document.getElementById(element)
+  // on reload, remove text from input
+  // ideally you would keep everything but that's a lot harder
+  inputCardText.value = ""
   inputCardText.addEventListener("input", function (event) {
     // Update the card title with the input value
     cardText.textContent = event.target.value
@@ -91,17 +94,16 @@ const updateCardLayout = (type) => {
 };
 
 const damageCheckboxClicked = () => {
-  const isVisible = damageCheckbox.checked;
-  cardTypes.monkey.damageVisibility = isVisible
-  cardTypes.monkey.ammoVisibility = isVisible
-  cardTypes.monkey.delayVisibility = isVisible
-
-  toggleVisibility(cardDamage, cardTypes.cardType.isVisible);
-  toggleVisibility(cardDamageText, cardTypes.cardType.isVisible);
-  toggleVisibility(cardAmmo, cardTypes.cardType.isVisible);
-  toggleVisibility(cardAmmoText, cardTypes.cardType.isVisible);
-  toggleVisibility(cardDelay, cardTypes.cardType.isVisible);
-  toggleVisibility(cardDelayText, cardTypes.cardType.isVisible);
+  cardTypes.monkey.damageVisibility = damageCheckbox.checked
+  cardTypes.monkey.ammoVisibility = damageCheckbox.checked
+  cardTypes.monkey.delayVisibility = damageCheckbox.checked
+  console.log(cardTypes[cardType])
+  toggleVisibility(cardDamage, cardTypes[cardType].damageVisibility);
+  toggleVisibility(cardDamageText, cardTypes[cardType].damageVisibility);
+  toggleVisibility(cardAmmo, cardTypes[cardType].ammoVisibility);
+  toggleVisibility(cardAmmoText, cardTypes[cardType].ammoVisibility);
+  toggleVisibility(cardDelay, cardTypes[cardType].delayVisibility);
+  toggleVisibility(cardDelayText, cardTypes[cardType].delayVisibility);
 };
 
 const changeRarityImg = (value) => {
@@ -168,6 +170,9 @@ const downloadImg = () => {
   })
 }
 
+const startup = () => {
+  damageCheckbox.checked = true
+}
 let cardType = "monkey"
 const damageCheckbox = document.getElementById("damage-checkbox")
 
@@ -195,3 +200,5 @@ editCardTextEvent("damage-text")
 editCardTextEvent("ammo-text")
 editCardTextEvent("delay-text")
 editCardTextEvent("description-text")
+
+startup()
