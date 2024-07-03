@@ -156,12 +156,13 @@
 }
 
 .form-element {
-	padding: 1em;
+	padding: 0.5em 1em;
 }
 
 .img-btn {
 	max-height: 96px;
 	cursor: pointer;
+	margin: 0.5em;
 }
 
 .damage-checkbox {
@@ -190,6 +191,12 @@ input[type="text"] {
 
 input[type="file"] {
     display: none;
+}
+
+textarea {
+	resize: none;
+	font-size: 1.5em;
+	font-family: 'Source Sans 3 SemiBold';
 }
 .label-btn {
 	border: 1px solid #888;
