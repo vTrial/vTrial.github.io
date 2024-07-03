@@ -64,7 +64,7 @@
 			<!-- only from downloads for now -->
 			<div class="form-element">
 				<label for="img-upload" class="label-btn" id="img-upload-btn">Upload Image</label>
-				<input type="file" name="img-upload" id="img-upload">
+				<input type="file" name="img-upload" id="img-upload" onchange="uploadImg(event)">
 			</div>
 			<div class="form-element">
 				<button id="download-btn" class="label-btn" onclick="downloadImg()">Download Image</button>

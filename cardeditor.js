@@ -119,24 +119,29 @@ const resizeImage = (img, wantedWidth, wantedHeight) => {
   return canvas.toDataURL()
 }
 
-const uploadImg = () => {
-  const fileList = this.files
-  const firstFile = fileList[0]
-  const reader = new FileReader()
+function uploadImg(event) {
+  const fileList = event.target.files;
+  const firstFile = fileList[0];
+  const reader = new FileReader();
 
   reader.onload = function (event) {
-    // resize img
-    const newImg = document.createElement("img")
-    newImg.src = event.target.result
+    // Create a new image element
+    const newImg = document.createElement("img");
+    newImg.src = event.target.result;
+
+    // Resize the image and update card-img element
     newImg.onload = function () {
-      const resizedDataUri = resizeImage(newImg, 512, 512)
-      document.getElementById("card-img").src = resizedDataUri
-    }
-  }
+      const resizedDataUri = resizeImage(newImg, 512, 512);
+      document.getElementById("card-img").src = resizedDataUri;
+    };
+  };
+
+  // Check if the selected file is an image
   if (firstFile.type.startsWith("image/")) {
-    reader.readAsDataURL(firstFile)
+    reader.readAsDataURL(firstFile);
   }
 }
+
 
 const downloadImg = () => {
   var cardContainer = document.getElementById("card-container")
@@ -190,26 +195,3 @@ editCardTextEvent("damage-text")
 editCardTextEvent("ammo-text")
 editCardTextEvent("delay-text")
 editCardTextEvent("description-text")
-
-imgUploadElement.addEventListener(
-  "change",
-  function () {
-    const fileList = this.files
-    const firstFile = fileList[0]
-    const reader = new FileReader()
-
-    reader.onload = function (event) {
-      // resize img
-      const newImg = document.createElement("img")
-      newImg.src = event.target.result
-      newImg.onload = function () {
-        const resizedDataUri = resizeImage(newImg, 512, 512)
-        document.getElementById("card-img").src = resizedDataUri
-      }
-    }
-    if (firstFile.type.startsWith("image/")) {
-      reader.readAsDataURL(firstFile)
-    }
-  },
-  false
-)
