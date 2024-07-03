@@ -47,8 +47,10 @@ const onCardTypeMonkeyClick = () => {
   cardBorderCircle.style.visibility = "hidden"
   cardDamage.src = "src/img/MonkeyDamage.png"
   cardImg.style.height = "100%"
+  cardImg.style.width = "100%"
   cardImg.style.borderRadius = "10%"
   cardImg.style.transform = "translate(-50%, 0%)"
+  cardImg.style.objectFit = "cover"
 
   cardDelay.style.top = "42%"
   cardDelayText.style.top = "42%"
@@ -63,8 +65,10 @@ const onCardTypeBloonClick = () => {
   cardBorderCircle.src = "src/img/BloonCardBorderCircle.png"
   cardDamage.src = "src/img/BloonDamage.png"
   cardImg.style.height = "55%"
+  cardImg.style.width = "75%"
   cardImg.style.transform = "translate(-50%, -7%)"
   cardImg.style.borderRadius = "50%"
+  cardImg.style.objectFit = "fill"
 
   cardDelay.style.top = "25%"
   cardDelayText.style.top = "25%"
@@ -78,8 +82,10 @@ const onCardTypePowerClick = () => {
   cardBorderCircle.style.visibility = "visible"
   cardBorderCircle.src = "src/img/PowerCardBorderCircle.png"
   cardImg.style.height = "55%"
+  cardImg.style.width = "75%"
   cardImg.style.transform = "translate(-50%, -7%)"
   cardImg.style.borderRadius = "40%"
+  cardImg.style.objectFit = "fill"
 
   cardAmmo.style.visibility = "hidden"
   cardAmmoText.style.visibility = "hidden"
