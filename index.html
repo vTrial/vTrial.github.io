@@ -5,11 +5,14 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>BCS Custom Cards</title>
 	<link rel="stylesheet" href="cardeditor.css">
+	<!-- temp favicon -->
 	<link rel="icon" type="image/x-icon" href="/src/img/favicon.ico">
 </head>
 <body>
 	<h1>BCS Custom Cards</h1>
+	<!-- 2 col constructor-->
 	<div class="two-col">
+		<!-- col 1/2 -->
 		<div id="card-form" class="form-flex two-col-item">
 			<div class=form-element>
 				<label>Card Type</label><br>
@@ -33,6 +36,7 @@
 				<label for="input-damage-text">Damage</label><br>
 				<input type="text" id="input-damage-text" name="input-damage-text" size="3"><br>
 			</div>
+			<!-- is this a not a farm? -->
 			<div class="form-element">
 				<label for="damage-checkbox">Damage?</label><br>
 				<input checked type="checkbox" class="damage-checkbox" name="damage-checkbox" id="damage-checkbox" onclick="monkeyIconVisiblityChange()">
@@ -57,6 +61,7 @@
 				<img class="img-btn" src="src/img/Rarity4.png" alt="Super Rare" onclick="changeRarityImg(4)">
 				<img class="img-btn" src="src/img/Rarity5.png" alt="Ultra Rare" onclick="changeRarityImg(5)">
 			</div>
+			<!-- only from downloads for now -->
 			<div class="form-element">
 				<label for="img-upload" class="label-btn" id="img-upload-btn">Upload Image</label>
 				<input type="file" name="img-upload" id="img-upload">
@@ -65,38 +70,45 @@
 				<button id="download-btn" class="label-btn" onclick="downloadImg()">Download Image</button>
 			</div>
 		</div>
+	<!-- col 2/2 -->
+	<!-- positions card container -->
 		<div class="card-two-col two-col-item">
+			<!-- contains card and surroundings; gets screenshotted -->
 			<div class="card-container" id="card-container">
+				<!-- contains card main box; some of it is cut off as elements hang from box -->
 				<div class="card" id="card">
-					<!-- resize if to monkey or out of monkey-->
+					<!-- sizes based on card border -->
 					<img class="card-img" id="card-img">
 					<!-- can be Bloon/Monkey/SpellCardBorder -->
 					<img class="card-border" id="card-border" src="src/img/MonkeyCardBorder.png">
-					<!-- hidden unless bloon -->
+					<!-- hidden unless bloon or power; diff shape as power -->
 					<img class="card-border-circle" id="card-border-circle" src="src/img/BloonCardBorderCircle.png">
 					<img class="cost coin1" src="src/img/Coin.png">
+					<!-- hidden initially -->
 					<img class="cost coin2" src="src/img/Coin.png">
 					<img class="cost coin3" src="src/img/Coin.png">
 					<!-- Monkey/BloonDamage, hidden if spell, -->
 					<img class="damage" id="card-damage" src="src/img/MonkeyDamage.png">
+					<!-- Monkey, hidden if spell/bloon, -->
 					<img class="ammo" id="card-ammo" src="src/img/Ammo.png">
 					<!-- hidden if spell -->
 					<img class="delay" id="card-delay" src="src/img/Delay.png">
 					<img class="rarity" src="src/img/Rarity1.png" id="rarity-img">
+					<!-- card text -->
 					<p class="title-text bold-text" id="title-text"></p>
-					<p class="cost-text bold-text" id="cost-text"></p>
-					<!-- hidden unless bloon? -->
-					<!-- consider combine with monkey damage text? -->
-					<p class="damage-text bold-text" id="damage-text"></p>
-					<p class="ammo-text bold-text" id="ammo-text"></p>
-					<p class="delay-text bold-text" id="delay-text"></p>
+					<span class="cost-text bold-text" id="cost-text"></span>
+					<span class="damage-text bold-text" id="damage-text"></span>
+					<span class="ammo-text bold-text" id="ammo-text"></span>
+					<span class="delay-text bold-text" id="delay-text"></span>
 					<p class="description-text" id="description-text"></p>
 				</div>
 			</div>
 		</div>
 	</div>
+</div>
 	<!-- for screenshotting -->
 	<script src="src/script/html2canvas.js"></script>
+	<!-- main script -->
 	<script src="cardeditor.js"></script>
 </body>
 </html>

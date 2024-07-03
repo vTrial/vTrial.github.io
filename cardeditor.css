@@ -1,3 +1,5 @@
+/* initialize fonts */
+
 @font-face {
 	font-family: 'Bloons TD';
 	src: url(../src/font/BloonsTD-Regular.ttf);
@@ -94,7 +96,10 @@
 	text-align: center;
 	color: white;
 	font-family: 'Bloons TD';
-	text-shadow: -0.05em 0.1em 0.03em black, 0.05em 0.1em 0.03em black, -0.03em -0.02em 0.03em black, 0.03em -0.02em  0.03em black;
+	text-shadow: -0.025em 0.05em 0.015em black,
+		0.025em 0.05em 0.015em black,
+		-0.015em -0.01em 0.015em black,
+		0.015em -0.01em  0.015em black;
 	word-wrap: break-word;
 	margin: 0;
 }
