@@ -80,6 +80,7 @@ const cardTypes = {
   }
 };
 
+// occurs when type changes
 const updateCardLayout = (type) => {
   cardType = type
   const cardTypeObj = cardTypes[type];
@@ -107,10 +108,12 @@ const damageCheckboxClicked = () => {
   toggleVisibilities(cardTypes[cardType])
 };
 
+// rarity buttons clicked
 const changeRarityImg = (value) => {
   rarityElement.src = `src/img/Rarity${value}.png`
 }
 
+// resize img to wanted width and height
 const resizeImage = (img, wantedWidth, wantedHeight) => {
   const canvas = document.createElement("canvas")
   const ctx = canvas.getContext("2d")
@@ -174,6 +177,7 @@ const downloadImg = () => {
 const startup = () => {
   damageCheckbox.checked = true
 }
+
 let cardType = "monkey"
 const damageCheckbox = document.getElementById("damage-checkbox")
 
@@ -202,4 +206,5 @@ editCardTextEvent("ammo-text")
 editCardTextEvent("delay-text")
 editCardTextEvent("description-text")
 
+// other things which need to happen at startup
 startup()
