@@ -13,7 +13,6 @@ const editCardTextEvent = (element) => {
 // set as many coins visible
 const setCoinQuantity = () => {
   const coins = document.getElementsByClassName("cost")
-  const copiesSlider = document.getElementById("copies-slider")
   const coinCount = copiesSlider.value
   const copiesText = document.getElementById("copies-label")
   for (let coin_i = 0; coin_i < coins.length; coin_i++) {
@@ -176,9 +175,12 @@ const downloadImg = () => {
 
 const startup = () => {
   damageCheckbox.checked = true
+  copiesSlider.value = 1
 }
 
 let cardType = "monkey"
+
+const copiesSlider = document.getElementById("copies-slider")
 const damageCheckbox = document.getElementById("damage-checkbox")
 
 const cardBorder = document.getElementById("card-border")
