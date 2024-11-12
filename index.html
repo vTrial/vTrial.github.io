@@ -56,26 +56,27 @@
 				<textarea name="input-description-text" id="input-description-text" cols="30" rows="3"></textarea>
 			</div>
 			<div class="form-element">
-				<label for="material-badges">Material Badge</label><br>
-				<select name="material-badges" id="material-badges">
-					<option value=0>Primary</option>
-					<option value=1>Military</option>
-					<option value=2>Magic</option>
-					<option value=3>Support</option>
-					<option value=4>Basic Bloon</option>
-					<option value=5>Advanced Bloon</option>
-					<option value=6>Large Bloon</option>
-					<option value=7>Basic Power</option>
-					<option value=8>Advanced Power</option>
-					<option value=9>Exotic Power</option>
+				<label for="class-badge-dropdown">Class Badge</label><br>
+				<select name="class-badge-dropdown" id="class-badge-dropdown">
+					<option value="None">None</option>
+					<option value="Primary">Primary</option>
+					<option value="Military">Military</option>
+					<option value="Magic">Magic</option>
+					<option value="Support">Support</option>
+					<option value="BasicBloon">Basic Bloon</option>
+					<option value="AdvancedBloon">Advanced Bloon</option>
+					<option value="LargeBloon">Large Bloon</option>
+					<option value="BasicPower">Basic Power</option>
+					<option value="AdvancedPower">Advanced Power</option>
+					<option value="ExoticPower">Exotic Power</option>
 				</select><br>
-				<label for="hero-badges">Hero Restriction</label><br>				
-				<select name="hero-badges" id="hero-badges">
-					<option value=0>None</option>
-					<option value=1>Quincy</option>
-					<option value=2>Gwendolin</option>
-					<option value=3>Obyn</option>
-					<option value=4>Amelia</option>
+				<label for="hero-badge-dropdown">Hero Restriction</label><br>				
+				<select name="hero-badge-dropdown" id="hero-badge-dropdown">
+					<option value="None">None</option>
+					<option value="Quincy">Quincy</option>
+					<option value="Gwendolin">Gwendolin</option>
+					<option value="Obyn">Obyn</option>
+					<option value="Amelia">Amelia</option>
 				</select>
 			</div>
 			<div class="form-element">
@@ -119,6 +120,9 @@
 					<!-- hidden if spell -->
 					<img class="delay" id="card-delay" src="src/img/Delay.png">
 					<img class="rarity" src="src/img/Rarity1.png" id="rarity-img">
+					<!-- badges for card, hidden initially-->
+					<img class="hero-badge" id="hero-badge" src="src/img/HeroBadgeNone.png">
+					<img class="class-badge" id="hero-badge" src="src/img/ClassBadgeNone.png">
 					<!-- card text -->
 					<p class="title-text bold-text" id="title-text"></p>
 					<span class="tribe-text bold-text" id="tribe-text"></span>

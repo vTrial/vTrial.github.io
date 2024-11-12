@@ -10,6 +10,18 @@ const editCardTextEvent = (element) => {
   })
 }
 
+const SetHeroBadge = () => {
+    const HeroBadgeDropdown = document.getElementById(`hero-badge-dropdown`)
+    HeroBadgeDropdown.addEventListener("change", function (event) { heroBadge.src = `src/img/HeroBadge${HeroBadgeDropdown.value}.png` } )
+}
+const SetHeroBadge = () => {
+    const ClassBadgeDropdown = document.getElementById(`class-badge-dropdown`)
+    ClassBadgeDropdown.addEventListener("change", function (event) { classBadge.src = `src/img/ClassBadge${ClassBadgeDropdown.value}.png` })
+}
+const SetMaterialBadge = () =>
+{
+
+}
 // set as many coins visible
 const setCoinQuantity = () => {
   const coins = document.getElementsByClassName("cost")
@@ -191,6 +203,9 @@ const cardDelay = document.getElementById("card-delay")
 const cardDamageText = document.getElementById("damage-text")
 const cardAmmoText = document.getElementById("ammo-text")
 const cardDelayText = document.getElementById("delay-text")
+
+const heroBadge = document.getElementById("hero-badge")
+const classBadge = document.getElementById("class-badge")
 
 const rarityButtons = document.querySelectorAll(".rarity-button")
 const rarityElement = document.getElementById("rarity-img")
