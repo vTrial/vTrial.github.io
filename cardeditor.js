@@ -200,6 +200,7 @@ const cardImg = document.getElementById("card-img")
 
 // make text editable
 editCardTextEvent("title-text")
+editCardTextEvent("tribe-text")
 editCardTextEvent("cost-text")
 editCardTextEvent("damage-text")
 editCardTextEvent("ammo-text")
