@@ -68,7 +68,7 @@ const cardTypes = {
     imgHeight: "55%",
     imgWidth: "86%",
     imgTransform: "translate(-51%, -8%)",
-    borderOffset: "translate(0%, -5%)",
+    borderOffset: "translate(0%, -5.5%)",
     imgBorderRadius: "40%",
     imgObjFit: "fill",
     damageVisibility: false,
