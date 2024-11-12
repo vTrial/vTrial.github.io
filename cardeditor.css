@@ -133,7 +133,7 @@ input[type="file"] {
 	top: 4%
 }
 .coin1 {
-	left: 10%;
+	left: 9%;
 	z-index: 3;
 }
 .coin2 {
@@ -142,12 +142,12 @@ input[type="file"] {
 	visibility: hidden;
 }
 .coin3 {
-	left: 20%;
+	left: 21%;
 	visibility: hidden;
 }
 .coinplus 
 {
-	left: 31%;
+	left: 32%;
 	visibility: hidden;
 	z-index: 1;
 }
