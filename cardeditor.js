@@ -39,7 +39,7 @@ const cardTypes = {
     borderSrc: "src/img/MonkeyCardBorder.png",
     borderCircleVisible: false,
     damageSrc: "src/img/MonkeyDamage.png",
-    imgHeight: "100%",
+    imgHeight: "95%",
     imgWidth: "100%",
     imgTransform: "translate(-50%, 0%)",
     imgBorderRadius: "10%",
@@ -52,7 +52,6 @@ const cardTypes = {
   bloon: {
     borderSrc: "src/img/BloonCardBorder.png",
     borderCircleVisible: true,
-    circleSrc: "src/img/BloonCardBorderCircle.png",
     damageSrc: "src/img/BloonDamage.png",
     imgHeight: "55%",
     imgWidth: "75%",
@@ -67,7 +66,6 @@ const cardTypes = {
   power: {
     borderSrc: "src/img/PowerCardBorder.png",
     borderCircleVisible: true,
-    circleSrc: "src/img/PowerCardBorderCircle.png",
     imgHeight: "55%",
     imgWidth: "86%",
     imgTransform: "translate(-51%, -8%)",
