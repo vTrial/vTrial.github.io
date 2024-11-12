@@ -134,22 +134,22 @@ input[type="file"] {
 }
 .coin1 {
 	left: 10%;
-	z-index: 3;
+	z-index: 2;
 }
 .coin2 {
 	left: 15%;
-	z-index: 2;
+	z-index: 1;
 	visibility: hidden;
 }
 .coin3 {
 	left: 20%;
 	visibility: hidden;
-	z-index: 1;
 }
 .coinplus 
 {
 	left: 25%;
 	visibility: hidden;
+	z-index: 3;
 }
 .damage {
 	position: absolute;
