@@ -42,7 +42,7 @@ const cardTypes = {
     imgWidth: "100%",
     imgTransform: "translate(-50%, 0%)",
     imgBorderRadius: "10%",
-    borderOffset: "translate(0%, 0%)";
+    borderOffset: "translate(0%, 0%)",
     imgObjFit: "cover",
     delayTop: "42%",
     damageVisibility: true,
@@ -55,7 +55,7 @@ const cardTypes = {
     imgHeight: "55%",
     imgWidth: "75%",
     imgTransform: "translate(-50%, -7%)",
-    borderOffset: "translate(0%, -20%)";
+    borderOffset: "translate(0%, -20%)",
     imgBorderRadius: "50%",
     imgObjFit: "fill",
     delayTop: "25%",
@@ -68,7 +68,7 @@ const cardTypes = {
     imgHeight: "55%",
     imgWidth: "86%",
       imgTransform: "translate(-51%, -8%)",
-      borderOffset: "translate(0%, -20%)";
+      borderOffset: "translate(0%, -20%)",
     imgBorderRadius: "40%",
     imgObjFit: "fill",
     damageVisibility: false,
