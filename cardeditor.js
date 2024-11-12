@@ -13,12 +13,13 @@ const editCardTextEvent = (element) => {
 // set as many coins visible
 const setCoinQuantity = () => {
   const coins = document.getElementsByClassName("cost")
-  const coinCount = copiesSlider.value
+   const coinCount = copiesSlider.value;
   const copiesText = document.getElementById("copies-label")
   for (let coin_i = 0; coin_i < coins.length; coin_i++) {
     coins[coin_i].style.visibility = coin_i < coinCount ? "visible" : "hidden"
   }
   copiesText.textContent = `Copies: ${coinCount}`
+  if (coinCount > 3) copiesText.textContent = `Copies: 3+`
 }
 
 const toggleVisibility = (element, isVisible) => {
