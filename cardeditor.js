@@ -85,8 +85,6 @@ const updateCardLayout = (type) => {
   
   cardBorder.src = cardTypeObj.borderSrc;
   cardBorder.style.transform = cardTypeObj.borderOffset;
-  cardBorderCircle.style.visibility = cardTypeObj.borderCircleVisible ? "visible" : "hidden";
-  if (cardTypeObj.circleSrc) cardBorderCircle.src = cardTypeObj.circleSrc;
   if (cardTypeObj.damageSrc) cardDamage.src = cardTypeObj.damageSrc;
   cardImg.style.height = cardTypeObj.imgHeight;
   cardImg.style.width = cardTypeObj.imgWidth;
@@ -184,7 +182,6 @@ const copiesSlider = document.getElementById("copies-slider")
 const damageCheckbox = document.getElementById("damage-checkbox")
 
 const cardBorder = document.getElementById("card-border")
-const cardBorderCircle = document.getElementById("card-border-circle")
 const cardTypeButtons = document.querySelectorAll(".card-type-button")
 
 const cardDamage = document.getElementById("card-damage")
