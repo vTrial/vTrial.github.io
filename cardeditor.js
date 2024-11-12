@@ -14,7 +14,7 @@ const SetHeroBadge = () => {
     const HeroBadgeDropdown = document.getElementById(`hero-badge-dropdown`)
     HeroBadgeDropdown.addEventListener("change", function (event) { heroBadge.src = `src/img/HeroBadge${HeroBadgeDropdown.value}.png` } )
 }
-const SetHeroBadge = () => {
+const SetClassBadge = () => {
     const ClassBadgeDropdown = document.getElementById(`class-badge-dropdown`)
     ClassBadgeDropdown.addEventListener("change", function (event) { classBadge.src = `src/img/ClassBadge${ClassBadgeDropdown.value}.png` })
 }
@@ -221,6 +221,8 @@ editCardTextEvent("damage-text")
 editCardTextEvent("ammo-text")
 editCardTextEvent("delay-text")
 editCardTextEvent("description-text")
+SetClassBadge()
+SetHeroBadge()
 
 // other things which need to happen at startup
 startup()
