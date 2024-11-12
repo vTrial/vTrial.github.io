@@ -37,12 +37,12 @@ const toggleVisibilities = (cardTypeObj) => {
 const cardTypes = {
   monkey: {
     borderSrc: "src/img/MonkeyCardBorder.png",
-    borderCircleVisible: false,
     damageSrc: "src/img/MonkeyDamage.png",
     imgHeight: "95%",
     imgWidth: "100%",
     imgTransform: "translate(-50%, 0%)",
     imgBorderRadius: "10%",
+    borderOffset: "translate(0%, 0%)";
     imgObjFit: "cover",
     delayTop: "42%",
     damageVisibility: true,
@@ -51,11 +51,11 @@ const cardTypes = {
   },
   bloon: {
     borderSrc: "src/img/BloonCardBorder.png",
-    borderCircleVisible: true,
     damageSrc: "src/img/BloonDamage.png",
     imgHeight: "55%",
     imgWidth: "75%",
     imgTransform: "translate(-50%, -7%)",
+    borderOffset: "translate(0%, -20%)";
     imgBorderRadius: "50%",
     imgObjFit: "fill",
     delayTop: "25%",
@@ -65,10 +65,10 @@ const cardTypes = {
   },
   power: {
     borderSrc: "src/img/PowerCardBorder.png",
-    borderCircleVisible: true,
     imgHeight: "55%",
     imgWidth: "86%",
-    imgTransform: "translate(-51%, -8%)",
+      imgTransform: "translate(-51%, -8%)",
+      borderOffset: "translate(0%, -20%)";
     imgBorderRadius: "40%",
     imgObjFit: "fill",
     damageVisibility: false,
@@ -83,6 +83,7 @@ const updateCardLayout = (type) => {
   const cardTypeObj = cardTypes[type];
   
   cardBorder.src = cardTypeObj.borderSrc;
+  cardBorder.style.transform = cardTypeObj.borderOffset;
   cardBorderCircle.style.visibility = cardTypeObj.borderCircleVisible ? "visible" : "hidden";
   if (cardTypeObj.circleSrc) cardBorderCircle.src = cardTypeObj.circleSrc;
   if (cardTypeObj.damageSrc) cardDamage.src = cardTypeObj.damageSrc;
