@@ -158,7 +158,7 @@ const downloadImg = () => {
       // remove unsuitable characters
       .replace(/[^\w\s]/gi, '')
       // more consistent with rest of download name
-      .replace(/\s/, '-')
+      .replace(/ /gi, '-')
       .toLowerCase()
       // Example: limit to 50 characters
       .substring(0, 50);

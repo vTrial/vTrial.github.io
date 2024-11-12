@@ -200,6 +200,15 @@ input[type="file"] {
 	width: 90%;
 	max-height: 20%;
 }
+.tribe-text {
+	position: absolute;
+	transform: translate(-50%, -50%);
+	font-size: 4em;
+	left: 50%;
+	top: 90%;
+	width: 90%;
+	max-height: 20%;
+}
 .cost-text {
 	position: absolute;
 	transform: translate(-50%, -50%);
