@@ -67,7 +67,7 @@ const cardTypes = {
     borderSrc: "src/img/PowerCardBorder.png",
     imgHeight: "55%",
     imgWidth: "86%",
-    imgTransform: "translate(-51%, -8%)",
+    imgTransform: "translate(-51%, -5%)",
     borderOffset: "translate(0%, -5.5%)",
     imgBorderRadius: "40%",
     imgObjFit: "fill",
