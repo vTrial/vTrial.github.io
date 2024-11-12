@@ -193,25 +193,20 @@ input[type="file"] {
 }
 .title-text {
 	position: absolute;
-	transform: translate(-50%, -50%);
 	font-size: 4em;
-	left: 50%;
-	top: 60%;
-	width: 90%;
-	max-height: 20%;
+	left: 7.5%;
+	width: 85%;
+	max-height: 30%;
+	bottom: 330px;
 }
 .tribe-text {
 	position: absolute;
 	transform: translate(-50%, -50%);
-	font-size: 3em;
+	font-size: 2em;
 	left: 50%;
-	top: 90%;
+	top: 64%;
 	width: 90%;
 	max-height: 20%;
-}
-.input-tribe-text
-{
-	transform: translate(0%, -30%);
 }
 .cost-text {
 	position: absolute;
