@@ -193,13 +193,13 @@ input[type="file"] {
 }
 .title-text {
 	position: absolute;
-	font-size: 4em;
+	font-size: 3.5em;
 	left: 7.5%;
 	width: 85%;
 	max-height: 30%;
-	bottom: 330px;
+	bottom: 345px;
 }
-.tribe-text {
+	.tribe-text {
 	position: absolute;
 	transform: translate(-50%, -50%);
 	font-size: 2em;
