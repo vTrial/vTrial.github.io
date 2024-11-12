@@ -55,7 +55,7 @@ const cardTypes = {
     imgHeight: "55%",
     imgWidth: "75%",
     imgTransform: "translate(-50%, -7%)",
-    borderOffset: "translate(0%, -20%)",
+    borderOffset: "translate(0%, -7%)",
     imgBorderRadius: "50%",
     imgObjFit: "fill",
     delayTop: "25%",
@@ -67,13 +67,14 @@ const cardTypes = {
     borderSrc: "src/img/PowerCardBorder.png",
     imgHeight: "55%",
     imgWidth: "86%",
-      imgTransform: "translate(-51%, -8%)",
-      borderOffset: "translate(0%, -20%)",
+    imgTransform: "translate(-51%, -8%)",
+    borderOffset: "translate(0%, -7%)",
     imgBorderRadius: "40%",
     imgObjFit: "fill",
     damageVisibility: false,
     ammoVisibility: false,
-    delayVisibility: false
+    delayVisibility: false,
+
   }
 };
 
