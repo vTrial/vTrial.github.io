@@ -197,8 +197,8 @@ input[type="file"] {
 .class-badge {
 	position: absolute;
 	transform: translate(-67%, 60%);
-	left: 8%;
-	top: 43%;
+	left: 50%;
+	top: 1%;
 }
 /* card text styles */
 .bold-text {
