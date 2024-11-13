@@ -56,7 +56,7 @@ const cardTypes = {
     imgWidth: "100%",
     imgTransform: "translate(-50%, 0%)",
     imgBorderRadius: "10%",
-    borderOffset: "translate(0%, 0%)",
+    borderOffset: "translate(0%, -0.8%)",
     imgObjFit: "cover",
     delayTop: "42%",
     classBadgeTransform: "translate(-67%, 60%)",
