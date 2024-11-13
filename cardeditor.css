@@ -13,6 +13,13 @@
 	font-weight: normal;
     font-style: normal;
 }
+@font-face
+{
+	font-family: 'Source Sans 3 MidItalics';
+	src: url(../src/font/SourceSans3-MediumItalic.ttf);
+	font-weight: normal;
+	font-style: normal;
+}
 
 .form-flex {
 	height:fit-content;
@@ -268,6 +275,7 @@ input[type="file"] {
 	max-height: 28%;
 }
 .flavor-text {
+	font-family: 'Source Sans 3 MidItalics';
 	position: absolute;
 	transform: translate(-50%, 0%);
 	left: 50%;
