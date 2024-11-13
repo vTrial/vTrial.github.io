@@ -191,14 +191,14 @@ input[type="file"] {
 .hero-badge {
 	position: absolute;
 	transform: translate(-35%, 80%);
-	left: 89%;
-	top: 43%
+	left: 50%;
+	top: 0%
 }
 .class-badge {
 	position: absolute;
 	transform: translate(-67%, 60%);
-	left: 50%;
-	top: 0%;
+	left: 8%;
+	top: 43%;
 }
 /* card text styles */
 .bold-text {
