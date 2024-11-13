@@ -226,7 +226,7 @@ input[type="file"] {
 	.class-text {
 	position: absolute;
 	transform: translate(-50%, -50%);
-	font-size: 2em;
+	font-size: 2.3em;
 	left: 50%;
 	top: 64%;
 	width: 90%;
