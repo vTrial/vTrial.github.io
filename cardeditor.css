@@ -188,7 +188,19 @@ input[type="file"] {
 	left: 50%;
 	top: 96.5%
 }
-
+.hero-badge
+{
+	position: absolute;
+	transform: translate(-50%, -50%);
+	left: 89%;
+	top: 43%
+}
+.class-badge {
+	position: absolute;
+	transform: translate(-50%, -50%);
+	left: 8%;
+	top: 44%;
+}
 /* card text styles */
 .bold-text {
 	text-align: center;
