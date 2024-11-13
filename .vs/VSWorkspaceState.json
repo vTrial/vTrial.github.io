@@ -2,8 +2,12 @@
   "ExpandedNodes": [
     "",
     "\\src",
-    "\\src\\img"
+    "\\src\\font",
+    "\\src\\img",
+    "\\src\\img\\ClassPin",
+    "\\src\\img\\HeroPin",
+    "\\src\\img\\RarityPin"
   ],
-  "SelectedNode": "\\index.html",
+  "SelectedNode": "\\src\\img\\ClassPin\\BasicBloon.png",
   "PreviewInSolutionExplorer": false
 }
