@@ -276,6 +276,7 @@ input[type="file"] {
 }
 .flavor-text {
 	font-family: 'Source Sans 3 MidItalics';
+	paint-order: stroke fill;
 	position: absolute;
 	transform: translate(-50%, 0%);
 	left: 50%;
