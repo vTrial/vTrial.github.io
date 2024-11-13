@@ -196,7 +196,7 @@ input[type="file"] {
 }
 .class-badge {
 	position: absolute;
-	transform: translate(-67%, 50%);
+	transform: translate(-67%, 60%);
 	left: 8%;
 	top: 43%;
 }
