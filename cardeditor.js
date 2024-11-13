@@ -12,10 +12,12 @@ const editCardTextEvent = (element) => {
 
 const SetHeroBadge = () => {
     const HeroBadgeDropdown = document.getElementById(`hero-badge-dropdown`)
+    HeroBadgeDropdown.value = "None";
     HeroBadgeDropdown.addEventListener("change", function (event) { heroBadge.src = `src/img/HeroBadge${HeroBadgeDropdown.value}.png` } )
 }
 const SetClassBadge = () => {
     const ClassBadgeDropdown = document.getElementById(`class-badge-dropdown`)
+    ClassBadgeDropdown.value = "None";
     ClassBadgeDropdown.addEventListener("change", function (event) {
         classBadge.src = `src/img/ClassBadge${ClassBadgeDropdown.value}.png`})
 }
