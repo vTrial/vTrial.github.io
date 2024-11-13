@@ -276,7 +276,7 @@ input[type="file"] {
 	text-align: center;
 	width: 90%;
 	max-height: 28%;
-	top: 100%;
+	top: 105%;
 	-webkit-text-stroke: 0.03em black;
 }
 /* top level styles */

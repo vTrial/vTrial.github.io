@@ -178,7 +178,8 @@ function uploadImg(event) {
 
 
 const downloadImg = () => {
-  var cardContainer = document.getElementById("card-container")
+    var cardContainer = document.getElementById("card-container")
+    cardContainer.style.height =  `${flavorText.clientHeight + 525}px`
   html2canvas(cardContainer, {
     backgroundColor: null,
   }).then(function (canvas) {
@@ -200,6 +201,7 @@ const downloadImg = () => {
     downloadLink.click()
     document.body.removeChild(downloadLink)
   })
+    cardContainer.style.height = "525px"
 }
 
 const startup = () => {
@@ -230,6 +232,7 @@ const rarityBadge = document.getElementById("rarity-img")
 
 const imgUploadElement = document.getElementById("img-upload")
 const cardImg = document.getElementById("card-img")
+const flavorText = document.getElementById("flavor-text")
 
 // make text editable
 editCardTextEvent("title-text")
