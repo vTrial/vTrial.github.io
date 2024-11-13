@@ -58,8 +58,8 @@ const cardTypes = {
     borderOffset: "translate(0%, 0%)",
     imgObjFit: "cover",
     delayTop: "42%",
-    classBadgeTransform = "translate(-67%, 50%)",
-    heroBadgeTransform = "translate(-35%, 80%)",
+    classBadgeTransform: "translate(-67%, 50%)",
+    heroBadgeTransform: "translate(-35%, 80%)",
     damageVisibility: true,
     ammoVisibility: true,
     delayVisibility: true
