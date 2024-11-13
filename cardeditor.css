@@ -223,7 +223,7 @@ input[type="file"] {
 	max-height: 30%;
 	bottom: 345px;
 }
-	.tribe-text {
+	.class-text {
 	position: absolute;
 	transform: translate(-50%, -50%);
 	font-size: 2em;
