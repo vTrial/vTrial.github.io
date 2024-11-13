@@ -64,7 +64,8 @@ const cardTypes = {
     imgBorderRadius: "10%",
     borderOffset: "translate(0%, -0.8%)",
     imgObjFit: "cover",
-    delayTop: "42%",
+    delayTop: "43%",
+    delayLeft: "95.5%",
     classBadgeTransform: "translate(-67%, 60%)",
     heroBadgeTransform: "translate(-50%, -50%)",
     heroBadgeLeft: "50%",
@@ -87,6 +88,7 @@ const cardTypes = {
     imgBorderRadius: "50%",
     imgObjFit: "fill",
     delayTop: "25%",
+    delayLeft: "90%",
     damageVisibility: true,
     ammoVisibility: false,
     delayVisibility: true
@@ -124,6 +126,7 @@ const updateCardLayout = (type) => {
   cardImg.style.borderRadius = cardTypeObj.imgBorderRadius;
   cardImg.style.ObjFit = cardTypeObj.imgObjFit;
   cardDelay.style.top = cardTypeObj.delayTop;
+  cardDelay.style.left = cardTypeObj.delayLeft;
   cardDelayText.style.top = cardTypeObj.delayTop;
   classBadge.style.transform = cardTypeObj.classBadgeTransform;
   heroBadge.style.transform = cardTypeObj.heroBadgeTransform;
