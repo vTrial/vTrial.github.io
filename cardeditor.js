@@ -62,7 +62,9 @@ const cardTypes = {
     imgObjFit: "cover",
     delayTop: "42%",
     classBadgeTransform: "translate(-67%, 60%)",
-    heroBadgeTransform: "translate(-35%, 80%)",
+    heroBadgeTransform: "translate(-50%, -50%)",
+    heroBadgeLeft: "50%",
+    heroBadgeTop: "1%",
     damageVisibility: true,
     ammoVisibility: true,
     delayVisibility: true
@@ -76,6 +78,8 @@ const cardTypes = {
     borderOffset: "translate(0%, -6%)",
     classBadgeTransform: "translate(-50%, -50%)",
     heroBadgeTransform: "translate(-50%, -50%)",
+    heroBadgeLeft: "89%",
+    heroBadgeTop: "43%",
     imgBorderRadius: "50%",
     imgObjFit: "fill",
     delayTop: "25%",
@@ -91,6 +95,8 @@ const cardTypes = {
     borderOffset: "translate(0%, -5.5%)",
     classBadgeTransform: "translate(-50%, -50%)",
     heroBadgeTransform: "translate(-50%, -50%)",
+    heroBadgeLeft: "89%",
+    heroBadgeTop: "43%",
     imgBorderRadius: "40%",
     imgObjFit: "fill",
     damageVisibility: false,
@@ -117,6 +123,8 @@ const updateCardLayout = (type) => {
   cardDelayText.style.top = cardTypeObj.delayTop;
   classBadge.style.transform = cardTypeObj.classBadgeTransform;
   heroBadge.style.transform = cardTypeObj.heroBadgeTransform;
+  heroBadge.style.left = cardTypeObj.heroBadgeLeft;
+  heroBadge.style.top = cardTypeObj.heroBadgeTop;
   toggleVisibilities(cardTypeObj)
 };
 
