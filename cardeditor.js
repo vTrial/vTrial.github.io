@@ -57,7 +57,7 @@ const cardTypes = {
     imgObjFit: "cover",
     delayTop: "43%",
     delayLeft: "95.5%",
-    classPinTransform: "translate(-66.2%, 65%)",
+    classPinTransform: "translate(-66.2%, 60%)",
     heroPinTransform: "translate(-50%, -50%)",
     heroPinLeft: "50%",
     heroPinTop: "0%",

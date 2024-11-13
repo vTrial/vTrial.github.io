@@ -200,7 +200,7 @@ input[type="file"] {
 }
 .class-pin {
 	position: absolute;
-	transform: translate(-66.2%, 65%);
+	transform: translate(-66.2%, 60%);
 	left: 8%;
 	top: 43%;
 }
