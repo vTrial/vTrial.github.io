@@ -16,7 +16,8 @@ const SetHeroBadge = () => {
 }
 const SetClassBadge = () => {
     const ClassBadgeDropdown = document.getElementById(`class-badge-dropdown`)
-    ClassBadgeDropdown.addEventListener("change", function (event) { classBadge.src = `src/img/ClassBadge${ClassBadgeDropdown.value}.png` })
+    ClassBadgeDropdown.addEventListener("change", function (event) {
+        classBadge.src = `src/img/ClassBadge${ClassBadgeDropdown.value}.png`})
 }
 const SetMaterialBadge = () =>
 {
@@ -58,7 +59,7 @@ const cardTypes = {
     borderOffset: "translate(0%, 0%)",
     imgObjFit: "cover",
     delayTop: "42%",
-    classBadgeTransform: "translate(-67%, 50%)",
+    classBadgeTransform: "translate(-67%, 60%)",
     heroBadgeTransform: "translate(-35%, 80%)",
     damageVisibility: true,
     ammoVisibility: true,
