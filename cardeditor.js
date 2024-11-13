@@ -64,7 +64,7 @@ const cardTypes = {
     classBadgeTransform: "translate(-67%, 60%)",
     heroBadgeTransform: "translate(-50%, -50%)",
     heroBadgeLeft: "50%",
-    heroBadgeTop: "1%",
+    heroBadgeTop: "0%",
     damageVisibility: true,
     ammoVisibility: true,
     delayVisibility: true
