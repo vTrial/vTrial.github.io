@@ -60,8 +60,8 @@
 				<textarea name="input-flavor-text" id="input-flavor-text" cols="20" rows="3"></textarea>
 			</div>
 			<div class="form-element">
-				<label for="class-badge-dropdown">Class Badge</label><br>
-				<select name="class-badge-dropdown" id="class-badge-dropdown">
+				<label for="class-pin-dropdown">Class Pin</label><br>
+				<select name="class-pin-dropdown" id="class-pin-dropdown">
 					<option value="None">None</option>
 					<option value="Primary">Primary</option>
 					<option value="Military">Military</option>
@@ -74,8 +74,8 @@
 					<option value="AdvancedPower">Advanced Power</option>
 					<option value="ExoticPower">Exotic Power</option>
 				</select><br>
-				<label for="hero-badge-dropdown">Hero Restriction</label><br>
-				<select name="hero-badge-dropdown" id="hero-badge-dropdown">
+				<label for="hero-pin-dropdown">Hero Restriction</label><br>
+				<select name="hero-pin-dropdown" id="hero-pin-dropdown">
 					<option value="None">None</option>
 					<option value="Quincy">Quincy</option>
 					<option value="Gwendolin">Gwendolin</option>
@@ -85,13 +85,13 @@
 			</div>
 			<div class="form-element">
 				<label>Rarity</label><br>
-				<select id="rarity-badge-dropdown">
-						<option value=0>None</option>
-						<option value=1>Common</option>
-						<option value=2>Uncommon</option>
-						<option value=3>Rare</option>
-						<option value=4>Super Rare</option>
-						<option value=5>Ultra Rare</option>
+				<select id="rarity-pin-dropdown">
+						<option value="None">None</option>
+						<option value="Common">Common</option>
+						<option value="Uncommon">Uncommon</option>
+						<option value="Rare">Rare</option>
+						<option value="SuperRare">Super Rare</option>
+						<option value="UltraRare">Ultra Rare</option>
 				</select>
 			</div>
 			<!-- only from downloads for now -->
@@ -125,10 +125,10 @@
 					<img class="ammo" id="card-ammo" src="src/img/Ammo.png">
 					<!-- hidden if spell -->
 					<img class="delay" id="card-delay" src="src/img/Delay.png">
-					<img class="rarity" src="src/img/Rarity0.png" id="rarity-img">
-					<!-- badges for card, hidden initially-->
-					<img class="hero-badge" id="hero-badge" src="src/img/HeroBadgeNone.png">
-					<img class="class-badge" id="class-badge" src="src/img/ClassBadgeNone.png">
+					<!-- pins for card, hidden initially-->
+					<img class="rarity-pin" src="src/img/RarityPin/None.png" id="rarity-pin">
+					<img class="hero-pin" id="hero-pin" src="src/img/HeroPin/None.png">
+					<img class="class-pin" id="class-pin" src="src/img/ClassPin/None.png">
 					<!-- card text -->
 					<p class="title-text bold-text" id="title-text"></p>
 					<span class="class-text bold-text" id="class-text"></span>

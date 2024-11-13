@@ -186,19 +186,19 @@ input[type="file"] {
 	left: 95.5%;
 	top: 43%
 }
-.rarity {
+.rarity-pin {
 	position: absolute;
 	transform: translate(-50%, -50%);
 	left: 50%;
 	top: 96.5%
 }
-.hero-badge {
+.hero-pin {
 	position: absolute;
 	transform: translate(-35%, 80%);
 	left: 50%;
 	top: 0%
 }
-.class-badge {
+.class-pin {
 	position: absolute;
 	transform: translate(-67%, 60%);
 	left: 8%;

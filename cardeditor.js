@@ -10,23 +10,14 @@ const editCardTextEvent = (element) => {
   })
 }
 
-// Dropdown options changed
-
-const SetHeroBadge = () => {
-    const HeroBadgeDropdown = document.getElementById(`hero-badge-dropdown`)
-    HeroBadgeDropdown.value = "None"
-    HeroBadgeDropdown.addEventListener("change", function (event) { heroBadge.src = `src/img/HeroBadge${HeroBadgeDropdown.value}.png` } )
-}
-const SetClassBadge = () => {
-    const ClassBadgeDropdown = document.getElementById(`class-badge-dropdown`)
-    ClassBadgeDropdown.value = "None"
-    ClassBadgeDropdown.addEventListener("change", function (event) {
-        classBadge.src = `src/img/ClassBadge${ClassBadgeDropdown.value}.png`})
-}
-const SetRarityBadge = () => {
-    const RarityBadgeDropdown = document.getElementById(`rarity-badge-dropdown`)
-    RarityBadgeDropdown.value = 0
-    RarityBadgeDropdown.addEventListener("change", function (event) { rarityBadge.src = `src/img/Rarity${RarityBadgeDropdown.value}.png`})
+// make dropdown affect card images
+const editDropdownEvent = (ID, folderName) => {
+    const Dropdown = document.getElementById(`${ID}-dropdown`)
+    const DropdownImg = document.getElementById(`${ID}`)
+    // on reload, the empty image is selected by default
+    Dropdown.value = "None"
+    Dropdown.addEventListener("change", function (event) {
+    DropdownImg.src = `src/img/${folderName}/${Dropdown.value}.png`})
 }
 
 // set as many coins visible
@@ -66,10 +57,10 @@ const cardTypes = {
     imgObjFit: "cover",
     delayTop: "43%",
     delayLeft: "95.5%",
-    classBadgeTransform: "translate(-67%, 60%)",
-    heroBadgeTransform: "translate(-50%, -50%)",
-    heroBadgeLeft: "50%",
-    heroBadgeTop: "0%",
+    classPinTransform: "translate(-67%, 60%)",
+    heroPinTransform: "translate(-50%, -50%)",
+    heroPinLeft: "50%",
+    heroPinTop: "0%",
     damageVisibility: true,
     ammoVisibility: true,
     delayVisibility: true
@@ -81,10 +72,10 @@ const cardTypes = {
     imgWidth: "75%",
     imgTransform: "translate(-50%, -7%)",
     borderOffset: "translate(0%, -6%)",
-    classBadgeTransform: "translate(-50%, -50%)",
-    heroBadgeTransform: "translate(-50%, -50%)",
-    heroBadgeLeft: "89%",
-    heroBadgeTop: "43%",
+    classPinTransform: "translate(-50%, -50%)",
+    heroPinTransform: "translate(-50%, -50%)",
+    heroPinLeft: "89%",
+    heroPinTop: "43%",
     imgBorderRadius: "50%",
     imgObjFit: "fill",
     delayTop: "25%",
@@ -99,10 +90,10 @@ const cardTypes = {
     imgWidth: "86%",
     imgTransform: "translate(-51%, -5%)",
     borderOffset: "translate(0%, -5.5%)",
-    classBadgeTransform: "translate(-50%, -50%)",
-    heroBadgeTransform: "translate(-50%, -50%)",
-    heroBadgeLeft: "89%",
-    heroBadgeTop: "43%",
+    classPinTransform: "translate(-50%, -50%)",
+    heroPinTransform: "translate(-50%, -50%)",
+    heroPinLeft: "89%",
+    heroPinTop: "43%",
     imgBorderRadius: "40%",
     imgObjFit: "fill",
     damageVisibility: false,
@@ -129,10 +120,10 @@ const updateCardLayout = (type) => {
   cardDelay.style.left = cardTypeObj.delayLeft;
   cardDelayText.style.top = cardTypeObj.delayTop;
   cardDelayText.style.left = cardTypeObj.delayLeft;
-  classBadge.style.transform = cardTypeObj.classBadgeTransform;
-  heroBadge.style.transform = cardTypeObj.heroBadgeTransform;
-  heroBadge.style.left = cardTypeObj.heroBadgeLeft;
-  heroBadge.style.top = cardTypeObj.heroBadgeTop;
+  classPin.style.transform = cardTypeObj.classPinTransform;
+  heroPin.style.transform = cardTypeObj.heroPinTransform;
+  heroPin.style.left = cardTypeObj.heroPinLeft;
+  heroPin.style.top = cardTypeObj.heroPinTop;
   toggleVisibilities(cardTypeObj)
 };
 
@@ -228,11 +219,9 @@ const cardDamageText = document.getElementById("damage-text")
 const cardAmmoText = document.getElementById("ammo-text")
 const cardDelayText = document.getElementById("delay-text")
 
-const heroBadge = document.getElementById("hero-badge")
-const classBadge = document.getElementById("class-badge")
-
-const rarityButtons = document.querySelectorAll(".rarity-button")
-const rarityBadge = document.getElementById("rarity-img")
+const rarityPin = document.getElementById("rarity-pin")
+const heroPin = document.getElementById("hero-pin")
+const classPin = document.getElementById("class-pin")
 
 const imgUploadElement = document.getElementById("img-upload")
 const cardImg = document.getElementById("card-img")
@@ -247,9 +236,9 @@ editCardTextEvent("ammo-text")
 editCardTextEvent("delay-text")
 editCardTextEvent("description-text")
 editCardTextEvent("flavor-text")
-SetClassBadge()
-SetHeroBadge()
-SetRarityBadge()
+editDropdownEvent("rarity-pin", "RarityPin")
+editDropdownEvent("hero-pin", "HeroPin")
+editDropdownEvent("class-pin", "ClassPin")
 
 // other things which need to happen at startup
 startup()
