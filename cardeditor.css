@@ -194,7 +194,7 @@ input[type="file"] {
 }
 .hero-pin {
 	position: absolute;
-	transform: translate(-35%, 80%);
+	transform: translate(-50%, -50%);
 	left: 50%;
 	top: 0%
 }
