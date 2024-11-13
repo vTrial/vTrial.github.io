@@ -231,7 +231,7 @@ input[type="file"] {
 	position: absolute;
 	transform: translate(-50%, -50%);
 	font-size: 6em;
-	left: 10%;
+	left: 9%;
 	top: 4%;
 	z-index: 3;
 }
