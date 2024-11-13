@@ -16,9 +16,9 @@
 		<div id="card-form" class="form-flex two-col-item">
 			<div class=form-element>
 				<label>Card Type</label><br>
-				<img class="img-btn img-border" src="src/img/Monkey.png" alt="Monkey" onclick="updateCardLayout('monkey')"/>
-				<img class="img-btn img-border" src="src/img/Bloon.png" alt="Bloon" onclick="updateCardLayout('bloon')"/>
-				<img class="img-btn img-border" src="src/img/Power.png" alt="Power" onclick="updateCardLayout('power')"/>
+				<img class="img-btn img-border" src="src/img/Monkey.png" alt="Monkey" onclick="updateCardLayout('monkey')" />
+				<img class="img-btn img-border" src="src/img/Bloon.png" alt="Bloon" onclick="updateCardLayout('bloon')" />
+				<img class="img-btn img-border" src="src/img/Power.png" alt="Power" onclick="updateCardLayout('power')" />
 			</div>
 			<div class="form-element">
 				<label for="input-title-text">Title</label><br>
@@ -53,7 +53,11 @@
 			</div>
 			<div class="form-element">
 				<label for="input-description-text">Description</label><br>
-				<textarea name="input-description-text" id="input-description-text" cols="30" rows="3"></textarea>
+				<textarea name="input-description-text" id="input-description-text" cols="25" rows="3"></textarea>
+			</div>
+			<div class="form-element">
+				<label for="input-flavor-text">Flavor</label><br>
+				<textarea name="input-flavor-text" id="input-flavor-text" cols="20" rows="3"></textarea>
 			</div>
 			<div class="form-element">
 				<label for="class-badge-dropdown">Class Badge</label><br>
@@ -70,7 +74,7 @@
 					<option value="AdvancedPower">Advanced Power</option>
 					<option value="ExoticPower">Exotic Power</option>
 				</select><br>
-				<label for="hero-badge-dropdown">Hero Restriction</label><br>				
+				<label for="hero-badge-dropdown">Hero Restriction</label><br>
 				<select name="hero-badge-dropdown" id="hero-badge-dropdown">
 					<option value="None">None</option>
 					<option value="Quincy">Quincy</option>
@@ -82,12 +86,12 @@
 			<div class="form-element">
 				<label>Rarity</label><br>
 				<select id="rarity-badge-dropdown">
-					<option value=0>None</option>
-					<option value=1>Common</option>
-					<option value=2>Uncommon</option>
-					<option value=3>Rare</option>
-					<option value=4>Super Rare</option>
-					<option value=5>Ultra Rare</option>
+						<option value=0>None</option>
+						<option value=1>Common</option>
+						<option value=2>Uncommon</option>
+						<option value=3>Rare</option>
+						<option value=4>Super Rare</option>
+						<option value=5>Ultra Rare</option>
 				</select>
 			</div>
 			<!-- only from downloads for now -->
@@ -132,6 +136,7 @@
 					<span class="damage-text bold-text" id="damage-text"></span>
 					<span class="ammo-text bold-text" id="ammo-text"></span>
 					<span class="delay-text bold-text" id="delay-text"></span>
+					<span class="flavor-text" id="flavor-text"></span>
 					<p class="description-text" id="description-text"></p>
 				</div>
 			</div>

@@ -60,9 +60,6 @@ select {
 	width: 250px;
 	height: 38.25px;
 }
-option {
-	font-family: 'Source Sans 3 SemiBold';
-}
 .copies-slider {
 	width: 7em;
 	cursor: pointer;
@@ -208,10 +205,8 @@ input[type="file"] {
 	/* text shadow is half as thick as it should be in preview */
 	/* issue with html2canvas js package */
 	/* solution is to use node js but then the hosting is another problem */
-	text-shadow: -0.025em 0.05em 0.015em black,
-		0.025em 0.05em 0.015em black,
-		-0.015em -0.01em 0.015em black,
-		0.015em -0.01em  0.015em black;
+	-webkit-text-stroke: 0.03em black;
+	text-shadow: 0em 0.07em black;
 	word-wrap: break-word;
 	margin: 0;
 }
@@ -271,6 +266,18 @@ input[type="file"] {
 	text-align: center;
 	width: 90%;
 	max-height: 28%;
+}
+.flavor-text {
+	position: absolute;
+	transform: translate(-50%, 0%);
+	left: 50%;
+	font-size: 2.5em;
+	color: white;
+	text-align: center;
+	width: 90%;
+	max-height: 28%;
+	top: 100%;
+	-webkit-text-stroke: 0.03em black;
 }
 /* top level styles */
 .two-col-item {
