@@ -10,21 +10,25 @@ const editCardTextEvent = (element) => {
   })
 }
 
+// Dropdown options changed
+
 const SetHeroBadge = () => {
     const HeroBadgeDropdown = document.getElementById(`hero-badge-dropdown`)
-    HeroBadgeDropdown.value = "None";
+    HeroBadgeDropdown.value = "None"
     HeroBadgeDropdown.addEventListener("change", function (event) { heroBadge.src = `src/img/HeroBadge${HeroBadgeDropdown.value}.png` } )
 }
 const SetClassBadge = () => {
     const ClassBadgeDropdown = document.getElementById(`class-badge-dropdown`)
-    ClassBadgeDropdown.value = "None";
+    ClassBadgeDropdown.value = "None"
     ClassBadgeDropdown.addEventListener("change", function (event) {
         classBadge.src = `src/img/ClassBadge${ClassBadgeDropdown.value}.png`})
 }
-const SetMaterialBadge = () =>
-{
-
+const SetRarityBadge = () => {
+    const RarityBadgeDropdown = document.getElementById(`rarity-badge-dropdown`)
+    RarityBadgeDropdown.value = 0
+    RarityBadgeDropdown.addEventListener("change", function (event) { rarityBadge.src = `src/img/Rarity${RarityBadgeDropdown.value}.png`})
 }
+
 // set as many coins visible
 const setCoinQuantity = () => {
   const coins = document.getElementsByClassName("cost")
@@ -137,11 +141,6 @@ const damageCheckboxClicked = () => {
   toggleVisibilities(cardTypes[cardType])
 };
 
-// rarity buttons clicked
-const changeRarityImg = (value) => {
-  rarityElement.src = `src/img/Rarity${value}.png`
-}
-
 // resize img to wanted width and height
 const resizeImage = (img, wantedWidth, wantedHeight) => {
   const canvas = document.createElement("canvas")
@@ -227,7 +226,7 @@ const heroBadge = document.getElementById("hero-badge")
 const classBadge = document.getElementById("class-badge")
 
 const rarityButtons = document.querySelectorAll(".rarity-button")
-const rarityElement = document.getElementById("rarity-img")
+const rarityBadge = document.getElementById("rarity-img")
 
 const imgUploadElement = document.getElementById("img-upload")
 const cardImg = document.getElementById("card-img")
@@ -242,6 +241,7 @@ editCardTextEvent("delay-text")
 editCardTextEvent("description-text")
 SetClassBadge()
 SetHeroBadge()
+SetRarityBadge()
 
 // other things which need to happen at startup
 startup()

@@ -81,12 +81,14 @@
 			</div>
 			<div class="form-element">
 				<label>Rarity</label><br>
-				<img class="img-btn" src="src/img/Rarity0Label.png" alt="No rarity" onclick="changeRarityImg(0)">
-				<img class="img-btn" src="src/img/Rarity1.png" alt="Common" onclick="changeRarityImg(1)">
-				<img class="img-btn" src="src/img/Rarity2.png" alt="Uncommon" onclick="changeRarityImg(2)">
-				<img class="img-btn" src="src/img/Rarity3.png" alt="Rare" onclick="changeRarityImg(3)">
-				<img class="img-btn" src="src/img/Rarity4.png" alt="Super Rare" onclick="changeRarityImg(4)">
-				<img class="img-btn" src="src/img/Rarity5.png" alt="Ultra Rare" onclick="changeRarityImg(5)">
+				<select id="rarity-badge-dropdown">
+					<option value=0>None</option>
+					<option value=1>Common</option>
+					<option value=2>Uncommon</option>
+					<option value=3>Rare</option>
+					<option value=4>Super Rare</option>
+					<option value=5>Ultra Rare</option>
+				</select>
 			</div>
 			<!-- only from downloads for now -->
 			<div class="form-element">
@@ -119,7 +121,7 @@
 					<img class="ammo" id="card-ammo" src="src/img/Ammo.png">
 					<!-- hidden if spell -->
 					<img class="delay" id="card-delay" src="src/img/Delay.png">
-					<img class="rarity" src="src/img/Rarity1.png" id="rarity-img">
+					<img class="rarity" src="src/img/Rarity0.png" id="rarity-img">
 					<!-- badges for card, hidden initially-->
 					<img class="hero-badge" id="hero-badge" src="src/img/HeroBadgeNone.png">
 					<img class="class-badge" id="class-badge" src="src/img/ClassBadgeNone.png">
