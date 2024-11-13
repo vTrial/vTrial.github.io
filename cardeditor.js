@@ -128,6 +128,7 @@ const updateCardLayout = (type) => {
   cardDelay.style.top = cardTypeObj.delayTop;
   cardDelay.style.left = cardTypeObj.delayLeft;
   cardDelayText.style.top = cardTypeObj.delayTop;
+  cardDelayText.style.left = cardTypeObj.delayLeft;
   classBadge.style.transform = cardTypeObj.classBadgeTransform;
   heroBadge.style.transform = cardTypeObj.heroBadgeTransform;
   heroBadge.style.left = cardTypeObj.heroBadgeLeft;
