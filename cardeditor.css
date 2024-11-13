@@ -188,16 +188,15 @@ input[type="file"] {
 	left: 50%;
 	top: 96.5%
 }
-.hero-badge
-{
+.hero-badge {
 	position: absolute;
-	transform: translate(-50%, -50%);
+	transform: translate(-35%, 80%);
 	left: 89%;
 	top: 43%
 }
 .class-badge {
 	position: absolute;
-	transform: translate(-50%, -50%);
+	transform: translate(-67%, 50%);
 	left: 8%;
 	top: 43%;
 }
