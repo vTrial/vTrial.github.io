@@ -58,9 +58,9 @@ const cardTypes = {
   monkey: {
     borderSrc: "src/img/MonkeyCardBorder.png",
     damageSrc: "src/img/MonkeyDamage.png",
-    imgHeight: "97%",
-    imgWidth: "100%",
-    imgTransform: "translate(-50%, 0%)",
+    imgHeight: "96%",
+    imgWidth: "92%",
+    imgTransform: "translate(-50%, 2.2%)",
     imgBorderRadius: "10%",
     borderOffset: "translate(0%, -0.8%)",
     imgObjFit: "cover",
