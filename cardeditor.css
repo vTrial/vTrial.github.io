@@ -115,7 +115,6 @@ input[type="file"] {
 .card-container {
 	width: 375px;
 	height: 510px;
-	display: flex;
 	justify-content: center;
 	position: absolute;
 	top: 20%;
@@ -296,9 +295,11 @@ input[type="file"] {
 }
 
 .card-two-col {
-	align-items: center;
+	align-items: flex-start;
 	display: flex;
 	justify-content: center;
+	position: relative;
+	transform: translate(0%, -10%);
 }
 
 h1 {
