@@ -21,14 +21,12 @@ const editDropdownEvent = (ID, folderName) => {
 }
 
 const editDescriptionEvent = () => {
-    const DescriptionBox = document.getElementsById("input-description-text").
+    const DescriptionBox = document.getElementsById("input-description-text")
     DescriptionBox.addEventListener("input", function (event) {
-        if (cardDescriptionText.clientHeight > 93) {
-            var newFontSize = 2.7
-            while (cardDescriptionText.clientHeight > 93) {
-                newFontSize -= 1.0/16.0
-                cardDescriptionText.style.fontSize = `${newFontSize}em`
-            }
+        var newFontSize = 2.8
+        while (cardDescriptionText.clientHeight > 93) {
+            newFontSize -= 1.0 / 16.0
+            cardDescriptionText.style.fontSize = `${newFontSize}em`
         }
     })
 }
