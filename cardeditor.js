@@ -29,7 +29,7 @@ const editDescriptionEvent = () => {
             newFontSize -= 1.0 / 16.0
             cardDescriptionText.style.fontSize = `${newFontSize}em`
         }
-        while (cardDescriptionText.clientHeight > 186)
+        while (cardDescriptionText.clientHeight > 188)
     })
 }
 
