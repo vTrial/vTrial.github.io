@@ -4,17 +4,17 @@
 	font-family: 'Bloons TD';
 	src: url(../src/font/BloonsTD-Regular.ttf);
 	font-weight: normal;
-    font-style: normal;
+	font-style: normal;
 }
 
 @font-face {
 	font-family: 'Source Sans 3 SemiBold';
 	src: url(../src/font/SourceSans3-Semibold.ttf);
 	font-weight: normal;
-    font-style: normal;
+	font-style: normal;
 }
-@font-face
-{
+
+@font-face {
 	font-family: 'Source Sans 3 MidItalics';
 	src: url(../src/font/SourceSans3-MediumItalic.ttf);
 	font-weight: normal;
@@ -22,11 +22,11 @@
 }
 
 .form-flex {
-	height:fit-content;
+	height: fit-content;
 	display: flex;
 	flex-wrap: wrap;
 	border: 2px solid black;
-	background-color: #f2f0e5;
+	background-color: #36343C;
 	border-radius: 5%;
 }
 
@@ -48,61 +48,71 @@
 label {
 	font-size: 1.5em;
 	display: inline-block;
+	-webkit-text-stroke: 0.03em black;
+	paint-order: stroke fill;
 }
-input[type="text"] {
-	font-size: 1.5em;
-	font-family: 'Source Sans 3 SemiBold';
-	padding: 0;
-	background-color: #E5E7F2;
-	border: 1px solid black;
-	border-radius: 10px;
-}
+
 select {
 	font-size: 1.25em;
 	font-family: 'Source Sans 3 SemiBold';
 	padding: 0;
-	background-color: #E5E7F2;
+	background-color: #8085A3;
 	border: 1px solid black;
 	border-radius: 10px;
-	width: 250px;
+	width: 200px;
 	height: 38.25px;
 }
+
 .copies-slider {
 	width: 8em;
 	cursor: pointer;
 	margin: 1em 0em;
-	accent-color: #E5E7F2;
+	accent-color: #8085A3;
 }
+
 .damage-checkbox {
 	margin: 0em;
 	height: 1.5em;
 	width: 1.5em;
 	font-size: 1.5em;
 	outline: 1px solid black;
-	accent-color: #E5E7F2 ;
+	accent-color: #8085A3;
 }
+
+input[type="text"] {
+	font-size: 1.5em;
+	font-family: 'Source Sans 3 SemiBold';
+	padding: 0;
+	background-color: #8085A3;
+	border: 1px solid black;
+	border-radius: 10px;
+}
+
 textarea {
 	resize: none;
 	font-size: 1.5em;
 	font-family: 'Source Sans 3 SemiBold';
-	background-color: #E5E7F2;
+	background-color: #8085A3;
 	border: 1px solid black;
 	border-radius: 10px;
 }
+
 input[type="file"] {
-    display: none;
+	display: none;
 }
+
 .label-btn {
-	border: 1px solid #888;
+	border: 1px solid #000;
 	margin: 0;
 	font-size: 1.5em;
 	padding: 0.25em 0.5em;
 	cursor: pointer;
 	font-family: 'Source Sans 3 SemiBold';
 	display: inline-block;
-	background-color: #E5E7F2;
+	background-color: #BDC4EF;
 	border-radius: 10px;
 }
+
 .two-col {
 	display: flex;
 	flex-wrap: wrap;
@@ -115,11 +125,17 @@ input[type="file"] {
 .card-container {
 	width: 375px;
 	height: 510px;
-	display:flex;
+	display: flex;
 	justify-content: center;
 	position: absolute;
 	top: 20%;
 }
+
+.img-upload-btn {
+	-webkit-text-stroke: 0em white;
+	color: #000;
+}
+
 .card {
 	max-width: 635px;
 	max-height: 888px;
@@ -129,9 +145,10 @@ input[type="file"] {
 	transform: scale(50%) translate(0%, -50%);
 	top: 35px;
 }
+
 .card-img {
 	width: 92%;
-  	height: 96%;
+	height: 96%;
 	transform: translate(-50%, 2.2%);
 	left: 50%;
 	object-fit: cover;
@@ -139,6 +156,7 @@ input[type="file"] {
 	border-radius: 10%;
 	z-index: -1;
 }
+
 .card-border-circle {
 	position: absolute;
 	transform: translate(-50%, -50%);
@@ -146,60 +164,70 @@ input[type="file"] {
 	top: 23%;
 	visibility: hidden;
 }
+
 .cost {
 	position: absolute;
 	transform: translate(-50%, -50%);
 	top: 4%
 }
+
 .coin1 {
 	left: 9%;
 	z-index: 3;
 }
+
 .coin2 {
 	left: 15%;
 	z-index: 2;
 	visibility: hidden;
 }
+
 .coin3 {
 	left: 21%;
 	visibility: hidden;
 }
-.coinplus 
-{
+
+.coinplus {
 	left: 32%;
 	visibility: hidden;
 	z-index: 1;
 }
+
 .damage {
 	position: absolute;
 	transform: translate(-50%, -50%);
 	left: 90%;
 	top: 4%
 }
+
 .ammo {
 	position: absolute;
 	transform: translate(-50%, -50%);
 	left: 90%;
 	top: 25%
 }
+
 .delay {
 	position: absolute;
 	transform: translate(-50%, -50%);
 	left: 95.5%;
 	top: 43%
 }
+
 .rarity-pin {
 	position: absolute;
 	transform: translate(-50%, -50%);
 	left: 50%;
 	top: 96.5%
 }
+
 .hero-pin {
 	position: absolute;
 	transform: translate(-50%, -50%);
 	left: 50%;
 	top: 0%
 }
+
 .class-pin {
 	position: absolute;
 	transform: translate(-66.2%, 60%);
@@ -219,6 +247,7 @@ input[type="file"] {
 	word-wrap: break-word;
 	margin: 0;
 }
+
 .title-text {
 	position: absolute;
 	font-size: 3.5em;
@@ -227,7 +256,8 @@ input[type="file"] {
 	max-height: 30%;
 	bottom: 345px;
 }
-	.class-text {
+
+.class-text {
 	position: absolute;
 	transform: translate(-50%, -50%);
 	font-size: 2.3em;
@@ -236,6 +266,7 @@ input[type="file"] {
 	width: 90%;
 	max-height: 20%;
 }
+
 .cost-text {
 	position: absolute;
 	transform: translate(-50%, -50%);
@@ -244,6 +275,7 @@ input[type="file"] {
 	top: 4%;
 	z-index: 3;
 }
+
 .damage-text {
 	position: absolute;
 	transform: translate(-50%, -50%);
@@ -251,6 +283,7 @@ input[type="file"] {
 	left: 90%;
 	top: 4%;
 }
+
 .ammo-text {
 	position: absolute;
 	transform: translate(-50%, -50%);
@@ -258,6 +291,7 @@ input[type="file"] {
 	left: 90%;
 	top: 23%;
 }
+
 .delay-text {
 	position: absolute;
 	transform: translate(-50%, -50%);
@@ -265,6 +299,7 @@ input[type="file"] {
 	left: 95.5%;
 	top: 43%;
 }
+
 .description-text {
 	position: absolute;
 	transform: translate(-50%, -30%);
@@ -276,6 +311,7 @@ input[type="file"] {
 	width: 90%;
 	max-height: 28%;
 }
+
 .flavor-text {
 	font-family: 'Source Sans 3 MidItalics';
 	paint-order: stroke fill;
@@ -288,7 +324,6 @@ input[type="file"] {
 	width: 90%;
 	max-height: 28%;
 	top: 105%;
-	-webkit-text-stroke: 0.03em black;
 }
 /* top level styles */
 .two-col-item {
@@ -305,10 +340,15 @@ input[type="file"] {
 
 h1 {
 	font-family: 'Bloons TD';
-	font-size: 4em;
+	font-size: 3.5em;
+	color: #FFF;
 	margin: 0;
+	-webkit-text-stroke: 0.02em black;
+	text-shadow: 0em 0.10em black;
 }
+
 body {
 	font-family: 'Source Sans 3 SemiBold';
-	background-color: #E5E7F2;
+	background-color: #4C4C4C;
+	color: #FFF;
 }

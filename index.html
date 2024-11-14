@@ -60,6 +60,17 @@
 				<textarea name="input-flavor-text" id="input-flavor-text" cols="20" rows="3"></textarea>
 			</div>
 			<div class="form-element">
+				<label>Rarity</label><br>
+				<select id="rarity-pin-dropdown">
+					<option value="None">None</option>
+					<option value="Common">Common</option>
+					<option value="Uncommon">Uncommon</option>
+					<option value="Rare">Rare</option>
+					<option value="SuperRare">Super Rare</option>
+					<option value="UltraRare">Ultra Rare</option>
+				</select>
+			</div>
+			<div class="form-element">
 				<label for="class-pin-dropdown">Class Pin</label><br>
 				<select name="class-pin-dropdown" id="class-pin-dropdown">
 					<option value="None">None</option>
@@ -73,7 +84,9 @@
 					<option value="BasicPower">Basic Power</option>
 					<option value="AdvancedPower">Advanced Power</option>
 					<option value="ExoticPower">Exotic Power</option>
-				</select><br>
+				</select>
+			</div>
+			<div class="form-element">
 				<label for="hero-pin-dropdown">Hero Restriction</label><br>
 				<select name="hero-pin-dropdown" id="hero-pin-dropdown">
 					<option value="None">None</option>
@@ -83,20 +96,9 @@
 					<option value="Amelia">Amelia</option>
 				</select>
 			</div>
-			<div class="form-element">
-				<label>Rarity</label><br>
-				<select id="rarity-pin-dropdown">
-						<option value="None">None</option>
-						<option value="Common">Common</option>
-						<option value="Uncommon">Uncommon</option>
-						<option value="Rare">Rare</option>
-						<option value="SuperRare">Super Rare</option>
-						<option value="UltraRare">Ultra Rare</option>
-				</select>
-			</div>
 			<!-- only from downloads for now -->
 			<div class="form-element">
-				<label for="img-upload" class="label-btn" id="img-upload-btn">Upload Image</label>
+				<label for="img-upload" class="label-btn img-upload-btn" id="img-upload-btn">Upload Image</label>
 				<input type="file" name="img-upload" id="img-upload" onchange="uploadImg(event)">
 			</div>
 			<div class="form-element">
