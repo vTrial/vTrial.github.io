@@ -48,26 +48,25 @@
 label {
 	font-size: 1.5em;
 	display: inline-block;
-	-webkit-text-stroke: 0.03em black;
-	paint-order: stroke fill;
 }
 
 select {
 	font-size: 1.25em;
 	font-family: 'Source Sans 3 SemiBold';
 	padding: 0;
-	background-color: #8085A3;
+	background-color: #384147;
 	border: 1px solid black;
 	border-radius: 10px;
 	width: 200px;
 	height: 38.25px;
+	color: #FFF
 }
 
 .copies-slider {
 	width: 8em;
 	cursor: pointer;
 	margin: 1em 0em;
-	accent-color: #8085A3;
+	accent-color: #384147;
 }
 
 .damage-checkbox {
@@ -76,23 +75,24 @@ select {
 	width: 1.5em;
 	font-size: 1.5em;
 	outline: 1px solid black;
-	accent-color: #8085A3;
+	accent-color: #384147;
 }
 
 input[type="text"] {
 	font-size: 1.5em;
 	font-family: 'Source Sans 3 SemiBold';
 	padding: 0;
-	background-color: #8085A3;
+	background-color: #384147;
 	border: 1px solid black;
 	border-radius: 10px;
+	color: #FFF
 }
 
 textarea {
 	resize: none;
 	font-size: 1.5em;
 	font-family: 'Source Sans 3 SemiBold';
-	background-color: #8085A3;
+	background-color: #384147;
 	border: 1px solid black;
 	border-radius: 10px;
 }
@@ -107,10 +107,10 @@ input[type="file"] {
 	font-size: 1.5em;
 	padding: 0.25em 0.5em;
 	cursor: pointer;
-	font-family: 'Source Sans 3 SemiBold';
 	display: inline-block;
-	background-color: #BDC4EF;
+	background-color: #384147;
 	border-radius: 10px;
+	color: #FFF;
 }
 
 .two-col {
@@ -129,11 +129,6 @@ input[type="file"] {
 	justify-content: center;
 	position: absolute;
 	top: 20%;
-}
-
-.img-upload-btn {
-	-webkit-text-stroke: 0em white;
-	color: #000;
 }
 
 .card {
@@ -351,4 +346,6 @@ body {
 	font-family: 'Source Sans 3 SemiBold';
 	background-color: #4C4C4C;
 	color: #FFF;
+	-webkit-text-stroke: 0.07em black;
+	paint-order: stroke fill;
 }
