@@ -25,10 +25,11 @@ const editDescriptionEvent = () => {
     var newFontSize = 2.8
     DescriptionBox.addEventListener("input", function (event) {
         newFontSize = 2.8
-        while (cardDescriptionText.clientHeight > 93) {
+        do {
             newFontSize -= 1.0 / 16.0
             cardDescriptionText.style.fontSize = `${newFontSize}em`
         }
+        while (cardDescriptionText.clientHeight > 93)
     })
 }
 
