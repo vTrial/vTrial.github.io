@@ -236,7 +236,7 @@ const cardDelay = document.getElementById("card-delay")
 const cardDamageText = document.getElementById("damage-text")
 const cardAmmoText = document.getElementById("ammo-text")
 const cardDelayText = document.getElementById("delay-text")
-const cardDescriptionText = document.getElementsById("description-text")
+const cardDescriptionText = document.getElementById("description-text")
 
 const rarityPin = document.getElementById("rarity-pin")
 const heroPin = document.getElementById("hero-pin")
@@ -259,6 +259,7 @@ editCardTextEvent("flavor-text")
 editDropdownEvent("rarity-pin", "RarityPin")
 editDropdownEvent("hero-pin", "HeroPin")
 editDropdownEvent("class-pin", "ClassPin")
+editDescriptionEvent()
 
 // other things which need to happen at startup
 startup()
