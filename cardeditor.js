@@ -20,6 +20,19 @@ const editDropdownEvent = (ID, folderName) => {
     DropdownImg.src = `src/img/${folderName}/${Dropdown.value}.png`})
 }
 
+const editDescriptionEvent = () => {
+    const DescriptionBox = document.getElementsById("input-description-text").
+    DescriptionBox.addEventListener("input", function (event) {
+        if (cardDescriptionText.clientHeight > 93) {
+            var newFontSize = 2.7
+            while (cardDescriptionText.clientHeight > 93) {
+                newFontSize -= 1.0/16.0
+                cardDescriptionText.style.fontSize = `${newFontSize}em`
+            }
+        }
+    })
+}
+
 // set as many coins visible
 const setCoinQuantity = () => {
   const coins = document.getElementsByClassName("cost")
@@ -223,6 +236,7 @@ const cardDelay = document.getElementById("card-delay")
 const cardDamageText = document.getElementById("damage-text")
 const cardAmmoText = document.getElementById("ammo-text")
 const cardDelayText = document.getElementById("delay-text")
+const cardDescriptionText = document.getElementsById("description-text")
 
 const rarityPin = document.getElementById("rarity-pin")
 const heroPin = document.getElementById("hero-pin")
