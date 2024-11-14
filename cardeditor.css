@@ -303,6 +303,7 @@ input[type="file"] {
 
 .description-text {
 	position: absolute;
+	white-space: pre-line;
 	transform: translate(-50%, -50%);
 	left: 50%;
 	top: 73.5%;
@@ -316,6 +317,7 @@ input[type="file"] {
 .flavor-text {
 	font-family: 'Source Sans 3 MidItalics';
 	paint-order: stroke fill;
+	white-space: pre-line;
 	position: absolute;
 	transform: translate(-50%, 0%);
 	left: 50%;
