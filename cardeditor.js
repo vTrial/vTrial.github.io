@@ -174,7 +174,7 @@ function uploadImg(event) {
 
 const downloadImg = () => {
     var cardContainer = document.getElementById("card-container")
-    cardContainer.style.height =  `${flavorText.clientHeight + 525}px`
+    cardContainer.style.height =  `${flavorText.clientHeight + 510}px`
   html2canvas(cardContainer, {
     backgroundColor: null,
   }).then(function (canvas) {
@@ -196,7 +196,7 @@ const downloadImg = () => {
     downloadLink.click()
     document.body.removeChild(downloadLink)
   })
-    cardContainer.style.height = "525px"
+    cardContainer.style.height = "510px"
 }
 
 const startup = () => {
