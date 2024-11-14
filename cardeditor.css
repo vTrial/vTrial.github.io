@@ -95,6 +95,7 @@ textarea {
 	background-color: #44425A;
 	border: 1px solid black;
 	border-radius: 10px;
+	color: #FFF;
 }
 
 input[type="file"] {
