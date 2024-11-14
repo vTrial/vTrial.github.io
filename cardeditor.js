@@ -176,7 +176,8 @@ const downloadImg = () => {
     var cardContainer = document.getElementById("card-container")
     cardContainer.style.height =  `${flavorText.clientHeight/2 + 510}px`
   html2canvas(cardContainer, {
-    backgroundColor: null,
+      backgroundColor: null,
+      scale: 3,
   }).then(function (canvas) {
     const titleText = document.getElementById("title-text").textContent.trim();
     
