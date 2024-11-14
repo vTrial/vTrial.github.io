@@ -152,15 +152,9 @@ input[type="file"] {
 	border-radius: 10%;
 	z-index: -1;
 }
-
-.card-border-circle {
-	position: absolute;
-	transform: translate(-50%, -50%);
-	left: 50%;
-	top: 23%;
-	visibility: hidden;
+.card-border {
+	transform: translate(0% -0.8%);
 }
-
 .cost {
 	position: absolute;
 	transform: translate(-50%, -50%);
