@@ -127,7 +127,7 @@ input[type="file"] {
 	user-select: none;
 	pointer-events: none;
 	transform: scale(50%) translate(0%, -50%);
-	top: 35%;
+	top: 35px;
 }
 .card-img {
 	width: 92%;
