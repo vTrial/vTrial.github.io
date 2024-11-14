@@ -196,7 +196,6 @@ const downloadImg = () => {
     downloadLink.click()
     document.body.removeChild(downloadLink)
   })
-    cardContainer.style.height = "510px"
 }
 
 const startup = () => {
