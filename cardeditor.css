@@ -296,7 +296,7 @@ input[type="file"] {
 }
 
 .card-two-col {
-	align-items: flex-start;
+	align-items: center;
 	display: flex;
 	justify-content: center;
 }
