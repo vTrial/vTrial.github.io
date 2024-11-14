@@ -259,6 +259,7 @@ editCardTextEvent("flavor-text")
 editDropdownEvent("rarity-pin", "RarityPin")
 editDropdownEvent("hero-pin", "HeroPin")
 editDropdownEvent("class-pin", "ClassPin")
+editDescriptionEvent()
 
 // other things which need to happen at startup
 startup()
