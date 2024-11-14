@@ -114,18 +114,21 @@ input[type="file"] {
 /* left top for where center is */
 .card-container {
 	width: 375px;
-	height: 525px;
+	height: 510px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	position: absolute;
+	top: 50%;
 }
 .card {
 	max-width: 635px;
 	max-height: 888px;
-	position: relative;
+	position: absolute;
 	user-select: none;
 	pointer-events: none;
-	transform: scale(50%);
+	transform: scale(50%) translate(0%, -50%);
+	top: 35px;
 }
 .card-img {
 	width: 92%;
@@ -294,7 +297,7 @@ input[type="file"] {
 }
 
 .card-two-col {
-	align-items: center;
+	align-items: flex-start;
 	display: flex;
 	justify-content: center;
 }
