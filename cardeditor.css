@@ -115,6 +115,7 @@ input[type="file"] {
 .card-container {
 	width: 375px;
 	height: 510px;
+	display:flex;
 	justify-content: center;
 	position: absolute;
 	top: 20%;
