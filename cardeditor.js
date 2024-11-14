@@ -47,8 +47,8 @@ const toggleVisibilities = (cardTypeObj) => {
 // card art properties for every card type
 const cardTypes = {
   monkey: {
-    borderSrc: "src/img/MonkeyCardBorder.png",
-    damageSrc: "src/img/MonkeyDamage.png",
+    borderSrc: "src/img/Border/MonkeyCardBorder.png",
+    damageSrc: "src/img/CardIcon/MonkeyDamage.png",
     imgHeight: "96%",
     imgWidth: "92%",
     imgTransform: "translate(-50%, 2.2%)",
@@ -66,8 +66,8 @@ const cardTypes = {
     delayVisibility: true
   },
   bloon: {
-    borderSrc: "src/img/BloonCardBorder.png",
-    damageSrc: "src/img/BloonDamage.png",
+    borderSrc: "src/img/Border/BloonCardBorder.png",
+    damageSrc: "src/img/CardIcon/BloonDamage.png",
     imgHeight: "55%",
     imgWidth: "75%",
     imgTransform: "translate(-50%, -7%)",
@@ -85,7 +85,7 @@ const cardTypes = {
     delayVisibility: true
   },
   power: {
-    borderSrc: "src/img/PowerCardBorder.png",
+    borderSrc: "src/img/Border/PowerCardBorder.png",
     imgHeight: "55%",
     imgWidth: "86%",
     imgTransform: "translate(-51%, -5%)",
