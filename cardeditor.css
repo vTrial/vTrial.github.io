@@ -54,7 +54,7 @@ select {
 	font-size: 1.25em;
 	font-family: 'Source Sans 3 SemiBold';
 	padding: 0;
-	background-color: #37374F;
+	background-color: #44425A;
 	border: 1px solid black;
 	border-radius: 10px;
 	width: 200px;
@@ -66,7 +66,7 @@ select {
 	width: 8em;
 	cursor: pointer;
 	margin: 1em 0em;
-	accent-color: #37374F;
+	accent-color: #44425A;
 }
 
 .damage-checkbox {
@@ -75,14 +75,14 @@ select {
 	width: 1.5em;
 	font-size: 1.5em;
 	outline: 1px solid black;
-	accent-color: #37374F;
+	accent-color: #44425A;
 }
 
 input[type="text"] {
 	font-size: 1.5em;
 	font-family: 'Source Sans 3 SemiBold';
 	padding: 0;
-	background-color: #37374F;
+	background-color: #44425A;
 	border: 1px solid black;
 	border-radius: 10px;
 	color: #FFF
@@ -92,7 +92,7 @@ textarea {
 	resize: none;
 	font-size: 1.5em;
 	font-family: 'Source Sans 3 SemiBold';
-	background-color: #37374F;
+	background-color: #44425A;
 	border: 1px solid black;
 	border-radius: 10px;
 }
@@ -108,7 +108,7 @@ input[type="file"] {
 	padding: 0.25em 0.5em;
 	cursor: pointer;
 	display: inline-block;
-	background-color: #37374F;
+	background-color: #44425A;
 	border-radius: 10px;
 	color: #FFF;
 }
