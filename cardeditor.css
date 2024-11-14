@@ -118,7 +118,7 @@ input[type="file"] {
 	display: flex;
 	justify-content: center;
 	position: absolute;
-	top: 50%;
+	top: 20%;
 }
 .card {
 	max-width: 635px;
