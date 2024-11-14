@@ -321,6 +321,9 @@ input[type="file"] {
 	max-height: 28%;
 	top: 105%;
 }
+.no-outline {
+	-webkit-text-stroke: 0em white;
+}
 /* top level styles */
 .two-col-item {
 	flex: 1 1 calc(50% - 12px); /* 50% width for each column minus gap */
