@@ -21,7 +21,7 @@ const editDropdownEvent = (ID, folderName) => {
 }
 
 const editDescriptionEvent = () => {
-    const DescriptionBox = document.getElementsById("input-description-text")
+    const DescriptionBox = document.getElementById("input-description-text")
     DescriptionBox.addEventListener("input", function (event) {
         var newFontSize = 2.8
         while (cardDescriptionText.clientHeight > 93) {
