@@ -6,7 +6,7 @@ const editCardTextEvent = (element) => {
   // ideally you would keep everything but that's a lot harder
   inputCardText.value = ""
   inputCardText.addEventListener("input", function (event) {
-    cardText.textContent = event.target.value
+      cardText.textContent = event.target.value
   })
 }
 
