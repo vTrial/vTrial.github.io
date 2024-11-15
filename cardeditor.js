@@ -20,6 +20,30 @@ const editDropdownEvent = (ID, folderName) => {
     DropdownImg.src = `src/img/${folderName}/${Dropdown.value}.png`})
 }
 
+const editImagePositionEvent = (ID, variable) => {
+    const positionInput = document.getElementById(`${ID}`)
+    const positionInputLabel = document.getElementById(`${ID}-label`)
+    const Pretext = imageSliderLabel.textContent
+
+    imageSlider.addEventListener("input", function (event) {
+        imageValues[variable] = positionInput.value
+        positionInputLabel.textContent = `${Pretext}${imageValues[variable]}`
+        updateImage(storedImg)
+    })
+}
+
+const editImageScaleEvent = (ID, variable) => {
+    const scaleSlider = document.getElementById(`${ID}`)
+    const scaleSliderLabel = document.getElementById(`${ID}-label`)
+    const Pretext = imageSliderLabel.textContent
+
+    imageSlider.addEventListener("input", function (event) {
+        imageValues[variable] = 512.0 * Math.pow(10.0, scaleSlider.value - 2)
+        scaleSliderLabel = `${Pretext}${Math.pow(10.0, scaleSlider.value)}%`
+        updateImage(storedImg)
+    })
+}
+
 const editDescriptionEvent = () => {
     const DescriptionBox = document.getElementById("input-description-text")
     var newFontSize = 2.8
@@ -150,15 +174,15 @@ const damageCheckboxClicked = () => {
 };
 
 // resize img to wanted width and height
-const resizeImage = (img, wantedXPosition, wantedYPosition, wantedWidth, wantedHeight) => {
+const updateImage = (img) => {
   const canvas = document.createElement("canvas")
   const ctx = canvas.getContext("2d")
 
   canvas.width = wantedWidth
   canvas.height = wantedHeight
 
-  ctx.drawImage(img, wantedXPosition, wantedYPosition, canvas.width, canvas.height)
-  return canvas.toDataURL()
+  ctx.drawImage(img, imageValues.x, imageValues.y, imageValues.w, imageValues.h)
+  cardImg.src = canvas.toDataURL()
 }
 
 function uploadImg(event) {
@@ -170,11 +194,11 @@ function uploadImg(event) {
     // Create a new image element
     const newImg = document.createElement("img");
     newImg.src = event.target.result;
+    storedImg = newImg;
 
     // Resize the image and update card-img element
     newImg.onload = function () {
-      const resizedDataUri = resizeImage(newImg, 0, 0, 512, 512);
-      document.getElementById("card-img").src = resizedDataUri;
+      updateImage(storedImg);
     };
   };
 
@@ -241,11 +265,13 @@ const cardDescriptionText = document.getElementById("description-text")
 const rarityPin = document.getElementById("rarity-pin")
 const heroPin = document.getElementById("hero-pin")
 const classPin = document.getElementById("class-pin")
+const storedImg
 
 const imgUploadElement = document.getElementById("img-upload")
 const cardImg = document.getElementById("card-img")
 const flavorText = document.getElementById("flavor-text")
 const boldTexts = document.getElementsByClassName("bold-text")
+const imageValues = { x: 0, y: 0, w: 512, h: 512 }
 
 // make text editable
 editCardTextEvent("title-text")
@@ -260,6 +286,6 @@ editDropdownEvent("rarity-pin", "RarityPin")
 editDropdownEvent("hero-pin", "HeroPin")
 editDropdownEvent("class-pin", "ClassPin")
 editDescriptionEvent()
-
+editImageSliderEvent()
 // other things which need to happen at startup
 startup()

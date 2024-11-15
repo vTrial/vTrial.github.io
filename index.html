@@ -32,7 +32,7 @@
 			</div>
 			<div class="form-element">
 				<label for="copies-slider" id="copies-label">Copies: 1</label><br>
-				<input type="range" min="1" max="4" value="1" class="copies-slider" name="copies-slider" id="copies-slider" oninput="setCoinQuantity()">
+				<input type="range" min="1" max="4" value="1" name="copies-slider" id="copies-slider" oninput="setCoinQuantity()">
 			</div>
 			<div class="form-element">
 				<label for="input-damage-text">Damage</label><br>
@@ -103,6 +103,22 @@
 			</div>
 			<div class="form-element">
 				<button id="download-btn" class="label-btn" onclick="downloadImg()">Download Image</button>
+			</div>
+			<div class="form-element">
+				<label for="x-input" id="x-input-label">Image X: </label><br>
+				<input type="number" value="0" name="x-input" id="x-input">
+			</div>
+			<div class="form-element">
+				<label for="y-input" id="x-input-label">Image Y: </label><br>
+				<input type="number" value="0" name="y-input" id="y-input">
+			</div>
+			<div class="form-element">
+				<label for="w-slider" id="w-slider-label">Image Width: </label><br>
+				<input type="range" min="1" max="3" value="2" step="0.1" name="w-slider" id="w-slider">
+			</div>
+			<div class="form-element">
+				<label for="h-slider" id="h-slider-label">Image Heigh: </label><br>
+				<input type="range" min="1" max="3" value="2" step="0.1" name="h-slider" id="h-slider">
 			</div>
 		</div>
 	<!-- col 2/2 -->
