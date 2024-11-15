@@ -29,7 +29,7 @@ const editImagePositionEvent = (ID, variable) => {
     positionInput.addEventListener("input", function (event) {
         imageValues[variable] = positionInput.value
         positionInputLabel.textContent = `${Pretext}${imageValues[variable]}`
-        updateImage(storedImg)
+        updateImage()
     })
 }
 
@@ -42,7 +42,7 @@ const editImageScaleEvent = (ID, variable) => {
     scaleSlider.addEventListener("input", function (event) {
         imageValues[variable] = 512.0 * Math.pow(10.0, scaleSlider.value - 2)
         scaleSliderLabel.textContent = `${Pretext}${Math.pow(10.0, scaleSlider.value).toFixed(2)}%`
-        updateImage(storedImg)
+        updateImage()
     })
 }
 
@@ -176,13 +176,13 @@ const damageCheckboxClicked = () => {
 };
 
 // resize img to wanted width and height
-const updateImage = (img) => {
+const updateImage = () => {
   if (img == null || ImageDrawTimer != null) return
   ImageDrawTimer = window.setTimeout(function () { ImageDrawTimer = null }, 250)
   canvas.width = imageValues.w
   canvas.height = imageValues.h
 
-  ctx.drawImage(img, imageValues.x, imageValues.y, imageValues.w, imageValues.h)
+  ctx.drawImage(storedImg, imageValues.x, imageValues.y, imageValues.w, imageValues.h)
   cardImg.src = canvas.toDataURL()
 }
 
@@ -199,7 +199,7 @@ function uploadImg(event) {
 
     // Resize the image and update card-img element
     newImg.onload = function () {
-      updateImage(storedImg);
+      updateImage();
     };
   };
 
