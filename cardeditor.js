@@ -23,8 +23,8 @@ const editDropdownEvent = (ID, folderName) => {
 const editImagePositionEvent = (ID, variable) => {
     const positionInput = document.getElementById(`${ID}`)
     const positionInputLabel = document.getElementById(`${ID}-label`)
-    const Pretext = imageSliderLabel.textContent
-
+    const Pretext = positionInputLabel.textContent
+    positionInputLabel.textContent += "0"
     imageSlider.addEventListener("input", function (event) {
         imageValues[variable] = positionInput.value
         positionInputLabel.textContent = `${Pretext}${imageValues[variable]}`
@@ -35,8 +35,8 @@ const editImagePositionEvent = (ID, variable) => {
 const editImageScaleEvent = (ID, variable) => {
     const scaleSlider = document.getElementById(`${ID}`)
     const scaleSliderLabel = document.getElementById(`${ID}-label`)
-    const Pretext = imageSliderLabel.textContent
-
+    const Pretext = scaleSliderLabel.textContent
+    scaleSliderLabel.textContent += "100%"
     imageSlider.addEventListener("input", function (event) {
         imageValues[variable] = 512.0 * Math.pow(10.0, scaleSlider.value - 2)
         scaleSliderLabel = `${Pretext}${Math.pow(10.0, scaleSlider.value)}%`
