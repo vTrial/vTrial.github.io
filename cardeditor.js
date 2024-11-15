@@ -173,7 +173,7 @@ function uploadImg(event) {
 
     // Resize the image and update card-img element
     newImg.onload = function () {
-      const resizedDataUri = resizeImage(newImg, -100, 0, 512, 512);
+      const resizedDataUri = resizeImage(newImg, 0, 0, 512, 512);
       document.getElementById("card-img").src = resizedDataUri;
     };
   };
