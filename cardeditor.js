@@ -46,6 +46,22 @@ const editImageScaleEvent = (ID, variable) => {
     })
 }
 
+const toggleKeepRatio = () => {
+    const keepRatioCheckbox = document.getElementById(`ratio-toggle`)
+    keepRatioCheckbox.addEventListener("input", function (event) {
+        if (keepRatioCheckbox.checked) cardImg.style.objectFit = "cover"
+        else cardImg.style.objectFit = "none"
+    })
+}
+
+const resetImageValues = () => {
+    imageValues.x = 0
+    imageValues.y = 0
+    imageValues.w = 512
+    imageValues.h = 512
+    updateImage()
+}
+
 const editDescriptionEvent = () => {
     const DescriptionBox = document.getElementById("input-description-text")
     var newFontSize = 2.8
@@ -291,6 +307,7 @@ editImagePositionEvent("x-input", "x")
 editImagePositionEvent("y-input", "y")
 editImageScaleEvent("w-slider", "w")
 editImageScaleEvent("h-slider", "h")
+toggleKeepRatio()
 editDescriptionEvent()
 // other things which need to happen at startup
 startup()
