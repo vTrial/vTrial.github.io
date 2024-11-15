@@ -178,14 +178,14 @@ const damageCheckboxClicked = () => {
 // resize img to wanted width and height
 const updateImage = () => {
     if (storedImg == null) return;
-    window.clearTimeout(ImageDrawTimer);
+    if (ImageDrawTimer != null) 
     ImageDrawTimer = window.setTimeout(function () {
         canvas.width = imageValues.w
         canvas.height = imageValues.h
 
         ctx.drawImage(storedImg, imageValues.x, imageValues.y, imageValues.w, imageValues.h)
         cardImg.src = canvas.toDataURL()
-    }, 100)
+    }, 250)
 }
 
 function uploadImg(event) {
