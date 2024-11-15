@@ -78,6 +78,17 @@ input[type="checkbox"] {
 	accent-color: #44425A;
 }
 
+input[type="number"] {
+	background-color: #44425A;
+	margin: 1em 0em;
+	color: #FFF;
+	border: 0px;
+}
+
+.scale-slider {
+	width: 10em;
+}
+
 input[type="text"] {
 	font-size: 1.5em;
 	font-family: 'Source Sans 3 SemiBold';
