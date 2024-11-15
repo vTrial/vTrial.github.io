@@ -178,14 +178,11 @@ const damageCheckboxClicked = () => {
 // resize img to wanted width and height
 const updateImage = () => {
     if (storedImg == null) return;
-    window.clearTimeout(ImageDrawTimer)
-    ImageDrawTimer = window.setTimeout(function () {
-        canvas.width = imageValues.w
-        canvas.height = imageValues.h
+    canvas.width = imageValues.w
+    canvas.height = imageValues.h
 
-        ctx.drawImage(storedImg, imageValues.x, imageValues.y, imageValues.w, imageValues.h)
-        cardImg.src = canvas.toDataURL()
-    }, 500)
+    ctx.drawImage(storedImg, imageValues.x, imageValues.y, imageValues.w, imageValues.h)
+    cardImg.src = canvas.toDataURL()
 }
 
 function uploadImg(event) {
@@ -277,7 +274,6 @@ const cardImg = document.getElementById("card-img")
 const flavorText = document.getElementById("flavor-text")
 const boldTexts = document.getElementsByClassName("bold-text")
 const imageValues = { x: 0, y: 0, w: 512, h: 512 }
-var ImageDrawTimer = null;
 
 // make text editable
 editCardTextEvent("title-text")
