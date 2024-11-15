@@ -64,6 +64,10 @@ const resetImageValues = () => {
     document.getElementById(`y-input`).value = 0
     document.getElementById(`w-slider`).value = 2
     document.getElementById(`h-slider`).value = 2
+    document.getElementById(`x-input-label`).textContent = "X: 0"
+    document.getElementById(`y-input-label`).textContent = "Y: 0"
+    document.getElementById(`w-slider-label`).textContent = "W: 100.00%"
+    document.getElementById(`h-slider-label`).textContent = "H: 100.00%"
     updateImage()
 }
 
