@@ -288,7 +288,7 @@ editDropdownEvent("class-pin", "ClassPin")
 editImagePositionEvent("x-input", "x")
 editImagePositionEvent("y-input", "y")
 editImageScaleEvent("w-slider", "w")
-editImagePositionEvent("h-input", "h")
+editImagePositionEvent("h-slider", "h")
 editDescriptionEvent()
 editImageSliderEvent()
 // other things which need to happen at startup
