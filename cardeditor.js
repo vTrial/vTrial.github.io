@@ -41,7 +41,7 @@ const editImageScaleEvent = (ID, variable) => {
     scaleSlider.value = 2
     scaleSlider.addEventListener("input", function (event) {
         imageValues[variable] = 512.0 * Math.pow(10.0, scaleSlider.value - 2)
-        scaleSliderLabel.textContent = `${Pretext}${Math.max(Math.pow(10.0, scaleSlider.value), 500).toFixed(2)}%`
+        scaleSliderLabel.textContent = `${Pretext}${Math.min(Math.pow(10.0, scaleSlider.value), 500).toFixed(2)}%`
         updateImage()
     })
 }
