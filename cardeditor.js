@@ -175,9 +175,6 @@ const damageCheckboxClicked = () => {
 
 // resize img to wanted width and height
 const updateImage = (img) => {
-  const canvas = document.createElement("canvas")
-  const ctx = canvas.getContext("2d")
-
   canvas.width = imageValues.w
   canvas.height = imageValues.h
 
@@ -265,6 +262,8 @@ const cardDescriptionText = document.getElementById("description-text")
 const rarityPin = document.getElementById("rarity-pin")
 const heroPin = document.getElementById("hero-pin")
 const classPin = document.getElementById("class-pin")
+const canvas = document.createElement("canvas")
+const ctx = canvas.getContext("2d")
 var storedImg = null
 
 const imgUploadElement = document.getElementById("img-upload")
