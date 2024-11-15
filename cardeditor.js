@@ -59,6 +59,10 @@ const resetImageValues = () => {
     imageValues.y = 0
     imageValues.w = 512
     imageValues.h = 512
+    document.getElementById(`x-input`).value = 0
+    document.getElementById(`y-input`).value = 0
+    document.getElementById(`w-slider`).value = 2
+    document.getElementById(`h-slider`).value = 2
     updateImage()
 }
 
