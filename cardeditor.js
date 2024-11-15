@@ -39,7 +39,7 @@ const editImageScaleEvent = (ID, variable) => {
     scaleSliderLabel.textContent += "100%"
     scaleSlider.addEventListener("input", function (event) {
         imageValues[variable] = 512.0 * Math.pow(10.0, scaleSlider.value - 2)
-        scaleSliderLabel.textContent = `${Pretext}${Math.pow(10.0, scaleSlider.value)}%`
+        scaleSliderLabel.textContent = `${Pretext}${Math.pow(10.0, scaleSlider.value).toFixed(2)}%`
         updateImage(storedImg)
     })
 }
@@ -290,6 +290,5 @@ editImagePositionEvent("y-input", "y")
 editImageScaleEvent("w-slider", "w")
 editImageScaleEvent("h-slider", "h")
 editDescriptionEvent()
-editImageSliderEvent()
 // other things which need to happen at startup
 startup()
