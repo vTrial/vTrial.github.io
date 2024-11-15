@@ -96,14 +96,6 @@
 					<option value="Amelia">Amelia</option>
 				</select>
 			</div>
-			<!-- only from downloads for now -->
-			<div class="form-element">
-				<label for="img-upload" class="label-btn img-upload-btn" id="img-upload-btn">Upload Image</label>
-				<input type="file" name="img-upload" id="img-upload" onchange="uploadImg(event)">
-			</div>
-			<div class="form-element">
-				<button id="download-btn" class="label-btn" onclick="downloadImg()">Download Image</button>
-			</div>
 			<div class="form-element">
 				<label for="x-input" id="x-input-label">Image X: </label><br>
 				<input type="number" value="0" name="x-input" id="x-input">
@@ -119,6 +111,14 @@
 			<div class="form-element">
 				<label for="h-slider" id="h-slider-label">Image Heigh: </label><br>
 				<input type="range" min="1" max="3" value="2" step="0.1" name="h-slider" id="h-slider">
+			</div>
+			<!-- only from downloads for now -->
+			<div class="form-element">
+				<label for="img-upload" class="label-btn img-upload-btn" id="img-upload-btn">Upload Image</label>
+				<input type="file" name="img-upload" id="img-upload" onchange="uploadImg(event)">
+			</div>
+			<div class="form-element">
+				<button id="download-btn" class="label-btn" onclick="downloadImg()">Download Image</button>
 			</div>
 		</div>
 	<!-- col 2/2 -->
