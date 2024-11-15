@@ -48,6 +48,7 @@ const editImageScaleEvent = (ID, variable) => {
 
 const toggleKeepRatio = () => {
     const keepRatioCheckbox = document.getElementById(`ratio-toggle`)
+    keepRatioCheckbox.checked = true;
     keepRatioCheckbox.addEventListener("input", function (event) {
         if (keepRatioCheckbox.checked) cardImg.style.objectFit = "cover"
         else cardImg.style.objectFit = "none"
