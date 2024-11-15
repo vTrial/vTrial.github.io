@@ -175,6 +175,7 @@ const damageCheckboxClicked = () => {
 
 // resize img to wanted width and height
 const updateImage = (img) => {
+  if (img == null) return
   canvas.width = imageValues.w
   canvas.height = imageValues.h
 
