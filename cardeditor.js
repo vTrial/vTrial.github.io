@@ -25,7 +25,7 @@ const editImagePositionEvent = (ID, variable) => {
     const positionInputLabel = document.getElementById(`${ID}-label`)
     const Pretext = positionInputLabel.textContent
     positionInputLabel.textContent += "0"
-    imageSlider.addEventListener("input", function (event) {
+    positionInput.addEventListener("input", function (event) {
         imageValues[variable] = positionInput.value
         positionInputLabel.textContent = `${Pretext}${imageValues[variable]}`
         updateImage(storedImg)
@@ -37,7 +37,7 @@ const editImageScaleEvent = (ID, variable) => {
     const scaleSliderLabel = document.getElementById(`${ID}-label`)
     const Pretext = scaleSliderLabel.textContent
     scaleSliderLabel.textContent += "100%"
-    imageSlider.addEventListener("input", function (event) {
+    scaleSlider.addEventListener("input", function (event) {
         imageValues[variable] = 512.0 * Math.pow(10.0, scaleSlider.value - 2)
         scaleSliderLabel = `${Pretext}${Math.pow(10.0, scaleSlider.value)}%`
         updateImage(storedImg)
