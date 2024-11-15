@@ -62,14 +62,14 @@ select {
 	color: #FFF
 }
 
-.copies-slider {
+input[type="range"] {
 	width: 8em;
 	cursor: pointer;
 	margin: 1em 0em;
 	accent-color: #44425A;
 }
 
-.damage-checkbox {
+input[type="checkbox"] {
 	margin: 0em;
 	height: 1.5em;
 	width: 1.5em;
