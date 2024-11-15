@@ -40,7 +40,7 @@ const editImageScaleEvent = (ID, variable) => {
     scaleSliderLabel.textContent += "100.00%"
     scaleSlider.value = 2
     scaleSlider.addEventListener("input", function (event) {
-        imageValues[variable] = Math.pow(10.0, scaleSlider.value)
+        imageValues[variable] = 512.0 * Math.pow(10.0, scaleSlider.value - 2)
         scaleSliderLabel.textContent = `${Pretext}${Math.min(Math.pow(10.0, scaleSlider.value), 500).toFixed(2)}%`
         updateImage()
     })
@@ -58,8 +58,8 @@ const toggleFillImage = () => {
 const resetImageValues = () => {
     imageValues.x = 0
     imageValues.y = 0
-    imageValues.w = 100
-    imageValues.h = 100
+    imageValues.w = 512
+    imageValues.h = 512
     document.getElementById(`x-input`).value = 0
     document.getElementById(`y-input`).value = 0
     document.getElementById(`w-slider`).value = 2
@@ -114,7 +114,6 @@ const cardTypes = {
     borderSrc: "src/img/Border/MonkeyCardBorder.png",
     damageSrc: "src/img/CardIcon/MonkeyDamage.png",
     maskSrc: "url(../src/img/Mask/MonkeyCardMask.png)",
-    maskTop: "0px",
     imgHeight: "96%",
     imgWidth: "92%",
     imgTransform: "translate(-50%, 2.2%)",
@@ -135,7 +134,6 @@ const cardTypes = {
     borderSrc: "src/img/Border/BloonCardBorder.png",
     damageSrc: "src/img/CardIcon/BloonDamage.png",
     maskSrc: "url(../src/img/Mask/BloonCardMask.png)",
-    maskTop: "-40px",
     imgHeight: "55%",
     imgWidth: "75%",
     imgTransform: "translate(-50%, -7%)",
@@ -155,7 +153,6 @@ const cardTypes = {
   power: {
     borderSrc: "src/img/Border/PowerCardBorder.png",
     maskSrc: "url(../src/img/Mask/PowerCardMask.png)",
-    maskTop: "-40px",
     imgHeight: "55%",
     imgWidth: "86%",
     imgTransform: "translate(-51%, -5%)",
@@ -178,13 +175,13 @@ const updateCardLayout = (type) => {
   const cardTypeObj = cardTypes[type];
 
   imageMasker.style.maskImage = cardTypeObj.maskSrc;
-  imageMasker.style.top = cardTypeObj.maskTop;
   cardBorder.src = cardTypeObj.borderSrc;
   cardBorder.style.transform = cardTypeObj.borderOffset;
   if (cardTypeObj.damageSrc) cardDamage.src = cardTypeObj.damageSrc;
   cardImg.style.height = cardTypeObj.imgHeight;
   cardImg.style.width = cardTypeObj.imgWidth;
-  imageValues.borderTransform = cardTypeObj.imgTransform
+    cardImg.style.transform = cardTypeObj.imgTransform;
+    imag
   cardImg.style.borderRadius = cardTypeObj.imgBorderRadius;
   cardImg.style.ObjFit = cardTypeObj.imgObjFit;
   cardDelay.style.top = cardTypeObj.delayTop;
@@ -196,7 +193,6 @@ const updateCardLayout = (type) => {
   heroPin.style.left = cardTypeObj.heroPinLeft;
   heroPin.style.top = cardTypeObj.heroPinTop;
   toggleVisibilities(cardTypeObj)
-  updateImage();
 };
 
 
@@ -266,7 +262,7 @@ const downloadImg = () => {
 }
 
 const updateImage = () => {
-    cardImg.style.transform = `${imageValues.borderTransform} translate(${imageValues.x}px, ${imageValues.y}px) scale(${imageValues.w}%, ${imageValues.h}%)`
+
 }
 
 const startup = () => {
@@ -293,7 +289,8 @@ const cardDescriptionText = document.getElementById("description-text")
 const rarityPin = document.getElementById("rarity-pin")
 const heroPin = document.getElementById("hero-pin")
 const classPin = document.getElementById("class-pin")
-var imageValues = { x: 0, y: 0, w: 100, h: 100, borderTransform: "translate(-50%, 2.2%)"}
+const canvas = document.createElement("canvas")
+const ctx = canvas.getContext("2d")
 var storedImg = null
 
 const imgUploadElement = document.getElementById("img-upload")
