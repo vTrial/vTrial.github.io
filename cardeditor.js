@@ -262,7 +262,7 @@ const downloadImg = () => {
 }
 
 const updateImage = () => {
-    cardImg.style.transform = `${imageValues.borderTransform} translate(${imageValues.x}px, ${imageValues.y}px) scale(${imageValues.w}%, ${imageValuesh}%)`
+    cardImg.style.transform = `${imageValues.borderTransform} translate(${imageValues.x}px, ${imageValues.y}px) scale(${imageValues.w}%, ${imageValues.h}%)`
 }
 
 const startup = () => {
