@@ -20,6 +20,10 @@
 	font-weight: normal;
 	font-style: normal;
 }
+.card-img-mask{
+	mask-image: url(../src/img/Mask/MonkeyCardMask.png);
+	mask-repeat: no-repeat;
+}
 
 .form-flex {
 	height: fit-content;

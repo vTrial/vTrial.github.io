@@ -40,17 +40,17 @@ const editImageScaleEvent = (ID, variable) => {
     scaleSliderLabel.textContent += "100.00%"
     scaleSlider.value = 2
     scaleSlider.addEventListener("input", function (event) {
-        imageValues[variable] = 512.0 * Math.pow(10.0, scaleSlider.value - 2)
+        imageValues[variable] = Math.pow(10.0, scaleSlider.value)
         scaleSliderLabel.textContent = `${Pretext}${Math.min(Math.pow(10.0, scaleSlider.value), 500).toFixed(2)}%`
         updateImage()
     })
 }
 
-const toggleKeepRatio = () => {
-    const keepRatioCheckbox = document.getElementById(`ratio-toggle`)
-    keepRatioCheckbox.checked = true;
-    keepRatioCheckbox.addEventListener("input", function (event) {
-        if (keepRatioCheckbox.checked) cardImg.style.objectFit = "cover"
+const toggleFillImage = () => {
+    const fillImage = document.getElementById(`fill-toggle`)
+    fillImage.checked = true;
+    fillImage.addEventListener("input", function (event) {
+        if (fillImage.checked) cardImg.style.objectFit = "cover"
         else cardImg.style.objectFit = "none"
     })
 }
@@ -113,6 +113,7 @@ const cardTypes = {
   monkey: {
     borderSrc: "src/img/Border/MonkeyCardBorder.png",
     damageSrc: "src/img/CardIcon/MonkeyDamage.png",
+    maskSrc: "url(../src/img/Mask/MonkeyCardMask.png)",
     imgHeight: "96%",
     imgWidth: "92%",
     imgTransform: "translate(-50%, 2.2%)",
@@ -132,6 +133,7 @@ const cardTypes = {
   bloon: {
     borderSrc: "src/img/Border/BloonCardBorder.png",
     damageSrc: "src/img/CardIcon/BloonDamage.png",
+    maskSrc: "url(../src/img/Mask/BloonCardMask.png)",
     imgHeight: "55%",
     imgWidth: "75%",
     imgTransform: "translate(-50%, -7%)",
@@ -150,6 +152,7 @@ const cardTypes = {
   },
   power: {
     borderSrc: "src/img/Border/PowerCardBorder.png",
+    maskSrc: "url(../src/img/Mask/PowerCardMask.png)",
     imgHeight: "55%",
     imgWidth: "86%",
     imgTransform: "translate(-51%, -5%)",
@@ -163,7 +166,6 @@ const cardTypes = {
     damageVisibility: false,
     ammoVisibility: false,
     delayVisibility: false,
-
   }
 };
 
@@ -171,13 +173,14 @@ const cardTypes = {
 const updateCardLayout = (type) => {
   cardType = type
   const cardTypeObj = cardTypes[type];
-  
+
+  imageMasker.style.maskImage = cardTypeObj.maskSrc;
   cardBorder.src = cardTypeObj.borderSrc;
   cardBorder.style.transform = cardTypeObj.borderOffset;
   if (cardTypeObj.damageSrc) cardDamage.src = cardTypeObj.damageSrc;
   cardImg.style.height = cardTypeObj.imgHeight;
   cardImg.style.width = cardTypeObj.imgWidth;
-  cardImg.style.transform = cardTypeObj.imgTransform;
+  imageValues.borderTransform = cardTypeObj.imgTransform
   cardImg.style.borderRadius = cardTypeObj.imgBorderRadius;
   cardImg.style.ObjFit = cardTypeObj.imgObjFit;
   cardDelay.style.top = cardTypeObj.delayTop;
@@ -189,6 +192,7 @@ const updateCardLayout = (type) => {
   heroPin.style.left = cardTypeObj.heroPinLeft;
   heroPin.style.top = cardTypeObj.heroPinTop;
   toggleVisibilities(cardTypeObj)
+  updateImage();
 };
 
 
@@ -201,14 +205,6 @@ const damageCheckboxClicked = () => {
 };
 
 // resize img to wanted width and height
-const updateImage = () => {
-    if (storedImg == null) return;
-    canvas.width = imageValues.w
-    canvas.height = imageValues.h
-
-    ctx.drawImage(storedImg, imageValues.x, imageValues.y, imageValues.w, imageValues.h)
-    cardImg.src = canvas.toDataURL()
-}
 
 function uploadImg(event) {
   const fileList = event.target.files;
@@ -219,11 +215,10 @@ function uploadImg(event) {
     // Create a new image element
     const newImg = document.createElement("img");
     newImg.src = event.target.result;
-    storedImg = newImg;
 
     // Resize the image and update card-img element
     newImg.onload = function () {
-      updateImage();
+        cardImg.src = newImg.src;
     };
   };
 
@@ -266,6 +261,10 @@ const downloadImg = () => {
   }
 }
 
+const updateImage = () => {
+    cardImg.style.transform = `${imageValues.borderTransform} translate(${imageValues.x}px, ${imageValues.y}px) scale(${imageValues.w}%, ${imageValuesh}%)`
+}
+
 const startup = () => {
   damageCheckbox.checked = true
   copiesSlider.value = 1
@@ -290,15 +289,14 @@ const cardDescriptionText = document.getElementById("description-text")
 const rarityPin = document.getElementById("rarity-pin")
 const heroPin = document.getElementById("hero-pin")
 const classPin = document.getElementById("class-pin")
-const canvas = document.createElement("canvas")
-const ctx = canvas.getContext("2d")
+var imageValues = { x: 0, y: 0, w: 100, h: 100, borderTransform: "translate(-50%, 2.2%)"}
 var storedImg = null
 
 const imgUploadElement = document.getElementById("img-upload")
 const cardImg = document.getElementById("card-img")
 const flavorText = document.getElementById("flavor-text")
 const boldTexts = document.getElementsByClassName("bold-text")
-const imageValues = { x: 0, y: 0, w: 512, h: 512 }
+const imageMasker = document.getElementById("card-img-mask")
 
 // make text editable
 editCardTextEvent("title-text")
@@ -316,7 +314,7 @@ editImagePositionEvent("x-input", "x")
 editImagePositionEvent("y-input", "y")
 editImageScaleEvent("w-slider", "w")
 editImageScaleEvent("h-slider", "h")
-toggleKeepRatio()
+toggleFillImage()
 editDescriptionEvent()
 // other things which need to happen at startup
 startup()
