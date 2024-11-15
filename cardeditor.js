@@ -177,7 +177,7 @@ const damageCheckboxClicked = () => {
 
 // resize img to wanted width and height
 const updateImage = () => {
-  if (img == null || ImageDrawTimer != null) return
+  if (storedImg == null || ImageDrawTimer != null) return;
   ImageDrawTimer = window.setTimeout(function () { ImageDrawTimer = null }, 250)
   canvas.width = imageValues.w
   canvas.height = imageValues.h
