@@ -23,6 +23,8 @@
 .card-img-mask{
 	mask-image: url(../src/img/Mask/MonkeyCardMask.png);
 	mask-repeat: no-repeat;
+	position: absolute;
+	top: 0px;
 }
 
 .form-flex {
@@ -164,7 +166,7 @@ input[type="file"] {
 	transform: translate(-50%, 2.2%);
 	left: 50%;
 	object-fit: cover;
-	position: absolute;
+	position: relative;
 	border-radius: 10%;
 	z-index: -1;
 }

@@ -58,8 +58,8 @@ const toggleFillImage = () => {
 const resetImageValues = () => {
     imageValues.x = 0
     imageValues.y = 0
-    imageValues.w = 512
-    imageValues.h = 512
+    imageValues.w = 100
+    imageValues.h = 100
     document.getElementById(`x-input`).value = 0
     document.getElementById(`y-input`).value = 0
     document.getElementById(`w-slider`).value = 2
@@ -114,6 +114,7 @@ const cardTypes = {
     borderSrc: "src/img/Border/MonkeyCardBorder.png",
     damageSrc: "src/img/CardIcon/MonkeyDamage.png",
     maskSrc: "url(../src/img/Mask/MonkeyCardMask.png)",
+    maskTop: "0px",
     imgHeight: "96%",
     imgWidth: "92%",
     imgTransform: "translate(-50%, 2.2%)",
@@ -134,6 +135,7 @@ const cardTypes = {
     borderSrc: "src/img/Border/BloonCardBorder.png",
     damageSrc: "src/img/CardIcon/BloonDamage.png",
     maskSrc: "url(../src/img/Mask/BloonCardMask.png)",
+    maskTop: "-40px",
     imgHeight: "55%",
     imgWidth: "75%",
     imgTransform: "translate(-50%, -7%)",
@@ -153,6 +155,7 @@ const cardTypes = {
   power: {
     borderSrc: "src/img/Border/PowerCardBorder.png",
     maskSrc: "url(../src/img/Mask/PowerCardMask.png)",
+    maskTop: "-40px",
     imgHeight: "55%",
     imgWidth: "86%",
     imgTransform: "translate(-51%, -5%)",
@@ -175,6 +178,7 @@ const updateCardLayout = (type) => {
   const cardTypeObj = cardTypes[type];
 
   imageMasker.style.maskImage = cardTypeObj.maskSrc;
+  imageMasker.style.top = cardTypeObj.maskTop;
   cardBorder.src = cardTypeObj.borderSrc;
   cardBorder.style.transform = cardTypeObj.borderOffset;
   if (cardTypeObj.damageSrc) cardDamage.src = cardTypeObj.damageSrc;
