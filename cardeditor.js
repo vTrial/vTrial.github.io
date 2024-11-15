@@ -178,8 +178,8 @@ const updateImage = (img) => {
   const canvas = document.createElement("canvas")
   const ctx = canvas.getContext("2d")
 
-  canvas.width = wantedWidth
-  canvas.height = wantedHeight
+  canvas.width = imageValues.w
+  canvas.height = imageValues.h
 
   ctx.drawImage(img, imageValues.x, imageValues.y, imageValues.w, imageValues.h)
   cardImg.src = canvas.toDataURL()
