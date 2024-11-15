@@ -86,7 +86,7 @@ input[type="number"] {
 }
 
 .scale-slider {
-	width: 10em;
+	width: 10em !important;
 }
 
 input[type="text"] {
