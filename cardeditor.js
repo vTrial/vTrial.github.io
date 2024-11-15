@@ -177,7 +177,8 @@ const damageCheckboxClicked = () => {
 
 // resize img to wanted width and height
 const updateImage = (img) => {
-  if (img == null) return
+  if (img == null || ImageDrawTimer != null) return
+  ImageDrawTimer = window.setTimeout(function () { ImageDrawTimer = null }, 250)
   canvas.width = imageValues.w
   canvas.height = imageValues.h
 
@@ -274,6 +275,7 @@ const cardImg = document.getElementById("card-img")
 const flavorText = document.getElementById("flavor-text")
 const boldTexts = document.getElementsByClassName("bold-text")
 const imageValues = { x: 0, y: 0, w: 512, h: 512 }
+var ImageDrawTimer = null;
 
 // make text editable
 editCardTextEvent("title-text")
