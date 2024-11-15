@@ -150,14 +150,14 @@ const damageCheckboxClicked = () => {
 };
 
 // resize img to wanted width and height
-const resizeImage = (img, wantedWidth, wantedHeight) => {
+const resizeImage = (img, wantedXPosition, wantedYPosition, wantedWidth, wantedHeight) => {
   const canvas = document.createElement("canvas")
   const ctx = canvas.getContext("2d")
 
   canvas.width = wantedWidth
   canvas.height = wantedHeight
 
-  ctx.drawImage(img, 0, 0, canvas.width, canvas.height)
+  ctx.drawImage(img, wantedXPosition, wantedYPositon, canvas.width, canvas.height)
   return canvas.toDataURL()
 }
 
@@ -173,7 +173,7 @@ function uploadImg(event) {
 
     // Resize the image and update card-img element
     newImg.onload = function () {
-      const resizedDataUri = resizeImage(newImg, 512, 512);
+      const resizedDataUri = resizeImage(newImg, -1000, 0, 512, 512);
       document.getElementById("card-img").src = resizedDataUri;
     };
   };
