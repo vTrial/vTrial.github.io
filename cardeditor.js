@@ -157,7 +157,7 @@ const resizeImage = (img, wantedXPosition, wantedYPosition, wantedWidth, wantedH
   canvas.width = wantedWidth
   canvas.height = wantedHeight
 
-  ctx.drawImage(img, wantedXPosition, wantedYPositon, canvas.width, canvas.height)
+  ctx.drawImage(img, wantedXPosition, wantedYPosition, canvas.width, canvas.height)
   return canvas.toDataURL()
 }
 
