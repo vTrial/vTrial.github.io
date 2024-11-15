@@ -265,7 +265,7 @@ const cardDescriptionText = document.getElementById("description-text")
 const rarityPin = document.getElementById("rarity-pin")
 const heroPin = document.getElementById("hero-pin")
 const classPin = document.getElementById("class-pin")
-const storedImg
+var storedImg = null
 
 const imgUploadElement = document.getElementById("img-upload")
 const cardImg = document.getElementById("card-img")
