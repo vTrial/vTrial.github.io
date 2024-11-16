@@ -210,7 +210,7 @@ const updateImage = () => {
     ctx.drawImage(storedImg, imageValues.x, imageValues.y, imageValues.w, imageValues.h)
     cardImg.src = canvas.toDataURL()
     drawTimer = null
-    }, 80)
+    }, 125)
 }
 
 function uploadImg(event) {
