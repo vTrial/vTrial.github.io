@@ -238,8 +238,9 @@ function uploadImg(event) {
 
 const downloadImg = () => {
   var cardContainer = document.getElementById("card-container")
-  const boldedTextClass = getComputedStyle("bold-text")
-  boldedTextClass.textShadow = "0em 0.05em black"
+  for (let bold_i = 0; bold_i < boldTexts.length; bold_i++) {
+      boldTexts[bold_i].classList.add("bold-text-output")
+  }
   cardContainer.style.height =  `${flavorText.clientHeight/2 + 510}px`
   html2canvas(cardContainer, {
       backgroundColor: null,
@@ -263,7 +264,9 @@ const downloadImg = () => {
     downloadLink.click()
     document.body.removeChild(downloadLink)
   })
-  boldedTextClass.textShadow = "0em 0.1em black"
+  for (let bold_i = 0; bold_i < boldTexts.length; bold_i++) {
+      boldTexts[bold_i].classList.remove("bold-text-output")
+  }
 }
 
 const startup = () => {
@@ -298,6 +301,7 @@ var drawTimer = null
 const imgUploadElement = document.getElementById("img-upload")
 const cardImg = document.getElementById("card-img")
 const flavorText = document.getElementById("flavor-text")
+const boldTexts = document.getElementsByClassName("bold-text")
 const imageValues = { x: 0, y: 0, w: 512, h: 512 }
 
 // make text editable

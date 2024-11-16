@@ -249,6 +249,11 @@ input[type="file"] {
 	word-wrap: break-word;
 	margin: 0;
 }
+.bold-text-output{
+	/* workaround to the problem of text shadows being rendered twice as far than it should be when screenshot*/
+	/* basically just halves the distance when the user downloads the image to counteract the doubling*/
+	text-shadow: 0em 0.05em black !important;
+}
 
 .title-text {
 	position: absolute;
