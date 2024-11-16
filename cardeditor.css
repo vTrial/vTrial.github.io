@@ -17,7 +17,7 @@
 @font-face {
 	font-family: 'Source Sans 3 MidItalics';
 	src: url(../src/font/SourceSans3-MediumItalic.ttf);
-	font-weight: normal;
+	font-weight: normal
 	font-style: normal;
 }
 
@@ -311,6 +311,7 @@ input[type="file"] {
 	position: absolute;
 	white-space: pre-line;
 	transform: translate(-50%, -50%);
+	font-weight: 600;
 	left: 50%;
 	top: 78.5%;
 	font-size: 2.7em;
