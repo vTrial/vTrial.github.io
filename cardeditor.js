@@ -202,12 +202,24 @@ const damageCheckboxClicked = () => {
 
 // resize img to wanted width and height
 const updateImage = () => {
-    if (storedImg == null) return;
+    if (storedImg == null || drawTimer != null) return;
+    setTimer()
     canvas.width = imageValues.w
     canvas.height = imageValues.h
 
     ctx.drawImage(storedImg, imageValues.x, imageValues.y, imageValues.w, imageValues.h)
     cardImg.src = canvas.toDataURL()
+}
+
+const setTimer = () => {
+    drawTimer = window.setTimeout(function () {
+        canvas.width = imageValues.w
+        canvas.height = imageValues.h
+
+        ctx.drawImage(storedImg, imageValues.x, imageValues.y, imageValues.w, imageValues.h)
+        cardImg.src = canvas.toDataURL()
+        drawTimer = null
+    }, 80)
 }
 
 function uploadImg(event) {
@@ -293,6 +305,7 @@ const classPin = document.getElementById("class-pin")
 const canvas = document.createElement("canvas")
 const ctx = canvas.getContext("2d")
 var storedImg = null
+var drawTimer = null
 
 const imgUploadElement = document.getElementById("img-upload")
 const cardImg = document.getElementById("card-img")
