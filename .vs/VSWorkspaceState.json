@@ -3,11 +3,8 @@
     "",
     "\\src",
     "\\src\\font",
-    "\\src\\img",
-    "\\src\\img\\ClassPin",
-    "\\src\\img\\HeroPin",
-    "\\src\\img\\RarityPin"
+    "\\src\\img"
   ],
-  "SelectedNode": "\\src\\img\\ClassPin\\BasicBloon.png",
+  "SelectedNode": "\\src\\font\\SourceSans3-MediumItalic.ttf",
   "PreviewInSolutionExplorer": false
 }
