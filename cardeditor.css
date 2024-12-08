@@ -238,9 +238,6 @@ input[type="file"] {
 }
 /* card text styles */
 .bold-text {
-	/* text shadow is half as thick as it should be in preview */
-	/* issue with html2canvas js package */
-	/* solution is to use node js but then the hosting is another problem */
 	text-align: center;
 	color: white;
 	font-family: 'Bloons TD';
@@ -249,40 +246,42 @@ input[type="file"] {
 	margin: 0;
 	z-index: 2
 }
-.bolder-text {
-	text-align: center;
-	color: white;
-	font-family: 'Bloons TD';
-	-webkit-text-stroke: 0.05em black;
-	word-wrap: break-word;
-	margin: 0;
-	z-index: 2
-}
-.bold-text::before {
-	content: attr(outlined);
-	top: 2px;
-	-webkit-text-stroke: 0.14em black;
-	color: transparent;
-	position: absolute;
-	word-wrap: break-word;
-	margin: 0;
-	font-family: 'Bloons TD';
-	text-align: center;
-	z-index: 1
-}
-.bolder-text::before {
-	content: attr(outlined);
+.thicker-stroke {
 	top: 4px;
 	-webkit-text-stroke: 0.16em black;
 	color: transparent;
 	position: absolute;
+	width: 100%;
 	word-wrap: break-word;
 	margin: 0;
 	font-family: 'Bloons TD';
 	text-align: center;
-	z-index: 1
 }
-.title-text {
+
+.thick-stroke {
+	top: 2px;
+	-webkit-text-stroke: 0.14em black;
+	color: transparent;
+	position: absolute;
+	width: 100%;
+	word-wrap: break-word;
+	margin: 0;
+	font-family: 'Bloons TD';
+	text-align: center;
+}
+
+.bold-text {
+	display: block;
+	z-index: 1;
+	position: relative;
+	-webkit-text-stroke: 0.05em black;
+	text-align: center;
+	color: white;
+	font-family: 'Bloons TD';
+	word-wrap: break-word;
+	margin: 0;
+}
+.title-text-container {
 	position: absolute;
 	font-size: 3.5em;
 	left: 7.5%;
@@ -291,7 +290,7 @@ input[type="file"] {
 	bottom: 345px;
 }
 
-.class-text {
+.class-text-container {
 	position: absolute;
 	transform: translate(-50%, -50%);
 	font-size: 2.3em;
@@ -301,7 +300,7 @@ input[type="file"] {
 	max-height: 20%;
 }
 
-.cost-text {
+.cost-text-container {
 	position: absolute;
 	transform: translate(-50%, -50%);
 	font-size: 6em;
@@ -310,7 +309,7 @@ input[type="file"] {
 	z-index: 3;
 }
 
-.damage-text {
+.damage-text-container {
 	position: absolute;
 	transform: translate(-50%, -50%);
 	font-size: 6em;
@@ -318,7 +317,7 @@ input[type="file"] {
 	top: 4%;
 }
 
-.ammo-text {
+.ammo-text-container {
 	position: absolute;
 	transform: translate(-50%, -50%);
 	font-size: 6em;
@@ -326,7 +325,7 @@ input[type="file"] {
 	top: 23%;
 }
 
-.delay-text {
+.delay-text-container {
 	position: absolute;
 	transform: translate(-50%, -50%);
 	font-size: 4em;
@@ -339,7 +338,7 @@ input[type="file"] {
 	white-space: pre-line;
 	transform: translate(-50%, -50%);
 	font-weight: 600;
-	left: 50%;
+	left: 49.8%;
 	top: 78.5%;
 	font-size: 2.7em;
 	color: white;

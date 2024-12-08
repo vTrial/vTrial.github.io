@@ -1,15 +1,19 @@
 // make text input affect card text
-const editCardTextEvent = (element) => {
+const editCardTextEvent = (element, hasStroke) => {
   const inputCardText = document.getElementById(`input-${element}`)
   const cardText = document.getElementById(element)
-  const cardOutline = cardText.getAttribute("outlined")
   // on reload, remove text from input
   // ideally you would keep everything but that's a lot harder
   inputCardText.value = ""
   inputCardText.addEventListener("input", function (event) {
     cardText.textContent = event.target.value
-    cardOutline = event.target.value
   })
+    if (hasStroke) {
+        cardStroke = document.getElementById(`${element}-stroke`)
+        inputCardText.addEventListener("input", function (event) {
+            cardStroke.textContent = event.target.value
+        })
+    }
 }
 
 // make dropdown affect card images
@@ -106,9 +110,9 @@ const toggleVisibilities = (cardTypeObj) => {
   toggleVisibility(cardDamage, cardTypeObj.damageVisibility);
   toggleVisibility(cardDamageText, cardTypeObj.damageVisibility);
   toggleVisibility(cardAmmo, cardTypeObj.ammoVisibility);
-  toggleVisibility(cardAmmoText, cardTypeObj.ammoVisibility);
+  toggleVisibility(cardAmmoTextContainer, cardTypeObj.ammoVisibility);
   toggleVisibility(cardDelay, cardTypeObj.delayVisibility);
-  toggleVisibility(cardDelayText, cardTypeObj.delayVisibility);
+  toggleVisibility(cardDelayTextContainer, cardTypeObj.delayVisibility);
 }
 // card art properties for every card type
 const cardTypes = {
@@ -184,8 +188,8 @@ const updateCardLayout = (type) => {
   cardImg.style.ObjFit = cardTypeObj.imgObjFit;
   cardDelay.style.top = cardTypeObj.delayTop;
   cardDelay.style.left = cardTypeObj.delayLeft;
-  cardDelayText.style.top = cardTypeObj.delayTop;
-  cardDelayText.style.left = cardTypeObj.delayLeft;
+  cardDelayTextContainer.style.top = cardTypeObj.delayTop;
+  cardDelayTextContainer.style.left = cardTypeObj.delayLeft;
   classPin.style.transform = cardTypeObj.classPinTransform;
   heroPin.style.transform = cardTypeObj.heroPinTransform;
   heroPin.style.left = cardTypeObj.heroPinLeft;
@@ -282,8 +286,8 @@ const cardDamage = document.getElementById("card-damage")
 const cardAmmo = document.getElementById("card-ammo")
 const cardDelay = document.getElementById("card-delay")
 const cardDamageText = document.getElementById("damage-text")
-const cardAmmoText = document.getElementById("ammo-text")
-const cardDelayText = document.getElementById("delay-text")
+const cardAmmoTextContainer = document.getElementById("ammo-text-container")
+const cardDelayTextContainer = document.getElementById("delay-text-container")
 const cardDescriptionText = document.getElementById("description-text")
 
 const rarityPin = document.getElementById("rarity-pin")
@@ -300,14 +304,14 @@ const flavorText = document.getElementById("flavor-text")
 const imageValues = { x: 0, y: 0, w: 512, h: 512 }
 
 // make text editable
-editCardTextEvent("title-text")
-editCardTextEvent("class-text")
-editCardTextEvent("cost-text")
-editCardTextEvent("damage-text")
-editCardTextEvent("ammo-text")
-editCardTextEvent("delay-text")
-editCardTextEvent("description-text")
-editCardTextEvent("flavor-text")
+editCardTextEvent("title-text", true)
+editCardTextEvent("class-text", true)
+editCardTextEvent("cost-text", true)
+editCardTextEvent("damage-text", true)
+editCardTextEvent("ammo-text", true)
+editCardTextEvent("delay-text", true)
+editCardTextEvent("description-text", false)
+editCardTextEvent("flavor-text", false)
 editDropdownEvent("rarity-pin", "RarityPin")
 editDropdownEvent("hero-pin", "HeroPin")
 editDropdownEvent("class-pin", "ClassPin")
