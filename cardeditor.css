@@ -236,16 +236,6 @@ input[type="file"] {
 	left: 8%;
 	top: 43%;
 }
-/* card text styles */
-.bold-text {
-	text-align: center;
-	color: white;
-	font-family: 'Bloons TD';
-	-webkit-text-stroke: 0.05em black;
-	word-wrap: break-word;
-	margin: 0;
-	z-index: 2
-}
 .thicker-stroke {
 	top: 4px;
 	-webkit-text-stroke: 0.16em black;
