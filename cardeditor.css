@@ -244,17 +244,44 @@ input[type="file"] {
 	text-align: center;
 	color: white;
 	font-family: 'Bloons TD';
-	-webkit-text-stroke: 0.08em black;
-	text-shadow: 0em 0.1em black;
+	-webkit-text-stroke: 0.05em black;
 	word-wrap: break-word;
 	margin: 0;
+	z-index: 2
 }
-.bold-text-output{
-	/* workaround to the problem of text shadows being rendered twice as far than it should be when screenshot*/
-	/* basically just halves the distance when the user downloads the image to counteract the doubling*/
-	text-shadow: 0em 0.05em black !important;
+.bolder-text {
+	text-align: center;
+	color: white;
+	font-family: 'Bloons TD';
+	-webkit-text-stroke: 0.05em black;
+	word-wrap: break-word;
+	margin: 0;
+	z-index: 2
 }
-
+.bold-text::before {
+	content: attr(outlined);
+	top: 2px;
+	-webkit-text-stroke: 0.14em black;
+	color: transparent;
+	position: absolute;
+	word-wrap: break-word;
+	margin: 0;
+	font-family: 'Bloons TD';
+	text-align: center;
+	z-index: 1
+}
+.bolder-text::before {
+	content: attr(outlined);
+	top: 4px;
+	-webkit-text-stroke: 0.16em black;
+	color: transparent;
+	position: absolute;
+	word-wrap: break-word;
+	margin: 0;
+	font-family: 'Bloons TD';
+	text-align: center;
+	z-index: 1
+}
 .title-text {
 	position: absolute;
 	font-size: 3.5em;

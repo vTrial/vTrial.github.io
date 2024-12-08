@@ -2,11 +2,13 @@
 const editCardTextEvent = (element) => {
   const inputCardText = document.getElementById(`input-${element}`)
   const cardText = document.getElementById(element)
+  const cardOutline = cardText.getAttribute("outlined")
   // on reload, remove text from input
   // ideally you would keep everything but that's a lot harder
   inputCardText.value = ""
   inputCardText.addEventListener("input", function (event) {
-      cardText.textContent = event.target.value
+    cardText.textContent = event.target.value
+    cardOutline = event.target.value
   })
 }
 
@@ -238,9 +240,6 @@ function uploadImg(event) {
 
 const downloadImg = () => {
   var cardContainer = document.getElementById("card-container")
-  for (let bold_i = 0; bold_i < boldTexts.length; bold_i++) {
-      boldTexts[bold_i].classList.add("bold-text-output")
-  }
   cardContainer.style.height =  `${flavorText.clientHeight/2 + 510}px`
   html2canvas(cardContainer, {
       backgroundColor: null,
@@ -264,9 +263,6 @@ const downloadImg = () => {
     downloadLink.click()
     document.body.removeChild(downloadLink)
   })
-  for (let bold_i = 0; bold_i < boldTexts.length; bold_i++) {
-      boldTexts[bold_i].classList.remove("bold-text-output")
-  }
 }
 
 const startup = () => {
@@ -301,7 +297,6 @@ var drawTimer = null
 const imgUploadElement = document.getElementById("img-upload")
 const cardImg = document.getElementById("card-img")
 const flavorText = document.getElementById("flavor-text")
-const boldTexts = document.getElementsByClassName("bold-text")
 const imageValues = { x: 0, y: 0, w: 512, h: 512 }
 
 // make text editable
