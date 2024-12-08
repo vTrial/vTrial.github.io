@@ -9,7 +9,7 @@ const editCardTextEvent = (element, hasStroke) => {
     cardText.textContent = event.target.value
   })
     if (hasStroke) {
-        cardStroke = document.getElementById(`${element}-stroke`)
+        const cardStroke = document.getElementById(`${element}-stroke`)
         inputCardText.addEventListener("input", function (event) {
             cardStroke.textContent = event.target.value
         })
