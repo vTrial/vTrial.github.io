@@ -108,7 +108,7 @@ const toggleVisibility = (element, isVisible) => {
 
 const toggleVisibilities = (cardTypeObj) => {
   toggleVisibility(cardDamage, cardTypeObj.damageVisibility);
-  toggleVisibility(cardDamageText, cardTypeObj.damageVisibility);
+  toggleVisibility(cardDamageTextContainer, cardTypeObj.damageVisibility);
   toggleVisibility(cardAmmo, cardTypeObj.ammoVisibility);
   toggleVisibility(cardAmmoTextContainer, cardTypeObj.ammoVisibility);
   toggleVisibility(cardDelay, cardTypeObj.delayVisibility);
@@ -285,7 +285,7 @@ const cardTypeButtons = document.querySelectorAll(".card-type-button")
 const cardDamage = document.getElementById("card-damage")
 const cardAmmo = document.getElementById("card-ammo")
 const cardDelay = document.getElementById("card-delay")
-const cardDamageText = document.getElementById("damage-text")
+const cardDamageTextContainer = document.getElementById("damage-text-container")
 const cardAmmoTextContainer = document.getElementById("ammo-text-container")
 const cardDelayTextContainer = document.getElementById("delay-text-container")
 const cardDescriptionText = document.getElementById("description-text")
