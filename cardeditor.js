@@ -121,6 +121,8 @@ const cardTypes = {
     damageSrc: "src/img/CardIcon/MonkeyDamage.png",
     imgHeight: "96%",
     imgWidth: "92%",
+    damageLeft: "90%",
+    damageTop: "4%",
     imgTransform: "translate(-50%, 2.2%)",
     imgBorderRadius: "10%",
     borderOffset: "translate(0%, -0.8%)",
@@ -140,6 +142,8 @@ const cardTypes = {
     damageSrc: "src/img/CardIcon/BloonDamage.png",
     imgHeight: "55%",
     imgWidth: "75%",
+    damageLeft: "88%",
+    damageTop: "5%",
     imgTransform: "translate(-50%, -7%)",
     borderOffset: "translate(0%, -6%)",
     classPinTransform: "translate(-50%, -50%)",
@@ -180,7 +184,14 @@ const updateCardLayout = (type) => {
   
   cardBorder.src = cardTypeObj.borderSrc;
   cardBorder.style.transform = cardTypeObj.borderOffset;
-  if (cardTypeObj.damageSrc) cardDamage.src = cardTypeObj.damageSrc;
+  if (cardTypeObj.damageSrc)
+  {
+    cardDamage.src = cardTypeObj.damageSrc;
+    cardDamage.style.top = cardTypeObj.damageTop;
+    cardDamage.style.left = cardTypeObj.damageLeft;
+    cardDamageTextContainer.style.top = cardTypeObj.damageTop;
+    cardDamageTextContainer.style.left = cardTypeObj.damageLeft;
+  }
   cardImg.style.height = cardTypeObj.imgHeight;
   cardImg.style.width = cardTypeObj.imgWidth;
   cardImg.style.transform = cardTypeObj.imgTransform;
