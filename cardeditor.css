@@ -179,18 +179,18 @@ input[type="file"] {
 }
 
 .coin2 {
-	left: 15%;
+	left: 14.5%;
 	z-index: 2;
 	visibility: hidden;
 }
 
 .coin3 {
-	left: 21%;
+	left: 20%;
 	visibility: hidden;
 }
 
 .coinplus {
-	left: 32%;
+	left: 30.5%;
 	visibility: hidden;
 	z-index: 1;
 }
