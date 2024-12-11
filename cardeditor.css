@@ -205,15 +205,15 @@ input[type="file"] {
 .ammo {
 	position: absolute;
 	transform: translate(-50%, -50%);
-	left: 90%;
-	top: 25%
+	left: 88%;
+	top: 22%
 }
 
 .delay {
 	position: absolute;
 	transform: translate(-50%, -50%);
-	left: 95.5%;
-	top: 43%
+	left: 95%;
+	top: 39%
 }
 
 .rarity-pin {
@@ -319,8 +319,8 @@ input[type="file"] {
 	position: absolute;
 	transform: translate(-50%, -50%);
 	font-size: 4em;
-	left: 95.5%;
-	top: 43%;
+	left: 95%;
+	top: 39%;
 }
 
 .description-text {

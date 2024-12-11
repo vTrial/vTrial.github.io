@@ -127,8 +127,9 @@ const cardTypes = {
     imgBorderRadius: "10%",
     borderOffset: "translate(0%, -0.8%)",
     imgObjFit: "cover",
-    delayTop: "43%",
-    delayLeft: "95.5%",
+    delayTop: "39%",
+    delayLeft: "95%",
+    delayFontSize: "4em",
     classPinTransform: "translate(-66.2%, 60%)",
     heroPinTransform: "translate(-50%, -50%)",
     heroPinLeft: "50%",
@@ -152,8 +153,9 @@ const cardTypes = {
     heroPinTop: "43%",
     imgBorderRadius: "50%",
     imgObjFit: "fill",
-    delayTop: "25%",
-    delayLeft: "90%",
+    delayTop: "22%",
+    delayLeft: "88%",
+    delayFontSize: "6em",
     damageVisibility: true,
     ammoVisibility: false,
     delayVisibility: true
@@ -201,6 +203,7 @@ const updateCardLayout = (type) => {
   cardDelay.style.left = cardTypeObj.delayLeft;
   cardDelayTextContainer.style.top = cardTypeObj.delayTop;
   cardDelayTextContainer.style.left = cardTypeObj.delayLeft;
+  cardDelayTextContainer.style.fontSize = cardTypeObj.delayFontSize;
   classPin.style.transform = cardTypeObj.classPinTransform;
   heroPin.style.transform = cardTypeObj.heroPinTransform;
   heroPin.style.left = cardTypeObj.heroPinLeft;
