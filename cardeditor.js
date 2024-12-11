@@ -153,7 +153,7 @@ const cardTypes = {
     heroPinTop: "43%",
     imgBorderRadius: "50%",
     imgObjFit: "fill",
-    delayTop: "22%",
+    delayTop: "22.25%",
     delayLeft: "88%",
     delayFontSize: "6em",
     damageVisibility: true,
