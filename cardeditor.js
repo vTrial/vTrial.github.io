@@ -352,8 +352,8 @@ function uploadImg(event) {
 }
 
 const downloadImg = () => {
+    var cardContainer = document.getElementById("card-container")
     if (!descriptiveModeCheckbox.checked) {
-        var cardContainer = document.getElementById("card-container")
         cardContainer.style.height = `${flavorText.clientHeight / 2 + 510}px`
     }
     else cardContainer.style.height = "510px"
