@@ -152,7 +152,6 @@ input[type="file"] {
 }
 
 .card {
-	display: block;
 	max-width: 635px;
 	max-height: 888px;
 	position: absolute;
@@ -405,6 +404,7 @@ input[type="file"] {
 	left: 180px;
 	top: 35px;
 	display: none;
+	user-select: none;
 }
 
 h1 {

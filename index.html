@@ -120,11 +120,11 @@
 					<option value="Pick">Pick</option>
 					<option value="Unique">Unique</option>
 				</select><br>
-				<label for="keyword-value" id="keyword-value-label">Keyword Value</label><br>
-				<input type="number" value="0" min="0" name="keyword-value" id="keyword-value" class="disableable" disabled>
+				<button id="add-keyword" class="label-btn disableable" onclick="addKeyword()" style="margin: 0.3em 0em;">Add Keyword</button>
 			</div>
 			<div class="form-element">
-				<button id="add-keyword" class="label-btn disableable" onclick="addKeyword()">Add Keyword</button><br>
+				<label for="keyword-value" id="keyword-value-label">Keyword Value</label><br>
+				<input type="number" value="0" min="0" name="keyword-value" id="keyword-value" class="disableable" disabled><br>
 				<button id="remove-keyword" class="label-btn disableable" onclick="removeKeyword()">Remove Keyword</button>
 			</div>
 			<div class="form-element">
