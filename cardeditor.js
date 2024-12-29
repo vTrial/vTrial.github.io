@@ -16,6 +16,66 @@ const editCardTextEvent = (element, hasStroke) => {
     }
 }
 
+const editDescriptiveFlavor = () => {
+    const inputCardText = document.getElementById(`input-flavor-text`)
+    const cardText = document.getElementById(`flavor-text-descriptive`)
+    inputCardText.addEventListener("input", function (event) {
+        cardText.textContent = event.target.value
+    })
+}
+
+const addKeyword = () => {
+    var finalDescription = keywordDescriptions[keywordDropdown.value].replace("{VALUE}", keywordValue.value)
+    keywordDescription.textContent = finalDescription
+    var finalTitle = keywordTitles[keywordDropdown.value].replace("{VALUE}", keywordValue.value)
+    keywordTitle.textContent = finalTitle
+    keywordTitleStroke.textContent = finalTitle
+    keywordImg.src = `src/img/Keyword/${keywordDropdown.value}.png`
+    var newKeyword = keywordElement.cloneNode(true)
+    newKeyword.style.display = "block"
+    var addedKeyword = keywordHolder.appendChild(newKeyword)
+    keywordList.push(addedKeyword)
+}
+const removeKeyword = () => {
+    if (keywordList.length > 0) {
+        keywordList[keywordList.length - 1].remove()
+        keywordList.pop()
+    }
+}
+
+const toggleDescriptiveMode = () => {
+    const descriptiveModeCheckbox = document.getElementById(`keyword-toggle`)
+    descriptiveModeCheckbox.checked = false
+    keywordDropdown.disabled = true
+    keywordValue.disabled = true
+    addKeywordBtn.disabled = true
+    removeKeywordBtn.disabled = true
+    flavorText.style.visibility = "visible"
+    keywordDropdown.value = "Defender"
+    keywordValue.value = 0
+    descriptiveModeCheckbox.addEventListener("input", function (event) {
+        if (descriptiveModeCheckbox.checked) {
+            card.style.left = "-140px"
+            cardContainer.style.width = "775px"
+            descriptiveBox.style.display = "inline"
+            keywordDropdown.disabled = false
+            keywordValue.disabled = false
+            addKeywordBtn.disabled = false
+            removeKeywordBtn.disabled = false
+            flavorText.style.visibility = "hidden"
+        }
+        else {
+            card.style.left = ""
+            cardContainer.style.width = "375px"
+            descriptiveBox.style.display = "none"
+            keywordDropdown.disabled = true
+            keywordValue.disabled = true
+            addKeywordBtn.disabled = true
+            removeKeywordBtn.disabled = true
+            flavorText.style.visibility = "visible"
+        }
+    })
+}
 // make dropdown affect card images
 const editDropdownEvent = (ID, folderName) => {
     const Dropdown = document.getElementById(`${ID}-dropdown`)
@@ -179,6 +239,42 @@ const cardTypes = {
   }
 };
 
+const keywordTitles = {
+    Defender: "Defender +{VALUE}",
+    DoubleAttack: "Double Attack",
+    OnDamaged: "On Damaged",
+    OnDestroyed: "On Destroyed",
+    OnFire: "On Fire",
+    OnLeak: "On Leak",
+    OnPlay: "On Play",
+    OnPopped: "On Popped",
+    OnReplace: "On Replace",
+    OnTurnStart: "On Turn Start",
+    OnTurnEnd: "On Turn End",
+    Pick: "Pick {VALUE}",
+    Shield: "Shield {VALUE}",
+    Stunned: "Stunned",
+    Unique: "Unique"
+}
+
+const keywordDescriptions = {
+    Defender: "Can defend on opponent's turn, has +{VALUE} damage on opponent's turn.",
+    DoubleAttack: "Attacks twice.",
+    OnDamaged: "Triggers on losing health from any source.",
+    OnDestroyed: "Triggers when Bloon is Popped (by damage or effect) or when it hits opposoing Hero.",
+    OnFire: "Will take 30 damage at the end of its turn and before attacking.",
+    OnLeak: "Triggers when a bloon attacks a hero (after defenders have acted).",
+    OnPlay: "Triggers when card is played",
+    OnPopped: "Triggers when Bloon is Popped (by damage or effect). Does not trigger if Bloon hits opposing Hero.",
+    OnReplace: "Triggers when this Monkey is replaced by another Monkey.",
+    OnTurnStart: "Triggers at start of turn",
+    OnTurnEnd: "Triggers once turn has ended",
+    Pick: "Look at the next {VALUE} cards in your deck. Choose one and add it to your hand. Other cards go to the bottom of your deck.",
+    Shield: "Shield will block {VALUE} incoming damage.",
+    Stunned: "Monkey can't attack or reload until stun wears off.",
+    Unique: "You can only have one copy of this card."
+}
+
 // occurs when type changes
 const updateCardLayout = (type) => {
   cardType = type
@@ -257,8 +353,11 @@ function uploadImg(event) {
 }
 
 const downloadImg = () => {
-  var cardContainer = document.getElementById("card-container")
-  cardContainer.style.height =  `${flavorText.clientHeight/2 + 510}px`
+    if (!descriptiveModeCheckbox.checked) {
+        var cardContainer = document.getElementById("card-container")
+        cardContainer.style.height = `${flavorText.clientHeight / 2 + 510}px`
+    }
+    else cardContainer.style.height = "510px"
   html2canvas(cardContainer, {
       backgroundColor: null,
       scale: 5,
@@ -296,6 +395,22 @@ const damageCheckbox = document.getElementById("damage-checkbox")
 const cardBorder = document.getElementById("card-border")
 const cardTypeButtons = document.querySelectorAll(".card-type-button")
 
+const card = document.getElementById("card")
+const cardContainer = document.getElementById("card-container")
+const descriptiveBox = document.getElementById("descriptive-box")
+const keywordHolder = document.getElementById("keyword-list")
+const keywordList = []
+
+const keywordDropdown = document.getElementById("keyword-dropdown")
+const keywordImg = document.getElementById("keyword-img")
+const keywordDescription = document.getElementById("keyword-description")
+const keywordTitle = document.getElementById("keyword-title")
+const keywordElement = document.getElementById("keyword-element")
+const keywordTitleStroke = document.getElementById("keyword-title-stroke")
+const keywordValue = document.getElementById("keyword-value")
+const addKeywordBtn = document.getElementById("add-keyword")
+const removeKeywordBtn = document.getElementById("remove-keyword")
+
 const cardDamage = document.getElementById("card-damage")
 const cardAmmo = document.getElementById("card-ammo")
 const cardDelay = document.getElementById("card-delay")
@@ -326,6 +441,7 @@ editCardTextEvent("ammo-text", true)
 editCardTextEvent("delay-text", true)
 editCardTextEvent("description-text", false)
 editCardTextEvent("flavor-text", false)
+editDescriptiveFlavor()
 editDropdownEvent("rarity-pin", "RarityPin")
 editDropdownEvent("hero-pin", "HeroPin")
 editDropdownEvent("class-pin", "ClassPin")
@@ -335,5 +451,6 @@ editImageScaleEvent("w-slider", "w")
 editImageScaleEvent("h-slider", "h")
 toggleKeepRatio()
 editDescriptionEvent()
+toggleDescriptiveMode()
 // other things which need to happen at startup
 startup()

@@ -2,21 +2,21 @@
 
 @font-face {
 	font-family: 'Bloons TD';
-	src: url(../src/font/BloonsTD-Regular.ttf);
+	src: url(./src/font/BloonsTD-Regular.ttf);
 	font-weight: normal;
 	font-style: normal;
 }
 
 @font-face {
 	font-family: 'Source Sans 3 SemiBold';
-	src: url(../src/font/SourceSans3-Semibold.ttf);
+	src: url(./src/font/SourceSans3-Semibold.ttf);
 	font-weight: normal;
 	font-style: normal;
 }
 
 @font-face {
 	font-family: 'Source Sans 3 MidItalics';
-	src: url(../src/font/SourceSans3-MediumItalic.ttf);
+	src: url(./src/font/SourceSans3-MediumItalic.ttf);
 	font-weight: normal;
 	font-style: normal;
 }
@@ -32,6 +32,10 @@
 
 .form-element {
 	padding: 0.5em 1em;
+}
+.keyword-element {
+	padding: 1em;
+	display: none;
 }
 
 .img-btn {
@@ -124,6 +128,9 @@ input[type="file"] {
 	background-color: #44425A;
 	border-radius: 10px;
 	color: #FFF;
+}
+.disableable:disabled {
+	background-color: #383838
 }
 
 .two-col {
@@ -227,7 +234,7 @@ input[type="file"] {
 	position: absolute;
 	transform: translate(-50%, -50%);
 	left: 50%;
-	top: 0%
+	top: 2%
 }
 
 .class-pin {
@@ -235,6 +242,11 @@ input[type="file"] {
 	transform: translate(-66.2%, 60%);
 	left: 8%;
 	top: 43%;
+}
+.keyword-img {
+	width: 30px;
+	height: 30px;
+	transform: translate(0%, 20%)
 }
 .thicker-stroke {
 	top: 4px;
@@ -264,7 +276,7 @@ input[type="file"] {
 	display: block;
 	z-index: 1;
 	position: relative;
-	-webkit-text-stroke: 0.05em black;
+	-webkit-text-stroke: 0.1em black;
 	text-align: center;
 	color: white;
 	font-family: 'Bloons TD';
@@ -279,7 +291,11 @@ input[type="file"] {
 	max-height: 30%;
 	bottom: 345px;
 }
-
+.keyword-text-container {
+	font-size: 1.5em;
+	position: relative;
+	display: inline;
+}
 .class-text-container {
 	position: absolute;
 	transform: translate(-50%, -50%);
@@ -351,6 +367,17 @@ input[type="file"] {
 	height: auto;
 	top: 105%;
 }
+.flavor-text-descriptive {
+	position: relative;
+	display: inherit;
+	font-family: 'Source Sans 3 MidItalics';
+	white-space: pre-line;
+	font-size: 1em;
+	padding: 1em;
+	color: white;
+	text-align: center;
+	height: auto;
+}
 .no-outline {
 	-webkit-text-stroke: 0em white;
 }
@@ -367,6 +394,18 @@ input[type="file"] {
 	transform: translate(0%, -10%);
 }
 
+.descriptive-box {
+	width: 375px;
+	height: 435px;
+	border: 2px solid #1F2228;
+	background-color: #4c4c4c;
+	border-radius: 5%;
+	position: relative;
+	left: 180px;
+	top: 35px;
+	display: none;
+}
+
 h1 {
 	font-family: 'Bloons TD';
 	font-size: 3.5em;
@@ -378,8 +417,9 @@ h1 {
 
 body {
 	font-family: 'Source Sans 3 SemiBold';
-	background-color: #4C4C4C;
+	background-color: #3C3C3C;
 	color: #FFF;
 	-webkit-text-stroke: 0.07em black;
 	paint-order: stroke fill;
 }
+

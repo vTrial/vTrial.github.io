@@ -98,6 +98,40 @@
 				</select>
 			</div>
 			<div class="form-element">
+				<label for="keyword-toggle" id="keyword-toggle-label">Enable Keywords</label><br>
+				<input type="checkbox" name="keyword-toggle" id="keyword-toggle">
+			</div>
+			<div class="form-element">
+				<label for="keyword-dropdown" id="keyword-dropdown-label">Keywords</label><br>
+				<select name="keyword-dropdown" id="keyword-dropdown" class="disableable" disabled>
+					<option value="Defender">Defender</option>
+					<option value="Stunned">Stunned</option>
+					<option value="OnReplace">On Replace</option>
+					<option value="DoubleAttack">Double Attack</option>
+					<option value="OnLeak">On Leak</option>
+					<option value="OnDamaged">On Damaged</option>
+					<option value="OnPopped">On Popped</option>
+					<option value="OnDestroyed">On Destroyed</option>
+					<option value="OnFire">On Fire</option>
+					<option value="OnPlay">On Play</option>
+					<option value="OnTurnStart">On Turn Start</option>
+					<option value="OnTurnEnd">On Turn End</option>
+					<option value="Shield">Shield</option>
+					<option value="Pick">Pick</option>
+					<option value="Unique">Unique</option>
+				</select>
+			</div>
+			<div class="form-element">
+				<label for="keyword-value" id="keyword-value-label">Keyword Value</label><br>
+				<input type="number" value="0" min="0" name="keyword-value" id="keyword-value" class="disableable" disabled>
+			</div>
+			<div class="form-element">
+				<button id="add-keyword" class="label-btn disableable" onclick="addKeyword()">Add to Keyword List</button>
+			</div>
+			<div class="form-element">
+				<button id="remove-keyword" class="label-btn disableable" onclick="removeKeyword()">Remove Last Keyword on List</button>
+			</div>
+			<div class="form-element">
 				<label for="x-input" id="x-input-label">X: </label><br>
 				<input type="number" value="0" name="x-input" id="x-input">
 			</div>
@@ -182,6 +216,19 @@
 					</div>
 					<span class="flavor-text no-outline" id="flavor-text"></span>
 					<span class="description-text no-outline" id="description-text"></span>
+				</div>
+				<div class="descriptive-box" id="descriptive-box" style="border-radius: 3%;">
+					<div id="keyword-list">
+						<div class="keyword-element" id="keyword-element">
+							<img src="src/img/Keyword/Defender.png" class="keyword-img" id="keyword-img">
+							<div class="keyword-text-container" id="keyword-text-container">
+								<span class="bold-text" id="keyword-title" style="display: inline;">Defender +10</span>
+								<span class="thicker-stroke" id="keyword-title-stroke" style="top: 3px; left: -2px;">Defender +10</span>
+							</div>
+							<span class="no-outline" id="keyword-description" style="display: block;"></span>
+						</div>
+					</div>
+					<span class="flavor-text-descriptive no-outline" id="flavor-text-descriptive"></span>
 				</div>
 			</div>
 		</div>
