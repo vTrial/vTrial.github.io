@@ -44,7 +44,6 @@ const removeKeyword = () => {
 }
 
 const toggleDescriptiveMode = () => {
-    const descriptiveModeCheckbox = document.getElementById(`keyword-toggle`)
     descriptiveModeCheckbox.checked = false
     keywordDropdown.disabled = true
     keywordValue.disabled = true
@@ -397,6 +396,7 @@ const cardTypeButtons = document.querySelectorAll(".card-type-button")
 
 const card = document.getElementById("card")
 const cardContainer = document.getElementById("card-container")
+const descriptiveModeCheckbox = document.getElementById(`keyword-toggle`)
 const descriptiveBox = document.getElementById("descriptive-box")
 const keywordHolder = document.getElementById("keyword-list")
 const keywordList = []
