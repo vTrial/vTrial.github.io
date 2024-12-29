@@ -119,17 +119,13 @@
 					<option value="Shield">Shield</option>
 					<option value="Pick">Pick</option>
 					<option value="Unique">Unique</option>
-				</select>
-			</div>
-			<div class="form-element">
+				</select><br>
 				<label for="keyword-value" id="keyword-value-label">Keyword Value</label><br>
 				<input type="number" value="0" min="0" name="keyword-value" id="keyword-value" class="disableable" disabled>
 			</div>
 			<div class="form-element">
-				<button id="add-keyword" class="label-btn disableable" onclick="addKeyword()">Add to Keyword List</button>
-			</div>
-			<div class="form-element">
-				<button id="remove-keyword" class="label-btn disableable" onclick="removeKeyword()">Remove Last Keyword on List</button>
+				<button id="add-keyword" class="label-btn disableable" onclick="addKeyword()">Add Keyword</button><br>
+				<button id="remove-keyword" class="label-btn disableable" onclick="removeKeyword()">Remove Keyword</button>
 			</div>
 			<div class="form-element">
 				<label for="x-input" id="x-input-label">X: </label><br>
@@ -171,7 +167,6 @@
 				<!-- contains card main box; some of it is cut off as elements hang from box -->
 				<div class="card" id="card">
 					<!-- sizes based on card border -->
-					<div style="position: relative;"></div>
 					<img class="card-img" id="card-img">
 					<!-- can be Bloon/Monkey/SpellCardBorder -->
 					<img class="card-border" id="card-border" src="src/img/Border/MonkeyCardBorder.png">
