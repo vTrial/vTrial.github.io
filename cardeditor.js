@@ -16,9 +16,9 @@ const editCardTextEvent = (element, hasStroke) => {
     }
 }
 
-const editDescriptiveFlavor = () => {
+const editKeywordFlavor = () => {
     const inputCardText = document.getElementById(`input-flavor-text`)
-    const cardText = document.getElementById(`flavor-text-descriptive`)
+    const cardText = document.getElementById(`flavor-text-keyword`)
     inputCardText.addEventListener("input", function (event) {
         cardText.textContent = event.target.value
     })
@@ -43,8 +43,8 @@ const removeKeyword = () => {
     }
 }
 
-const toggleDescriptiveMode = () => {
-    descriptiveModeCheckbox.checked = false
+const toggleKeywords = () => {
+    keywordCheckbox.checked = false
     keywordDropdown.disabled = true
     keywordValue.disabled = true
     addKeywordBtn.disabled = true
@@ -53,10 +53,10 @@ const toggleDescriptiveMode = () => {
     keywordDropdown.value = "Defender"
     cardJustifier.style.justifyContent = "center"
     keywordValue.value = 0
-    descriptiveModeCheckbox.addEventListener("input", function (event) {
-        if (descriptiveModeCheckbox.checked) {
+    keywordCheckbox.addEventListener("input", function (event) {
+        if (keywordCheckbox.checked) {
             cardContainer.style.width = "775px"
-            descriptiveBox.style.display = "inline"
+            keywordBox.style.display = "inline"
             keywordDropdown.disabled = false
             keywordValue.disabled = false
             addKeywordBtn.disabled = false
@@ -66,7 +66,7 @@ const toggleDescriptiveMode = () => {
         }
         else {
             cardContainer.style.width = "375px"
-            descriptiveBox.style.display = "none"
+            keywordBox.style.display = "none"
             keywordDropdown.disabled = true
             keywordValue.disabled = true
             addKeywordBtn.disabled = true
@@ -354,7 +354,7 @@ function uploadImg(event) {
 
 const downloadImg = () => {
     var cardContainer = document.getElementById("card-container")
-    if (!descriptiveModeCheckbox.checked) {
+    if (!keywordCheckbox.checked) {
         cardContainer.style.height = `${flavorText.clientHeight / 2 + 510}px`
     }
     else cardContainer.style.height = "510px"
@@ -397,8 +397,8 @@ const cardTypeButtons = document.querySelectorAll(".card-type-button")
 const cardJustifier = document.getElementById("card-justifier")
 
 const cardContainer = document.getElementById("card-container")
-const descriptiveModeCheckbox = document.getElementById(`keyword-toggle`)
-const descriptiveBox = document.getElementById("descriptive-box")
+const keywordCheckbox = document.getElementById(`keyword-toggle`)
+const keywordBox = document.getElementById("keyword-box")
 const keywordHolder = document.getElementById("keyword-list")
 const keywordList = []
 
@@ -442,7 +442,7 @@ editCardTextEvent("ammo-text", true)
 editCardTextEvent("delay-text", true)
 editCardTextEvent("description-text", false)
 editCardTextEvent("flavor-text", false)
-editDescriptiveFlavor()
+editKeywordFlavor()
 editDropdownEvent("rarity-pin", "RarityPin")
 editDropdownEvent("hero-pin", "HeroPin")
 editDropdownEvent("class-pin", "ClassPin")
@@ -452,6 +452,6 @@ editImageScaleEvent("w-slider", "w")
 editImageScaleEvent("h-slider", "h")
 toggleKeepRatio()
 editDescriptionEvent()
-toggleDescriptiveMode()
+toggleKeywords()
 // other things which need to happen at startup
 startup()

@@ -366,7 +366,7 @@ input[type="file"] {
 	height: auto;
 	top: 105%;
 }
-.flavor-text-descriptive {
+.flavor-text-keyword {
 	position: relative;
 	display: inherit;
 	font-family: 'Source Sans 3 MidItalics';
@@ -392,14 +392,14 @@ input[type="file"] {
 	transform: translate(0%, -10%);
 }
 
-.descriptive-box {
+.keyword-box {
 	width: 375px;
 	height: 435px;
 	border: 2px solid #1F2228;
 	background-color: #4c4c4c;
-	border-radius: 5%;
+	border-radius: 3%;
 	position: relative;
-	left: 380px;
+	left: 375px;
 	top: 35px;
 	display: none;
 	user-select: none;
