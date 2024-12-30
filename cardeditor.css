@@ -156,7 +156,7 @@ input[type="file"] {
 	position: absolute;
 	user-select: none;
 	pointer-events: none;
-	transform: scale(50%) translate(-42.5%, -50%);
+	transform: scale(50%) translate(-41%, -50%);
 	top: 35px;
 }
 
