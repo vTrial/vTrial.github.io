@@ -51,6 +51,7 @@ const toggleDescriptiveMode = () => {
     removeKeywordBtn.disabled = true
     flavorText.style.visibility = "visible"
     keywordDropdown.value = "Defender"
+    cardJustifier.style.justifyContent = "center"
     keywordValue.value = 0
     descriptiveModeCheckbox.addEventListener("input", function (event) {
         if (descriptiveModeCheckbox.checked) {
@@ -61,6 +62,7 @@ const toggleDescriptiveMode = () => {
             addKeywordBtn.disabled = false
             removeKeywordBtn.disabled = false
             flavorText.style.visibility = "hidden"
+            cardJustifier.style.justifyContent = ""
         }
         else {
             cardContainer.style.width = "375px"
@@ -70,6 +72,7 @@ const toggleDescriptiveMode = () => {
             addKeywordBtn.disabled = true
             removeKeywordBtn.disabled = true
             flavorText.style.visibility = "visible"
+            cardJustifier.style.justifyContent = "center"
         }
     })
 }
@@ -391,6 +394,7 @@ const damageCheckbox = document.getElementById("damage-checkbox")
 
 const cardBorder = document.getElementById("card-border")
 const cardTypeButtons = document.querySelectorAll(".card-type-button")
+const cardJustifier = document.getElementById("card-justifier")
 
 const cardContainer = document.getElementById("card-container")
 const descriptiveModeCheckbox = document.getElementById(`keyword-toggle`)
