@@ -99,7 +99,8 @@
 			</div>
 			<div class="form-element">
 				<label for="keyword-toggle" id="keyword-toggle-label">Enable Keywords</label><br>
-				<input type="checkbox" name="keyword-toggle" id="keyword-toggle">
+				<input type="checkbox" name="keyword-toggle" id="keyword-toggle"><br>
+				<button id="add-keyword" class="label-btn disableable" onclick="addKeyword()" style="margin: 0.3em 0em;">Add Keyword</button>
 			</div>
 			<div class="form-element">
 				<label for="keyword-dropdown" id="keyword-dropdown-label">Keywords</label><br>
@@ -120,12 +121,11 @@
 					<option value="Pick">Pick</option>
 					<option value="Unique">Unique</option>
 				</select><br>
-				<button id="add-keyword" class="label-btn disableable" onclick="addKeyword()" style="margin: 0.3em 0em;">Add Keyword</button>
+				<button id="remove-keyword" class="label-btn disableable" onclick="removeKeyword()" style="margin: 0.4em 0em;">Remove Keyword</button>
 			</div>
 			<div class="form-element">
-				<label for="keyword-value" id="keyword-value-label">Keyword Value</label><br>
-				<input type="number" value="0" min="0" name="keyword-value" id="keyword-value" class="disableable" disabled><br>
-				<button id="remove-keyword" class="label-btn disableable" onclick="removeKeyword()">Remove Keyword</button>
+				<label for="keyword-value" id="keyword-value-label">Secondary Value</label><br>
+				<input type="number" value="0" min="0" name="keyword-value" id="keyword-value" class="disableable" disabled>
 			</div>
 			<div class="form-element">
 				<label for="x-input" id="x-input-label">X: </label><br>

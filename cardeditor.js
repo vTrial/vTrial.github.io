@@ -54,7 +54,6 @@ const toggleDescriptiveMode = () => {
     keywordValue.value = 0
     descriptiveModeCheckbox.addEventListener("input", function (event) {
         if (descriptiveModeCheckbox.checked) {
-            card.style.left = "-140px"
             cardContainer.style.width = "775px"
             descriptiveBox.style.display = "inline"
             keywordDropdown.disabled = false
@@ -64,7 +63,6 @@ const toggleDescriptiveMode = () => {
             flavorText.style.visibility = "hidden"
         }
         else {
-            card.style.left = ""
             cardContainer.style.width = "375px"
             descriptiveBox.style.display = "none"
             keywordDropdown.disabled = true
@@ -394,7 +392,6 @@ const damageCheckbox = document.getElementById("damage-checkbox")
 const cardBorder = document.getElementById("card-border")
 const cardTypeButtons = document.querySelectorAll(".card-type-button")
 
-const card = document.getElementById("card")
 const cardContainer = document.getElementById("card-container")
 const descriptiveModeCheckbox = document.getElementById(`keyword-toggle`)
 const descriptiveBox = document.getElementById("descriptive-box")
