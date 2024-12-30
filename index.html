@@ -97,55 +97,63 @@
 					<option value="Adora">Adora</option>
 				</select>
 			</div>
-			<div class="form-element">
-				<label for="keyword-toggle" id="keyword-toggle-label">Enable Keywords</label><br>
-				<input type="checkbox" name="keyword-toggle" id="keyword-toggle"><br>
-				<button id="add-keyword" class="label-btn disableable" onclick="addKeyword()" style="margin: 0.3em 0em;">Add Keyword</button>
+			<div class="multi-form-element">
+				<div class="form-element">
+					<label for="keyword-toggle" id="keyword-toggle-label">Enable Keywords</label><br>
+					<input type="checkbox" name="keyword-toggle" id="keyword-toggle">
+				</div>
+				<div class="form-element">
+					<label for="keyword-dropdown" id="keyword-dropdown-label">Keywords</label><br>
+					<select name="keyword-dropdown" id="keyword-dropdown" class="disableable" disabled>
+						<option value="Defender">Defender</option>
+						<option value="Stunned">Stunned</option>
+						<option value="OnReplace">On Replace</option>
+						<option value="DoubleAttack">Double Attack</option>
+						<option value="OnLeak">On Leak</option>
+						<option value="OnDamaged">On Damaged</option>
+						<option value="OnPopped">On Popped</option>
+						<option value="OnDestroyed">On Destroyed</option>
+						<option value="OnFire">On Fire</option>
+						<option value="OnPlay">On Play</option>
+						<option value="OnTurnStart">On Turn Start</option>
+						<option value="OnTurnEnd">On Turn End</option>
+						<option value="Shield">Shield</option>
+						<option value="Pick">Pick</option>
+						<option value="Unique">Unique</option>
+					</select>
+				</div>
+				<div class="form-element">
+					<label for="keyword-value" id="keyword-value-label">Secondary Value</label><br>
+					<input type="number" value="0" min="0" name="keyword-value" id="keyword-value" class="disableable" disabled>
+				</div>
+				<div class="form-element">
+					<button id="add-keyword" class="label-btn disableable" onclick="addKeyword()">Add Keyword</button>
+				</div>
+				<div class="form-element">
+					<button id="remove-keyword" class="label-btn disableable" onclick="removeKeyword()">Remove Keyword</button>
+				</div>
 			</div>
-			<div class="form-element">
-				<label for="keyword-dropdown" id="keyword-dropdown-label">Keywords</label><br>
-				<select name="keyword-dropdown" id="keyword-dropdown" class="disableable" disabled>
-					<option value="Defender">Defender</option>
-					<option value="Stunned">Stunned</option>
-					<option value="OnReplace">On Replace</option>
-					<option value="DoubleAttack">Double Attack</option>
-					<option value="OnLeak">On Leak</option>
-					<option value="OnDamaged">On Damaged</option>
-					<option value="OnPopped">On Popped</option>
-					<option value="OnDestroyed">On Destroyed</option>
-					<option value="OnFire">On Fire</option>
-					<option value="OnPlay">On Play</option>
-					<option value="OnTurnStart">On Turn Start</option>
-					<option value="OnTurnEnd">On Turn End</option>
-					<option value="Shield">Shield</option>
-					<option value="Pick">Pick</option>
-					<option value="Unique">Unique</option>
-				</select><br>
-				<button id="remove-keyword" class="label-btn disableable" onclick="removeKeyword()" style="margin: 0.4em 0em;">Remove Keyword</button>
-			</div>
-			<div class="form-element">
-				<label for="keyword-value" id="keyword-value-label">Secondary Value</label><br>
-				<input type="number" value="0" min="0" name="keyword-value" id="keyword-value" class="disableable" disabled>
-			</div>
-			<div class="form-element">
-				<label for="x-input" id="x-input-label">X: </label><br>
-				<input type="number" value="0" name="x-input" id="x-input">
-			</div>
-			<div class="form-element">
-				<label for="y-input" id="y-input-label">Y: </label><br>
-				<input type="number" value="0" name="y-input" id="y-input">
-			</div>
-			<div class="form-element">
-				<label for="w-slider" id="w-slider-label">W: </label><br>
-				<input type="range" min="1" max="2.7" value="2" step="0.01" name="w-slider" id="w-slider" class="scale-slider">
-			</div>
-			<div class="form-element">
-				<label for="h-slider" id="h-slider-label">H: </label><br>
-				<input type="range" min="1" max="2.7" value="2" step="0.01" name="h-slider" id="h-slider" class="scale-slider">
-			</div>
-			<div class="form-element">
-				<label for="ratio-toggle" id="ratio-toggle-label">Keep Ratio</label><br>
-				<input type="checkbox" checked name="ratio-toggle" id="ratio-toggle">
+			<div class="multi-form-element">
+				<div class="form-element">
+					<label for="x-input" id="x-input-label">X: </label><br>
+					<input type="number" value="0" name="x-input" id="x-input">
+				</div>
+				<div class="form-element">
+					<label for="y-input" id="y-input-label">Y: </label><br>
+					<input type="number" value="0" name="y-input" id="y-input">
+				</div>
+				<div class="form-element">
+					<label for="w-slider" id="w-slider-label">W: </label><br>
+					<input type="range" min="1" max="2.7" value="2" step="0.01" name="w-slider" id="w-slider" class="scale-slider">
+				</div>
+				<div class="form-element">
+					<label for="h-slider" id="h-slider-label">H: </label><br>
+					<input type="range" min="1" max="2.7" value="2" step="0.01" name="h-slider" id="h-slider" class="scale-slider">
+				</div>
+				<div class="form-element">
+					<label for="ratio-toggle" id="ratio-toggle-label">Keep Ratio</label><br>
+					<input type="checkbox" checked name="ratio-toggle" id="ratio-toggle">
+				</div>
 			</div>
 			<div class="form-element">
 				<button id="reset-btn" class="label-btn" onclick="resetImageValues()">Reset Image</button>

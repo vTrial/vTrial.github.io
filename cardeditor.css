@@ -29,9 +29,14 @@
 	background-color: #36343C;
 	border-radius: 5%;
 }
+.multi-form-element{
+	display: flex;
+	flex-wrap: wrap;
+}
 
 .form-element {
 	padding: 0.5em 1em;
+	display: inline-block;
 }
 .keyword-element {
 	padding: 1em;
