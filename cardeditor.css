@@ -26,10 +26,11 @@
 	display: flex;
 	flex-wrap: wrap;
 	border: 2px solid black;
-	background-color: #36343C;
+	background-color: var(--bg-card-form);
 	border-radius: 5%;
 }
-.multi-form-element{
+
+.multi-form-element {
 	display: flex;
 	flex-wrap: wrap;
 }
@@ -38,6 +39,7 @@
 	padding: 0.5em 1em;
 	display: inline-block;
 }
+
 .keyword-element {
 	padding: 1em;
 	display: none;
@@ -63,19 +65,19 @@ select {
 	font-size: 1.25em;
 	font-family: 'Source Sans 3 SemiBold';
 	padding: 0;
-	background-color: #44425A;
+	background-color: var(--accent-card-form);
 	border: 1px solid black;
 	border-radius: 10px;
 	width: 200px;
 	height: 38.25px;
-	color: #FFF
+	color: var(--text-main);
 }
 
 input[type="range"] {
 	width: 8em;
 	cursor: pointer;
 	margin: 1em 0em;
-	accent-color: #44425A;
+	accent-color: var(--accent-card-form);
 }
 
 input[type="checkbox"] {
@@ -84,15 +86,23 @@ input[type="checkbox"] {
 	width: 1.5em;
 	font-size: 1.5em;
 	outline: 1px solid black;
-	accent-color: #44425A;
+	accent-color: var(--accent-card-form);
 }
 
+
 input[type="number"] {
-	background-color: #44425A;
+	/* background-color: var(--accent-card-form);
 	margin: 1em 0em;
-	color: #FFF;
+	color: var(--text-main);
 	border: 0px;
-	width: 5em;
+	width: 5em; */
+	font-size: 1.5em;
+	font-family: 'Source Sans 3 SemiBold';
+	padding: 0;
+	background-color: var(--accent-card-form);
+	border: 1px solid black;
+	border-radius: 10px;
+	color: var(--text-main);
 }
 
 .scale-slider {
@@ -103,20 +113,20 @@ input[type="text"] {
 	font-size: 1.5em;
 	font-family: 'Source Sans 3 SemiBold';
 	padding: 0;
-	background-color: #44425A;
+	background-color: var(--accent-card-form);
 	border: 1px solid black;
 	border-radius: 10px;
-	color: #FFF
+	color: var(--text-main);
 }
 
 textarea {
 	resize: none;
 	font-size: 1.5em;
 	font-family: 'Source Sans 3 SemiBold';
-	background-color: #44425A;
+	background-color: var(--accent-card-form);
 	border: 1px solid black;
 	border-radius: 10px;
-	color: #FFF;
+	color: var(--text-main);
 }
 
 input[type="file"] {
@@ -130,12 +140,18 @@ input[type="file"] {
 	padding: 0.25em 0.5em;
 	cursor: pointer;
 	display: inline-block;
-	background-color: #44425A;
+	background-color: var(--accent-card-form);
 	border-radius: 10px;
-	color: #FFF;
+	color: var(--text-main);
 }
+
 .disableable:disabled {
-	background-color: #383838
+	background-color: var(--disabled-card-form);
+	color: var(--text-disabled);
+}
+
+.disabled-text {
+	color: var(--text-disabled);
 }
 
 .two-col {
@@ -175,9 +191,11 @@ input[type="file"] {
 	border-radius: 10%;
 	z-index: -1;
 }
+
 .card-border {
 	transform: translate(0% -0.8%);
 }
+
 .cost {
 	position: absolute;
 	transform: translate(-50%, -50%);
@@ -247,11 +265,13 @@ input[type="file"] {
 	left: 8%;
 	top: 43%;
 }
+
 .keyword-img {
 	width: 30px;
 	height: 30px;
 	transform: translate(0%, 20%)
 }
+
 .thicker-stroke {
 	top: 4px;
 	-webkit-text-stroke: 0.16em black;
@@ -282,11 +302,12 @@ input[type="file"] {
 	position: relative;
 	-webkit-text-stroke: 0.1em black;
 	text-align: center;
-	color: white;
+	color: var(--text-main);
 	font-family: 'Bloons TD';
 	word-wrap: break-word;
 	margin: 0;
 }
+
 .title-text-container {
 	position: absolute;
 	font-size: 3.5em;
@@ -295,12 +316,14 @@ input[type="file"] {
 	max-height: 30%;
 	bottom: 345px;
 }
+
 .keyword-text-container {
 	margin: 0em 0.25em;
 	font-size: 1.5em;
 	position: relative;
 	display: inline;
 }
+
 .class-text-container {
 	position: absolute;
 	transform: translate(-50%, -50%);
@@ -352,7 +375,7 @@ input[type="file"] {
 	left: 49.8%;
 	top: 78.5%;
 	font-size: 2.7em;
-	color: white;
+	color: var(--text-main);
 	text-align: center;
 	width: 85%;
 	height: auto;
@@ -366,12 +389,13 @@ input[type="file"] {
 	transform: translate(-50%, 0%);
 	left: 50%;
 	font-size: 2.5em;
-	color: white;
+	color: var(--text-main);
 	text-align: center;
 	width: 90%;
 	height: auto;
 	top: 105%;
 }
+
 .flavor-text-keyword {
 	position: relative;
 	display: inherit;
@@ -379,16 +403,19 @@ input[type="file"] {
 	white-space: pre-line;
 	font-size: 1em;
 	padding: 1.25em;
-	color: white;
+	color: var(--text-main);
 	text-align: center;
 	height: auto;
 }
+
 .no-outline {
-	-webkit-text-stroke: 0em white;
+	-webkit-text-stroke: 0em var(--text-main);
 }
+
 /* top level styles */
 .two-col-item {
-	flex: 1 1 calc(50% - 12px); /* 50% width for each column minus gap */
+	flex: 1 1 calc(50% - 12px);
+	/* 50% width for each column minus gap */
 }
 
 .card-two-col {
@@ -414,7 +441,7 @@ input[type="file"] {
 h1 {
 	font-family: 'Bloons TD';
 	font-size: 3.5em;
-	color: #FFF;
+	color: var(--text-main);
 	margin: 0;
 	-webkit-text-stroke: 0.05em black;
 	text-shadow: 0em 0.10em black;
@@ -423,8 +450,16 @@ h1 {
 body {
 	font-family: 'Source Sans 3 SemiBold';
 	background-color: #3C3C3C;
-	color: #FFF;
+	color: var(--text-main);
 	-webkit-text-stroke: 0.07em black;
 	paint-order: stroke fill;
 }
 
+:root {
+	--bg-main: #3C3C3C;
+	--bg-card-form: #36343C;
+	--accent-card-form: #44425A;
+	--disabled-card-form: #383838;
+	--text-main: white;
+	--text-disabled: #999;
+}

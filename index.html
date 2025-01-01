@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +9,7 @@
 	<!-- temp favicon -->
 	<link rel="icon" type="image/x-icon" href="/src/img/favicon.ico">
 </head>
+
 <body>
 	<h1>BCS Custom Cards</h1>
 	<!-- 2 col constructor-->
@@ -16,9 +18,12 @@
 		<div id="card-form" class="form-flex two-col-item">
 			<div class=form-element>
 				<label>Card Type</label><br>
-				<img class="img-btn img-border" src="src/img/Button/Monkey.png" alt="Monkey" onclick="updateCardLayout('monkey')" />
-				<img class="img-btn img-border" src="src/img/Button/Bloon.png" alt="Bloon" onclick="updateCardLayout('bloon')" />
-				<img class="img-btn img-border" src="src/img/Button/Power.png" alt="Power" onclick="updateCardLayout('power')" />
+				<img class="img-btn img-border" src="src/img/Button/Monkey.png" alt="Monkey"
+					onclick="updateCardLayout('monkey')" />
+				<img class="img-btn img-border" src="src/img/Button/Bloon.png" alt="Bloon"
+					onclick="updateCardLayout('bloon')" />
+				<img class="img-btn img-border" src="src/img/Button/Power.png" alt="Power"
+					onclick="updateCardLayout('power')" />
 			</div>
 			<div class="form-element">
 				<label for="input-title-text">Title</label><br>
@@ -32,32 +37,32 @@
 			</div>
 			<div class="form-element">
 				<label for="copies-slider" id="copies-label">Copies: 1</label><br>
-				<input type="range" min="1" max="4" value="1" name="copies-slider" id="copies-slider" oninput="setCoinQuantity()">
-			</div>
-			<div class="form-element">
-				<label for="input-damage-text">Damage</label><br>
-				<input type="text" id="input-damage-text" name="input-damage-text" size="3"><br>
+				<input type="range" min="1" max="4" value="1" name="copies-slider" id="copies-slider"
+					oninput="setCoinQuantity()">
 			</div>
 			<!-- is this a not a farm? -->
-			<div class="form-element">
-				<label for="damage-checkbox">Damage?</label><br>
-				<input checked type="checkbox" name="damage-checkbox" id="damage-checkbox" onclick="damageCheckboxClicked()">
-			</div>
-			<div class="form-element">
-				<label for="input-ammo-text">Ammo</label><br>
-				<input type="text" id="input-ammo-text" name="input-ammo-text" size="3">
-			</div>
-			<div class="form-element">
-				<label for="input-delay-text">Delay</label><br>
-				<input type="text" id="input-delay-text" name="input-delay-text" size="3">
+			<div class="multi-form-element" id="enable-damage-elements">
+				<div class="form-element">
+					<label for="damage-checkbox">Enable Damage</label><br>
+					<input checked type="checkbox" name="damage-checkbox" id="damage-checkbox"
+						onclick="damageCheckboxClicked()" class="disableable">
+				</div>
+				<div class="form-element">
+					<label for="input-damage-text">Damage</label><br>
+					<input type="text" id="input-damage-text" name="input-damage-text" size="3" class="disableable"><br>
+				</div>
+				<div class="form-element">
+					<label for="input-ammo-text">Ammo</label><br>
+					<input type="text" id="input-ammo-text" name="input-ammo-text" size="3" class="disableable">
+				</div>
+				<div class="form-element">
+					<label for="input-delay-text">Delay</label><br>
+					<input type="text" id="input-delay-text" name="input-delay-text" size="3" class="disableable">
+				</div>
 			</div>
 			<div class="form-element">
 				<label for="input-description-text">Description</label><br>
 				<textarea name="input-description-text" id="input-description-text" cols="23" rows="3"></textarea>
-			</div>
-			<div class="form-element">
-				<label for="input-flavor-text">Flavor</label><br>
-				<textarea name="input-flavor-text" id="input-flavor-text" cols="22" rows="3"></textarea>
 			</div>
 			<div class="form-element">
 				<label>Rarity</label><br>
@@ -97,10 +102,16 @@
 					<option value="Adora">Adora</option>
 				</select>
 			</div>
-			<div class="multi-form-element">
+			<div class="multi-form-element disabled-text" id="enable-keyword-elements">
 				<div class="form-element">
-					<label for="keyword-toggle" id="keyword-toggle-label">Enable Keywords</label><br>
+					<label for="keyword-toggle" id="keyword-toggle-label">Enable Additional
+						Details</label><br>
 					<input type="checkbox" name="keyword-toggle" id="keyword-toggle">
+				</div>
+				<div class="form-element">
+					<label for="input-flavor-text">Flavor</label><br>
+					<textarea name="input-flavor-text" id="input-flavor-text" class="disableable" disabled cols="22"
+						rows="3"></textarea>
 				</div>
 				<div class="form-element">
 					<label for="keyword-dropdown" id="keyword-dropdown-label">Keywords</label><br>
@@ -124,51 +135,55 @@
 				</div>
 				<div class="form-element">
 					<label for="keyword-value" id="keyword-value-label">Secondary Value</label><br>
-					<input type="number" value="0" min="0" name="keyword-value" id="keyword-value" class="disableable" disabled>
+					<input type="number" value="0" min="0" name="keyword-value" id="keyword-value" class="disableable"
+						disabled>
 				</div>
 				<div class="form-element">
 					<button id="add-keyword" class="label-btn disableable" onclick="addKeyword()">Add Keyword</button>
 				</div>
 				<div class="form-element">
-					<button id="remove-keyword" class="label-btn disableable" onclick="removeKeyword()">Remove Keyword</button>
+					<button id="remove-keyword" class="label-btn disableable" onclick="removeKeyword()">Remove
+						Keyword</button>
 				</div>
 			</div>
 			<div class="multi-form-element">
+				<!-- only from downloads for now -->
 				<div class="form-element">
-					<label for="x-input" id="x-input-label">X: </label><br>
-					<input type="number" value="0" name="x-input" id="x-input">
+					<label for="img-upload" class="label-btn img-upload-btn" id="img-upload-btn">Upload Image</label>
+					<input type="file" name="img-upload" id="img-upload" onchange="uploadImg(event)">
 				</div>
 				<div class="form-element">
-					<label for="y-input" id="y-input-label">Y: </label><br>
-					<input type="number" value="0" name="y-input" id="y-input">
+					<label for="x-input" id="x-input-label">X Position</label><br>
+					<input type="number" value="0" size="3" name="x-input" id="x-input">
 				</div>
 				<div class="form-element">
-					<label for="w-slider" id="w-slider-label">W: </label><br>
-					<input type="range" min="1" max="2.7" value="2" step="0.01" name="w-slider" id="w-slider" class="scale-slider">
+					<label for="y-input" id="y-input-label">Y Position</label><br>
+					<input type="number" value="0" size="3" name="y-input" id="y-input">
 				</div>
 				<div class="form-element">
-					<label for="h-slider" id="h-slider-label">H: </label><br>
-					<input type="range" min="1" max="2.7" value="2" step="0.01" name="h-slider" id="h-slider" class="scale-slider">
+					<label for="w-slider" id="w-slider-label">Width %</label><br>
+					<input type="range" min="1" max="2.7" value="2" step="0.01" name="w-slider" id="w-slider"
+						class="scale-slider">
+				</div>
+				<div class="form-element">
+					<label for="h-slider" id="h-slider-label">Height %</label><br>
+					<input type="range" min="1" max="2.7" value="2" step="0.01" name="h-slider" id="h-slider"
+						class="scale-slider">
 				</div>
 				<div class="form-element">
 					<label for="ratio-toggle" id="ratio-toggle-label">Keep Ratio</label><br>
 					<input type="checkbox" checked name="ratio-toggle" id="ratio-toggle">
 				</div>
-			</div>
-			<div class="form-element">
-				<button id="reset-btn" class="label-btn" onclick="resetImageValues()">Reset Image</button>
-			</div>
-			<!-- only from downloads for now -->
-			<div class="form-element">
-				<label for="img-upload" class="label-btn img-upload-btn" id="img-upload-btn">Upload Image</label>
-				<input type="file" name="img-upload" id="img-upload" onchange="uploadImg(event)">
+				<div class="form-element">
+					<button id="reset-btn" class="label-btn" onclick="resetImageValues()">Reset Image</button>
+				</div>
 			</div>
 			<div class="form-element">
 				<button id="download-btn" class="label-btn" onclick="downloadImg()">Download Image</button>
 			</div>
 		</div>
-	<!-- col 2/2 -->
-	<!-- positions card container -->
+		<!-- col 2/2 -->
+		<!-- positions card container -->
 		<div class="card-two-col two-col-item" id="card-justifier">
 			<!-- contains card and surroundings; gets screenshotted -->
 			<div class="card-container" id="card-container">
@@ -218,7 +233,8 @@
 						<span class="bold-text" id="delay-text"></span>
 						<span class="thicker-stroke" id="delay-text-stroke"></span>
 					</div>
-					<span class="flavor-text no-outline" id="flavor-text"></span>
+					<!-- old flavor text -->
+					<!-- <span class="flavor-text no-outline" id="flavor-text"></span> -->
 					<span class="description-text no-outline" id="description-text"></span>
 				</div>
 				<div class="keyword-box" id="keyword-box">
@@ -227,7 +243,8 @@
 							<img src="src/img/Keyword/Defender.png" class="keyword-img" id="keyword-img">
 							<div class="keyword-text-container" id="keyword-text-container">
 								<span class="bold-text" id="keyword-title" style="display: inline;">Defender +10</span>
-								<span class="thicker-stroke" id="keyword-title-stroke" style="top: 3px; left: -2px;">Defender +10</span>
+								<span class="thicker-stroke" id="keyword-title-stroke"
+									style="top: 3px; left: -2px;">Defender +10</span>
 							</div>
 							<span class="no-outline" id="keyword-description" style="display: block;"></span>
 						</div>
@@ -242,4 +259,5 @@
 	<!-- main script -->
 	<script src="cardeditor.js"></script>
 </body>
+
 </html>

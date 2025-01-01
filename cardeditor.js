@@ -43,17 +43,18 @@ const removeKeyword = () => {
     }
 }
 
+
 const toggleKeywords = () => {
     keywordCheckbox.checked = false
     keywordDropdown.disabled = true
     keywordValue.disabled = true
     addKeywordBtn.disabled = true
     removeKeywordBtn.disabled = true
-    flavorText.style.visibility = "visible"
     keywordDropdown.value = "Defender"
     cardJustifier.style.justifyContent = "center"
     keywordValue.value = 0
     keywordCheckbox.addEventListener("input", function (event) {
+        inputKeywordEnabled.classList.toggle("disabled-text")
         if (keywordCheckbox.checked) {
             cardContainer.style.width = "775px"
             keywordBox.style.display = "inline"
@@ -61,8 +62,10 @@ const toggleKeywords = () => {
             keywordValue.disabled = false
             addKeywordBtn.disabled = false
             removeKeywordBtn.disabled = false
-            flavorText.style.visibility = "hidden"
+            inputFlavorText.disabled = false
+            // flavorText.style.visibility = "hidden"
             cardJustifier.style.justifyContent = ""
+
         }
         else {
             cardContainer.style.width = "375px"
@@ -71,7 +74,8 @@ const toggleKeywords = () => {
             keywordValue.disabled = true
             addKeywordBtn.disabled = true
             removeKeywordBtn.disabled = true
-            flavorText.style.visibility = "visible"
+            inputFlavorText.disabled = true
+            // flavorText.style.visibility = "visible"
             cardJustifier.style.justifyContent = "center"
         }
     })
@@ -88,13 +92,10 @@ const editDropdownEvent = (ID, folderName) => {
 
 const editImagePositionEvent = (ID, variable) => {
     const positionInput = document.getElementById(`${ID}`)
-    const positionInputLabel = document.getElementById(`${ID}-label`)
     const Pretext = positionInputLabel.textContent
-    positionInputLabel.textContent += "0"
     positionInput.value = 0
     positionInput.addEventListener("input", function (event) {
         imageValues[variable] = positionInput.value
-        positionInputLabel.textContent = `${Pretext}${imageValues[variable]}`
         updateImage()
     })
 }
@@ -128,10 +129,10 @@ const resetImageValues = () => {
     imageValues.h = 512
     document.getElementById(`x-input`).value = 0
     document.getElementById(`y-input`).value = 0
-    document.getElementById(`w-slider`).value = 2
-    document.getElementById(`h-slider`).value = 2
-    document.getElementById(`x-input-label`).textContent = "X: 0"
-    document.getElementById(`y-input-label`).textContent = "Y: 0"
+    // document.getElementById(`w-slider`).value = 2
+    // document.getElementById(`h-slider`).value = 2
+    // document.getElementById(`x-input-label`).textContent = "X: 0"
+    // document.getElementById(`y-input-label`).textContent = "Y: 0"
     document.getElementById(`w-slider-label`).textContent = "W: 100.00%"
     document.getElementById(`h-slider-label`).textContent = "H: 100.00%"
     updateImage()
@@ -312,7 +313,17 @@ const damageCheckboxClicked = () => {
   cardTypes.monkey.damageVisibility = damageCheckbox.checked
   cardTypes.monkey.ammoVisibility = damageCheckbox.checked
   cardTypes.monkey.delayVisibility = damageCheckbox.checked
-  console.log(cardTypes[cardType])
+  inputDamageEnabled.classList.toggle("disabled-text")
+  if (damageCheckbox.checked) {
+    inputDamage.disabled = false
+    inputAmmo.disabled = false
+    inputDelay.disabled = false
+  }
+  else {
+    inputDamage.disabled = true
+    inputAmmo.disabled = true
+    inputDelay.disabled = true
+  }
   toggleVisibilities(cardTypes[cardType])
 };
 
@@ -354,10 +365,7 @@ function uploadImg(event) {
 
 const downloadImg = () => {
     var cardContainer = document.getElementById("card-container")
-    if (!keywordCheckbox.checked) {
-        cardContainer.style.height = `${flavorText.clientHeight / 2 + 510}px`
-    }
-    else cardContainer.style.height = "510px"
+    cardContainer.style.height = "510px"
   html2canvas(cardContainer, {
       backgroundColor: null,
       scale: 5,
@@ -402,7 +410,14 @@ const keywordBox = document.getElementById("keyword-box")
 const keywordHolder = document.getElementById("keyword-list")
 const keywordList = []
 
+const inputDamageEnabled = document.getElementById("enable-damage-elements")
+const inputDamage = document.getElementById("input-damage-text")
+const inputAmmo = document.getElementById("input-ammo-text")
+const inputDelay = document.getElementById("input-delay-text")
+
+const inputKeywordEnabled = document.getElementById("enable-keyword-elements")
 const keywordDropdown = document.getElementById("keyword-dropdown")
+const inputFlavorText = document.getElementById(`input-flavor-text`)
 const keywordImg = document.getElementById("keyword-img")
 const keywordDescription = document.getElementById("keyword-description")
 const keywordTitle = document.getElementById("keyword-title")
@@ -430,7 +445,7 @@ var drawTimer = null
 
 const imgUploadElement = document.getElementById("img-upload")
 const cardImg = document.getElementById("card-img")
-const flavorText = document.getElementById("flavor-text")
+// const flavorText = document.getElementById("flavor-text")
 const imageValues = { x: 0, y: 0, w: 512, h: 512 }
 
 // make text editable
