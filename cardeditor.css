@@ -425,7 +425,7 @@ input[type="file"] {
 	transform: translate(0%, -10%);
 }
 
-.keyword-box {
+.detail-box {
 	width: 375px;
 	height: 435px;
 	border: 2px solid #1F2228;

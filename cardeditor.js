@@ -16,7 +16,7 @@ const editCardTextEvent = (element, hasStroke) => {
     }
 }
 
-const editKeywordFlavor = () => {
+const editDetailFlavor = () => {
     const inputCardText = document.getElementById(`input-flavor-text`)
     const cardText = document.getElementById(`flavor-text-keyword`)
     inputCardText.addEventListener("input", function (event) {
@@ -44,8 +44,8 @@ const removeKeyword = () => {
 }
 
 
-const toggleKeywords = () => {
-    keywordCheckbox.checked = false
+const toggleDetails = () => {
+    detailCheckbox.checked = false
     keywordDropdown.disabled = true
     keywordValue.disabled = true
     addKeywordBtn.disabled = true
@@ -53,11 +53,11 @@ const toggleKeywords = () => {
     keywordDropdown.value = "Defender"
     cardJustifier.style.justifyContent = "center"
     keywordValue.value = 0
-    keywordCheckbox.addEventListener("input", function (event) {
-        inputKeywordEnabled.classList.toggle("disabled-text")
-        if (keywordCheckbox.checked) {
+    detailCheckbox.addEventListener("input", function (event) {
+        inputDetailEnabled.classList.toggle("disabled-text")
+        if (detailCheckbox.checked) {
             cardContainer.style.width = "775px"
-            keywordBox.style.display = "inline"
+            detailBox.style.display = "inline"
             keywordDropdown.disabled = false
             keywordValue.disabled = false
             addKeywordBtn.disabled = false
@@ -69,7 +69,7 @@ const toggleKeywords = () => {
         }
         else {
             cardContainer.style.width = "375px"
-            keywordBox.style.display = "none"
+            detailBox.style.display = "none"
             keywordDropdown.disabled = true
             keywordValue.disabled = true
             addKeywordBtn.disabled = true
@@ -92,7 +92,6 @@ const editDropdownEvent = (ID, folderName) => {
 
 const editImagePositionEvent = (ID, variable) => {
     const positionInput = document.getElementById(`${ID}`)
-    const Pretext = positionInputLabel.textContent
     positionInput.value = 0
     positionInput.addEventListener("input", function (event) {
         imageValues[variable] = positionInput.value
@@ -405,8 +404,8 @@ const cardTypeButtons = document.querySelectorAll(".card-type-button")
 const cardJustifier = document.getElementById("card-justifier")
 
 const cardContainer = document.getElementById("card-container")
-const keywordCheckbox = document.getElementById(`keyword-toggle`)
-const keywordBox = document.getElementById("keyword-box")
+const detailCheckbox = document.getElementById(`detail-toggle`)
+const detailBox = document.getElementById("detail-box")
 const keywordHolder = document.getElementById("keyword-list")
 const keywordList = []
 
@@ -415,7 +414,7 @@ const inputDamage = document.getElementById("input-damage-text")
 const inputAmmo = document.getElementById("input-ammo-text")
 const inputDelay = document.getElementById("input-delay-text")
 
-const inputKeywordEnabled = document.getElementById("enable-keyword-elements")
+const inputDetailEnabled = document.getElementById("enable-detail-elements")
 const keywordDropdown = document.getElementById("keyword-dropdown")
 const inputFlavorText = document.getElementById(`input-flavor-text`)
 const keywordImg = document.getElementById("keyword-img")
@@ -456,8 +455,8 @@ editCardTextEvent("damage-text", true)
 editCardTextEvent("ammo-text", true)
 editCardTextEvent("delay-text", true)
 editCardTextEvent("description-text", false)
-editCardTextEvent("flavor-text", false)
-editKeywordFlavor()
+// editCardTextEvent("flavor-text", false)
+editDetailFlavor()
 editDropdownEvent("rarity-pin", "RarityPin")
 editDropdownEvent("hero-pin", "HeroPin")
 editDropdownEvent("class-pin", "ClassPin")
@@ -467,6 +466,6 @@ editImageScaleEvent("w-slider", "w")
 editImageScaleEvent("h-slider", "h")
 toggleKeepRatio()
 editDescriptionEvent()
-toggleKeywords()
+toggleDetails()
 // other things which need to happen at startup
 startup()
