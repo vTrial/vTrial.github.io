@@ -321,6 +321,25 @@ const damageCheckboxClicked = () => {
   toggleVisibilities(cardTypes[cardType])
 };
 
+const openUploadModal = () => {
+  const uploadModal = document.getElementById("uploadImgModal")
+  toggleVisibility(uploadModal, true)
+}
+
+const closeUploadModal = () => {
+  const uploadModal = document.getElementById("uploadImgModal")
+  toggleVisibility(uploadModal, false)
+}
+
+
+// if click out of modal, close it
+window.onclick = function(event) {
+  const uploadModal = document.getElementById("uploadImgModal")
+  if (event.target == uploadModal) {
+    closeUploadModal()
+  }
+} 
+
 // resize img to wanted width and height
 const updateImage = () => {
     if (storedImg == null || drawTimer != null) return;
@@ -334,7 +353,7 @@ const updateImage = () => {
     }, 125)
 }
 
-function uploadImg(event) {
+const uploadImg = (event) => {
   const fileList = event.target.files;
   const firstFile = fileList[0];
   const reader = new FileReader();
@@ -343,18 +362,44 @@ function uploadImg(event) {
     // Create a new image element
     const newImg = document.createElement("img");
     newImg.src = event.target.result;
-    storedImg = newImg;
-
     // Resize the image and update card-img element
     newImg.onload = function () {
+      setThumbnail(newImg.src)
+      storedImg = newImg;
       updateImage();
     };
   };
-
   // Check if the selected file is an image
   if (firstFile.type.startsWith("image/")) {
     reader.readAsDataURL(firstFile);
   }
+}
+
+const uploadImgFromURL = () => {
+  const imgURLInput = document.getElementById("url-input");
+  const url = imgURLInput.value.trim();
+
+  if (url) {
+    imgURLInput.value = '';
+
+    const newImg = document.createElement("img");
+    newImg.src = url;
+
+    newImg.onload = function () {
+      setThumbnail(url);
+      storedImg = newImg;
+      updateImage();
+    };
+
+    newImg.onerror = function () {
+      alert("Invalid image URL. Please check the link and try again.");
+    };
+  }
+};
+
+const setThumbnail = (src) => {
+  var imgThumbnail = document.getElementById("img-thumbnail")
+  imgThumbnail.src = src
 }
 
 const downloadImg = () => {
@@ -437,7 +482,7 @@ const ctx = canvas.getContext("2d")
 var storedImg = null
 var drawTimer = null
 
-const imgUploadElement = document.getElementById("img-upload")
+// const imgUploadElement = document.getElementById("img-upload")
 const cardImg = document.getElementById("card-img")
 // const flavorText = document.getElementById("flavor-text")
 const imageValues = { x: 0, y: 0, w: 512, h: 512 }

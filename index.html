@@ -149,8 +149,9 @@
 			<div class="multi-form-element">
 				<!-- only from downloads for now -->
 				<div class="form-element">
-					<label for="img-upload" class="label-btn img-upload-btn" id="img-upload-btn">Upload Image</label>
-					<input type="file" name="img-upload" id="img-upload" onchange="uploadImg(event)">
+					<button class="label-btn" id="show-img-upload-modal" onclick="openUploadModal()">Upload
+						Image</button>
+					<!-- <input type="file" name="img-upload" id="img-upload" onchange="uploadImg(event)"> -->
 				</div>
 				<div class="form-element">
 					<label for="x-input" id="x-input-label">X Position</label><br>
@@ -251,6 +252,21 @@
 				</div>
 			</div>
 		</div>
+	</div>
+	<div id="uploadImgModal" class="modal">
+		<div class="modal-box">
+			<span class="close" onclick="closeUploadModal()">&times;</span>
+			<div class="uploader" id="img-uploader">
+				<p>Drag and drop images here or <label for="img-upload">browse</label></p>
+				<input type="file" name="img-upload" id="img-upload" onchange="uploadImg(event)" accept="image/*">
+				<div class="url-input">
+					<input type="text" id="url-input" placeholder="Paste image URL here">
+					<button onclick="uploadImgFromURL()">Add</button>
+				</div>
+				<img src="data:," alt class="thumbnail" id="img-thumbnail">
+			</div>
+		</div>
+	</div>
 	</div>
 	<!-- for screenshotting -->
 	<script src="src/script/html2canvas.js"></script>
