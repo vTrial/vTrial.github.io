@@ -379,6 +379,7 @@ const uploadImgFromURL = () => {
     imgURLInput.value = '';
 
     const newImg = document.createElement("img");
+    newImg.crossOrigin = "anonymous";
     newImg.src = url;
 
     newImg.onload = function () {
