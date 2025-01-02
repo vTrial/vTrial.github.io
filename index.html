@@ -19,11 +19,11 @@
 			<div class=form-element>
 				<label>Card Type</label><br>
 				<img class="img-btn img-border" src="src/img/Button/Monkey.png" alt="Monkey"
-					onclick="updateCardLayout('monkey')" />
+					 onclick="updateCardLayout('monkey')" />
 				<img class="img-btn img-border" src="src/img/Button/Bloon.png" alt="Bloon"
-					onclick="updateCardLayout('bloon')" />
+					 onclick="updateCardLayout('bloon')" />
 				<img class="img-btn img-border" src="src/img/Button/Power.png" alt="Power"
-					onclick="updateCardLayout('power')" />
+					 onclick="updateCardLayout('power')" />
 			</div>
 			<div class="form-element">
 				<label for="input-title-text">Title</label><br>
@@ -38,14 +38,14 @@
 			<div class="form-element">
 				<label for="copies-slider" id="copies-label">Copies: 1</label><br>
 				<input type="range" min="1" max="4" value="1" name="copies-slider" id="copies-slider"
-					oninput="setCoinQuantity()">
+					   oninput="setCoinQuantity()">
 			</div>
 			<!-- is this a not a farm? -->
 			<div class="multi-form-element" id="enable-damage-elements">
 				<div class="form-element">
 					<label for="damage-checkbox">Enable Damage</label><br>
 					<input checked type="checkbox" name="damage-checkbox" id="damage-checkbox"
-						onclick="damageCheckboxClicked()" class="disableable">
+						   onclick="damageCheckboxClicked()" class="disableable">
 				</div>
 				<div class="form-element">
 					<label for="input-damage-text">Damage</label><br>
@@ -62,8 +62,9 @@
 			</div>
 			<div class="form-element">
 				<label for="input-description-text">Description</label><br>
-				<textarea name="input-description-text" id="input-description-text" cols="23" rows="3"></textarea>
+				<textarea name="input-description-text" id="input-description-text" cols="25" rows="3"></textarea>
 			</div>
+			<div class="multi-form-element">
 			<div class="form-element">
 				<label>Rarity</label><br>
 				<select id="rarity-pin-dropdown">
@@ -102,15 +103,19 @@
 					<option value="Adora">Adora</option>
 				</select>
 			</div>
+				</div>
 			<div class="multi-form-element disabled-text" id="enable-detail-elements">
 				<div class="form-element">
-					<label for="detail-toggle" id="detail-toggle-label">Enable Additional
-						Details</label><br>
+					<label for="detail-toggle" id="detail-toggle-label">Enable Additional Details</label><br>
 					<input type="checkbox" name="detail-toggle" id="detail-toggle">
 				</div>
 				<div class="form-element">
+					<label for="input-flavor-text">Flavor</label><br>
+					<textarea name="input-flavor-text" id="input-flavor-text" class="disableable" disabled cols="24" rows="2"> </textarea>
+				</div>
+				<div class="form-element">
 					<label for="keyword-dropdown" id="keyword-dropdown-label">Keywords</label><br>
-					<select name="keyword-dropdown" id="keyword-dropdown" class="disableable" disabled>
+					<select name="keyword-dropdown" id="keyword-dropdown" class="disableable" disabled style="width: 170px;">
 						<option value="Defender">Defender</option>
 						<option value="Stunned">Stunned</option>
 						<option value="OnReplace">On Replace</option>
@@ -129,30 +134,20 @@
 					</select>
 				</div>
 				<div class="form-element">
-					<label for="keyword-value" id="keyword-value-label">Secondary Value</label><br>
-					<input type="number" value="0" min="0" name="keyword-value" id="keyword-value" class="disableable"
-						disabled>
+					<label for="keyword-value" id="keyword-value-label">Value</label><br>
+					<input type="number" value="0" min="0" size="3" name="keyword-value" id="keyword-value" class="disableable"
+						   disabled>
 				</div>
 				<div class="form-element">
+					<br>
 					<button id="add-keyword" class="label-btn disableable" onclick="addKeyword()">Add Keyword</button>
 				</div>
 				<div class="form-element">
-					<button id="remove-keyword" class="label-btn disableable" onclick="removeKeyword()">Remove
-						Keyword</button>
-				</div>
-				<div class="form-element">
-					<label for="input-flavor-text">Flavor</label><br>
-					<textarea name="input-flavor-text" id="input-flavor-text" class="disableable" disabled cols="22"
-						rows="3"></textarea>
+					<br>
+					<button id="remove-keyword" class="label-btn disableable" onclick="removeKeyword()">Delete Keyword</button>
 				</div>
 			</div>
 			<div class="multi-form-element">
-				<!-- only from downloads for now -->
-				<div class="form-element">
-					<button class="label-btn" id="show-img-upload-modal" onclick="openUploadModal()">Upload
-						Image</button>
-					<!-- <input type="file" name="img-upload" id="img-upload" onchange="uploadImg(event)"> -->
-				</div>
 				<div class="form-element">
 					<label for="x-input" id="x-input-label">X Position</label><br>
 					<input type="number" value="0" size="3" name="x-input" id="x-input">
@@ -173,12 +168,18 @@
 					<label for="ratio-toggle" id="ratio-toggle-label">Keep Ratio</label><br>
 					<input type="checkbox" checked name="ratio-toggle" id="ratio-toggle">
 				</div>
+			</div>
+			<div class="multi-form-element">
+				<div class="form-element">
+					<button class="label-btn" id="show-img-upload-modal" onclick="openUploadModal()">Upload Image</button>
+					<!-- <input type="file" name="img-upload" id="img-upload" onchange="uploadImg(event)"> -->
+				</div>
 				<div class="form-element">
 					<button id="reset-btn" class="label-btn" onclick="resetImageValues()">Reset Image</button>
 				</div>
-			</div>
-			<div class="form-element">
-				<button id="download-btn" class="label-btn" onclick="downloadImg()">Download Image</button>
+				<div class="form-element">
+					<button id="download-btn" class="label-btn" onclick="downloadImg()">Download Image</button>
+				</div>
 			</div>
 		</div>
 		<!-- col 2/2 -->
@@ -264,10 +265,9 @@
 					<button class="label-btn" onclick="uploadImgFromURL()">Add</button>
 				</div>
 				<p>Image Preview</p>
-				<img src="data:," alt class="thumbnail" id="img-thumbnail">
+				<img src="data:," class="thumbnail" id="img-thumbnail">
 			</div>
 		</div>
-	</div>
 	</div>
 	<!-- for screenshotting -->
 	<script src="src/script/html2canvas.js"></script>

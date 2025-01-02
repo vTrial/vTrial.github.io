@@ -50,8 +50,10 @@ const toggleDetails = () => {
     keywordValue.disabled = true
     addKeywordBtn.disabled = true
     removeKeywordBtn.disabled = true
+    inputFlavorText.disabled = true
     keywordDropdown.value = "Defender"
     cardJustifier.style.justifyContent = "center"
+    inputFlavorText.value = ""
     keywordValue.value = 0
     detailCheckbox.addEventListener("input", function (event) {
         inputDetailEnabled.classList.toggle("disabled-text")
