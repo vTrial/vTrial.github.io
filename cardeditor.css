@@ -431,8 +431,8 @@ input[type="file"] {
 	/* center stuff in modal box */
 	padding: 20px;
 	border: var(--border-default);
-	width: 50%;
-	height: 50%;
+	width: max(50%, 300px);
+	height: max(50%, 400px);
 	border-radius: 50px;
 }
 
