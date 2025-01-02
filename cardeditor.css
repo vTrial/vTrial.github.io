@@ -105,9 +105,9 @@ input[type="number"] {
 	color: var(--text-main);
 }
 
-.scale-slider {
+/* .scale-slider {
 	width: 10em !important;
-}
+} */
 
 input[type="text"] {
 	font-size: 1.5em;

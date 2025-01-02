@@ -100,14 +100,9 @@ const editImagePositionEvent = (ID, variable) => {
 }
 
 const editImageScaleEvent = (ID, variable) => {
-    const scaleSlider = document.getElementById(`${ID}`)
-    const scaleSliderLabel = document.getElementById(`${ID}-label`)
-    const Pretext = scaleSliderLabel.textContent
-    scaleSliderLabel.textContent += "100.00%"
-    scaleSlider.value = 2
-    scaleSlider.addEventListener("input", function (event) {
-        imageValues[variable] = 512.0 * Math.pow(10.0, scaleSlider.value - 2)
-        scaleSliderLabel.textContent = `${Pretext}${Math.min(Math.pow(10.0, scaleSlider.value), 500).toFixed(2)}%`
+    const scaleInput = document.getElementById(`${ID}`)
+    scaleInput.addEventListener("input", function (event) {
+        imageValues[variable] = scaleInput.value
         updateImage()
     })
 }
@@ -132,8 +127,8 @@ const resetImageValues = () => {
     // document.getElementById(`h-slider`).value = 2
     // document.getElementById(`x-input-label`).textContent = "X: 0"
     // document.getElementById(`y-input-label`).textContent = "Y: 0"
-    document.getElementById(`w-slider-label`).textContent = "W: 100.00%"
-    document.getElementById(`h-slider-label`).textContent = "H: 100.00%"
+    // document.getElementById(`w-input-label`).textContent = "W: 100.00%"
+    // document.getElementById(`h-input-label`).textContent = "H: 100.00%"
     updateImage()
 }
 
@@ -462,8 +457,8 @@ editDropdownEvent("hero-pin", "HeroPin")
 editDropdownEvent("class-pin", "ClassPin")
 editImagePositionEvent("x-input", "x")
 editImagePositionEvent("y-input", "y")
-editImageScaleEvent("w-slider", "w")
-editImageScaleEvent("h-slider", "h")
+editImageScaleEvent("w-input", "w")
+editImageScaleEvent("h-input", "h")
 toggleKeepRatio()
 editDescriptionEvent()
 toggleDetails()
