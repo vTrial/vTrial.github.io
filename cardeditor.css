@@ -2,21 +2,21 @@
 
 @font-face {
 	font-family: 'Bloons TD';
-	src: url(../src/font/BloonsTD-Regular.ttf);
+	src: url(./src/font/BloonsTD-Regular.ttf);
 	font-weight: normal;
 	font-style: normal;
 }
 
 @font-face {
 	font-family: 'Source Sans 3 SemiBold';
-	src: url(../src/font/SourceSans3-Semibold.ttf);
+	src: url(./src/font/SourceSans3-Semibold.ttf);
 	font-weight: normal;
 	font-style: normal;
 }
 
 @font-face {
 	font-family: 'Source Sans 3 MidItalics';
-	src: url(../src/font/SourceSans3-MediumItalic.ttf);
+	src: url(./src/font/SourceSans3-MediumItalic.ttf);
 	font-weight: normal;
 	font-style: normal;
 }
@@ -25,13 +25,24 @@
 	height: fit-content;
 	display: flex;
 	flex-wrap: wrap;
-	border: 2px solid black;
-	background-color: #36343C;
+	border: var(--border-default);
+	background-color: var(--bg-card-form);
 	border-radius: 5%;
+}
+
+.multi-form-element {
+	display: flex;
+	flex-wrap: wrap;
 }
 
 .form-element {
 	padding: 0.5em 1em;
+	display: inline-block;
+}
+
+.keyword-element {
+	padding: 1em;
+	display: none;
 }
 
 .img-btn {
@@ -42,7 +53,7 @@
 }
 
 .img-border {
-	border: 1px solid black;
+	border: var(--border-default);
 }
 
 label {
@@ -54,19 +65,19 @@ select {
 	font-size: 1.25em;
 	font-family: 'Source Sans 3 SemiBold';
 	padding: 0;
-	background-color: #44425A;
-	border: 1px solid black;
+	background-color: var(--accent-card-form);
+	border: var(--border-default);
 	border-radius: 10px;
 	width: 200px;
 	height: 38.25px;
-	color: #FFF
+	color: var(--text-main);
 }
 
 input[type="range"] {
 	width: 8em;
 	cursor: pointer;
 	margin: 1em 0em;
-	accent-color: #44425A;
+	accent-color: var(--accent-card-form);
 }
 
 input[type="checkbox"] {
@@ -75,39 +86,39 @@ input[type="checkbox"] {
 	width: 1.5em;
 	font-size: 1.5em;
 	outline: 1px solid black;
-	accent-color: #44425A;
+	accent-color: var(--accent-card-form);
+	outline: var(--border-default);
 }
+
 
 input[type="number"] {
-	background-color: #44425A;
-	margin: 1em 0em;
-	color: #FFF;
-	border: 0px;
-	width: 5em;
-}
-
-.scale-slider {
-	width: 10em !important;
+	font-size: 1.5em;
+	font-family: 'Source Sans 3 SemiBold';
+	padding: 0;
+	background-color: var(--accent-card-form);
+	border: var(--border-default);
+	border-radius: 10px;
+	color: var(--text-main);
 }
 
 input[type="text"] {
 	font-size: 1.5em;
 	font-family: 'Source Sans 3 SemiBold';
 	padding: 0;
-	background-color: #44425A;
-	border: 1px solid black;
+	background-color: var(--accent-card-form);
+	border: var(--border-default);
 	border-radius: 10px;
-	color: #FFF
+	color: var(--text-main);
 }
 
 textarea {
 	resize: none;
 	font-size: 1.5em;
 	font-family: 'Source Sans 3 SemiBold';
-	background-color: #44425A;
-	border: 1px solid black;
+	background-color: var(--accent-card-form);
+	border: var(--border-default);
 	border-radius: 10px;
-	color: #FFF;
+	color: var(--text-main);
 }
 
 input[type="file"] {
@@ -115,15 +126,24 @@ input[type="file"] {
 }
 
 .label-btn {
-	border: 1px solid #000;
+	border: var(--border-default);
 	margin: 0;
 	font-size: 1.5em;
 	padding: 0.25em 0.5em;
 	cursor: pointer;
 	display: inline-block;
-	background-color: #44425A;
+	background-color: var(--accent-card-form);
 	border-radius: 10px;
-	color: #FFF;
+	color: var(--text-main);
+}
+
+.disableable:disabled {
+	background-color: var(--disabled-card-form);
+	color: var(--text-disabled);
+}
+
+.disabled-text {
+	color: var(--text-disabled);
 }
 
 .two-col {
@@ -139,7 +159,6 @@ input[type="file"] {
 	width: 375px;
 	height: 510px;
 	display: flex;
-	justify-content: center;
 	position: absolute;
 	top: 20%;
 }
@@ -150,7 +169,7 @@ input[type="file"] {
 	position: absolute;
 	user-select: none;
 	pointer-events: none;
-	transform: scale(50%) translate(0%, -50%);
+	transform: scale(50%) translate(-41%, -50%);
 	top: 35px;
 }
 
@@ -164,9 +183,11 @@ input[type="file"] {
 	border-radius: 10%;
 	z-index: -1;
 }
+
 .card-border {
 	transform: translate(0% -0.8%);
 }
+
 .cost {
 	position: absolute;
 	transform: translate(-50%, -50%);
@@ -179,18 +200,18 @@ input[type="file"] {
 }
 
 .coin2 {
-	left: 15%;
+	left: 14.5%;
 	z-index: 2;
 	visibility: hidden;
 }
 
 .coin3 {
-	left: 21%;
+	left: 20%;
 	visibility: hidden;
 }
 
 .coinplus {
-	left: 32%;
+	left: 30.5%;
 	visibility: hidden;
 	z-index: 1;
 }
@@ -205,15 +226,15 @@ input[type="file"] {
 .ammo {
 	position: absolute;
 	transform: translate(-50%, -50%);
-	left: 90%;
-	top: 25%
+	left: 88%;
+	top: 22%
 }
 
 .delay {
 	position: absolute;
 	transform: translate(-50%, -50%);
-	left: 95.5%;
-	top: 43%
+	left: 95%;
+	top: 39%
 }
 
 .rarity-pin {
@@ -236,26 +257,50 @@ input[type="file"] {
 	left: 8%;
 	top: 43%;
 }
-/* card text styles */
-.bold-text {
-	/* text shadow is half as thick as it should be in preview */
-	/* issue with html2canvas js package */
-	/* solution is to use node js but then the hosting is another problem */
-	text-align: center;
-	color: white;
+
+.keyword-img {
+	width: 30px;
+	height: 30px;
+	transform: translate(0%, 20%)
+}
+
+.thicker-stroke {
+	top: 4px;
+	-webkit-text-stroke: 0.16em black;
+	color: transparent;
+	position: absolute;
+	width: 100%;
+	word-wrap: break-word;
+	margin: 0;
 	font-family: 'Bloons TD';
-	-webkit-text-stroke: 0.08em black;
-	text-shadow: 0em 0.1em black;
+	text-align: center;
+}
+
+.thick-stroke {
+	top: 2px;
+	-webkit-text-stroke: 0.14em black;
+	color: transparent;
+	position: absolute;
+	width: 100%;
+	word-wrap: break-word;
+	margin: 0;
+	font-family: 'Bloons TD';
+	text-align: center;
+}
+
+.bold-text {
+	display: block;
+	z-index: 1;
+	position: relative;
+	-webkit-text-stroke: 0.1em black;
+	text-align: center;
+	color: var(--text-main);
+	font-family: 'Bloons TD';
 	word-wrap: break-word;
 	margin: 0;
 }
-.bold-text-output{
-	/* workaround to the problem of text shadows being rendered twice as far than it should be when screenshot*/
-	/* basically just halves the distance when the user downloads the image to counteract the doubling*/
-	text-shadow: 0em 0.05em black !important;
-}
 
-.title-text {
+.title-text-container {
 	position: absolute;
 	font-size: 3.5em;
 	left: 7.5%;
@@ -264,7 +309,14 @@ input[type="file"] {
 	bottom: 345px;
 }
 
-.class-text {
+.keyword-text-container {
+	margin: 0em 0.25em;
+	font-size: 1.5em;
+	position: relative;
+	display: inline;
+}
+
+.class-text-container {
 	position: absolute;
 	transform: translate(-50%, -50%);
 	font-size: 2.3em;
@@ -274,7 +326,7 @@ input[type="file"] {
 	max-height: 20%;
 }
 
-.cost-text {
+.cost-text-container {
 	position: absolute;
 	transform: translate(-50%, -50%);
 	font-size: 6em;
@@ -283,7 +335,7 @@ input[type="file"] {
 	z-index: 3;
 }
 
-.damage-text {
+.damage-text-container {
 	position: absolute;
 	transform: translate(-50%, -50%);
 	font-size: 6em;
@@ -291,20 +343,20 @@ input[type="file"] {
 	top: 4%;
 }
 
-.ammo-text {
+.ammo-text-container {
 	position: absolute;
 	transform: translate(-50%, -50%);
 	font-size: 6em;
-	left: 90%;
-	top: 23%;
+	left: 88%;
+	top: 20%;
 }
 
-.delay-text {
+.delay-text-container {
 	position: absolute;
 	transform: translate(-50%, -50%);
 	font-size: 4em;
-	left: 95.5%;
-	top: 43%;
+	left: 95%;
+	top: 39%;
 }
 
 .description-text {
@@ -312,10 +364,10 @@ input[type="file"] {
 	white-space: pre-line;
 	transform: translate(-50%, -50%);
 	font-weight: 600;
-	left: 50%;
+	left: 49.8%;
 	top: 78.5%;
 	font-size: 2.7em;
-	color: white;
+	color: var(--text-main);
 	text-align: center;
 	width: 85%;
 	height: auto;
@@ -329,41 +381,145 @@ input[type="file"] {
 	transform: translate(-50%, 0%);
 	left: 50%;
 	font-size: 2.5em;
-	color: white;
+	color: var(--text-main);
 	text-align: center;
 	width: 90%;
 	height: auto;
 	top: 105%;
 }
-.no-outline {
-	-webkit-text-stroke: 0em white;
+
+.flavor-text-keyword {
+	position: relative;
+	display: inherit;
+	font-family: 'Source Sans 3 MidItalics';
+	white-space: pre-line;
+	font-size: 1em;
+	padding: 1.25em;
+	color: var(--text-main);
+	text-align: center;
+	height: auto;
 }
+
+.no-outline {
+	-webkit-text-stroke: 0em var(--text-main);
+}
+
+/* Upload modal */
+
+.modal {
+	visibility: hidden;
+	position: fixed;
+	/* center modal box */
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	/* Stay in place */
+	z-index: 4;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgb(0, 0, 0);
+	/* Fallback color */
+	background-color: rgba(0, 0, 0, 0.6);
+	/* Black w/ opacity */
+}
+
+.modal-box {
+	background-color: var(--bg-main);
+	/* center stuff in modal box */
+	padding: 20px;
+	border: var(--border-default);
+	width: max(50%, 300px);
+	height: max(50%, 400px);
+	border-radius: 50px;
+}
+
+.uploader {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
+}
+
+.uploader>* {
+	margin: 1em;
+}
+
+.thumbnail {
+	width: 100px;
+	height: 100px;
+	border-radius: 5px;
+}
+
+.close {
+	float: right;
+	font-size: 4em;
+	font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+	text-decoration: none;
+	cursor: pointer;
+}
+
 /* top level styles */
 .two-col-item {
-	flex: 1 1 calc(50% - 12px); /* 50% width for each column minus gap */
+	flex: 1 1 calc(50% - 12px);
+	/* 50% width for each column minus gap */
 }
 
 .card-two-col {
 	align-items: flex-start;
 	display: flex;
-	justify-content: center;
 	position: relative;
 	transform: translate(0%, -10%);
+}
+
+.detail-box {
+	width: 375px;
+	height: 435px;
+	border: var(--border-default);
+	background-color: var(--bg-detail-box);
+	border-radius: 3%;
+	position: relative;
+	left: 375px;
+	top: 35px;
+	display: none;
+	user-select: none;
 }
 
 h1 {
 	font-family: 'Bloons TD';
 	font-size: 3.5em;
-	color: #FFF;
+	color: var(--text-main);
 	margin: 0;
 	-webkit-text-stroke: 0.05em black;
 	text-shadow: 0em 0.10em black;
 }
 
+p {
+	font-size: 1.5em;
+}
+
 body {
 	font-family: 'Source Sans 3 SemiBold';
-	background-color: #4C4C4C;
-	color: #FFF;
+	background-color: var(--bg-main);
+	color: var(--text-main);
 	-webkit-text-stroke: 0.07em black;
 	paint-order: stroke fill;
+}
+
+:root {
+	--bg-main: #3C3C3C;
+	--bg-card-form: #36343C;
+	--bg-detail-box: #4c4c4c;
+	--accent-card-form: #44425A;
+	--disabled-card-form: #383838;
+	--text-main: white;
+	--text-disabled: #999;
+	--border-default: 2px solid #1F2228;
 }

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +9,7 @@
 	<!-- temp favicon -->
 	<link rel="icon" type="image/x-icon" href="/src/img/favicon.ico">
 </head>
+
 <body>
 	<h1>BCS Custom Cards</h1>
 	<!-- 2 col constructor-->
@@ -16,9 +18,12 @@
 		<div id="card-form" class="form-flex two-col-item">
 			<div class=form-element>
 				<label>Card Type</label><br>
-				<img class="img-btn img-border" src="src/img/Button/Monkey.png" alt="Monkey" onclick="updateCardLayout('monkey')" />
-				<img class="img-btn img-border" src="src/img/Button/Bloon.png" alt="Bloon" onclick="updateCardLayout('bloon')" />
-				<img class="img-btn img-border" src="src/img/Button/Power.png" alt="Power" onclick="updateCardLayout('power')" />
+				<img class="img-btn img-border" src="src/img/Button/Monkey.png" alt="Monkey"
+					 onclick="updateCardLayout('monkey')" />
+				<img class="img-btn img-border" src="src/img/Button/Bloon.png" alt="Bloon"
+					 onclick="updateCardLayout('bloon')" />
+				<img class="img-btn img-border" src="src/img/Button/Power.png" alt="Power"
+					 onclick="updateCardLayout('power')" />
 			</div>
 			<div class="form-element">
 				<label for="input-title-text">Title</label><br>
@@ -32,33 +37,34 @@
 			</div>
 			<div class="form-element">
 				<label for="copies-slider" id="copies-label">Copies: 1</label><br>
-				<input type="range" min="1" max="4" value="1" name="copies-slider" id="copies-slider" oninput="setCoinQuantity()">
-			</div>
-			<div class="form-element">
-				<label for="input-damage-text">Damage</label><br>
-				<input type="text" id="input-damage-text" name="input-damage-text" size="3"><br>
+				<input type="range" min="1" max="4" value="1" name="copies-slider" id="copies-slider"
+					   oninput="setCoinQuantity()">
 			</div>
 			<!-- is this a not a farm? -->
-			<div class="form-element">
-				<label for="damage-checkbox">Damage?</label><br>
-				<input checked type="checkbox" name="damage-checkbox" id="damage-checkbox" onclick="damageCheckboxClicked()">
-			</div>
-			<div class="form-element">
-				<label for="input-ammo-text">Ammo</label><br>
-				<input type="text" id="input-ammo-text" name="input-ammo-text" size="3">
-			</div>
-			<div class="form-element">
-				<label for="input-delay-text">Delay</label><br>
-				<input type="text" id="input-delay-text" name="input-delay-text" size="3">
+			<div class="multi-form-element" id="enable-damage-elements">
+				<div class="form-element">
+					<label for="damage-checkbox">Enable Damage</label><br>
+					<input checked type="checkbox" name="damage-checkbox" id="damage-checkbox"
+						   onclick="damageCheckboxClicked()" class="disableable">
+				</div>
+				<div class="form-element">
+					<label for="input-damage-text">Damage</label><br>
+					<input type="text" id="input-damage-text" name="input-damage-text" size="3" class="disableable"><br>
+				</div>
+				<div class="form-element">
+					<label for="input-ammo-text">Ammo</label><br>
+					<input type="text" id="input-ammo-text" name="input-ammo-text" size="3" class="disableable">
+				</div>
+				<div class="form-element">
+					<label for="input-delay-text">Delay</label><br>
+					<input type="text" id="input-delay-text" name="input-delay-text" size="3" class="disableable">
+				</div>
 			</div>
 			<div class="form-element">
 				<label for="input-description-text">Description</label><br>
-				<textarea name="input-description-text" id="input-description-text" cols="23" rows="3"></textarea>
+				<textarea name="input-description-text" id="input-description-text" cols="50" rows="4"></textarea>
 			</div>
-			<div class="form-element">
-				<label for="input-flavor-text">Flavor</label><br>
-				<textarea name="input-flavor-text" id="input-flavor-text" cols="22" rows="3"></textarea>
-			</div>
+			<div class="multi-form-element">
 			<div class="form-element">
 				<label>Rarity</label><br>
 				<select id="rarity-pin-dropdown">
@@ -94,43 +100,91 @@
 					<option value="Gwendolin">Gwendolin</option>
 					<option value="Obyn">Obyn</option>
 					<option value="Amelia">Amelia</option>
+					<option value="Adora">Adora</option>
 				</select>
 			</div>
-			<div class="form-element">
-				<label for="x-input" id="x-input-label">X: </label><br>
-				<input type="number" value="0" name="x-input" id="x-input">
+				</div>
+			<div class="multi-form-element disabled-text" id="enable-detail-elements">
+				<div class="form-element">
+					<label for="detail-toggle" id="detail-toggle-label">Enable Additional Details</label><br>
+					<input type="checkbox" name="detail-toggle" id="detail-toggle">
+				</div>
+				<div class="form-element">
+					<label for="input-flavor-text">Flavor</label><br>
+					<textarea name="input-flavor-text" id="input-flavor-text" class="disableable" disabled cols="25" rows="2"> </textarea>
+				</div>
+				<div class="form-element">
+					<label for="keyword-dropdown" id="keyword-dropdown-label">Keywords</label><br>
+					<select name="keyword-dropdown" id="keyword-dropdown" class="disableable" disabled style="width: 170px;">
+						<option value="Defender">Defender</option>
+						<option value="Stunned">Stunned</option>
+						<option value="OnReplace">On Replace</option>
+						<option value="DoubleAttack">Double Attack</option>
+						<option value="OnLeak">On Leak</option>
+						<option value="OnDamaged">On Damaged</option>
+						<option value="OnPopped">On Popped</option>
+						<option value="OnDestroyed">On Destroyed</option>
+						<option value="OnFire">On Fire</option>
+						<option value="OnPlay">On Play</option>
+						<option value="OnTurnStart">On Turn Start</option>
+						<option value="OnTurnEnd">On Turn End</option>
+						<option value="Shield">Shield</option>
+						<option value="Pick">Pick</option>
+						<option value="Unique">Unique</option>
+					</select>
+				</div>
+				<div class="form-element">
+					<label for="keyword-value" id="keyword-value-label">Value</label><br>
+					<input type="number" value="0" min="0" size="3" name="keyword-value" id="keyword-value" class="disableable"
+						   disabled>
+				</div>
+				<div class="form-element">
+					<br>
+					<button id="add-keyword" class="label-btn disableable" onclick="addKeyword()">Add Keyword</button>
+				</div>
+				<div class="form-element">
+					<br>
+					<button id="remove-keyword" class="label-btn disableable" onclick="removeKeyword()">Delete Keyword</button>
+				</div>
 			</div>
-			<div class="form-element">
-				<label for="y-input" id="y-input-label">Y: </label><br>
-				<input type="number" value="0" name="y-input" id="y-input">
+			<div class="multi-form-element">
+				<div class="form-element">
+					<label for="x-input" id="x-input-label">X Position</label><br>
+					<input type="number" value="0" size="3" name="x-input" id="x-input">
+				</div>
+				<div class="form-element">
+					<label for="y-input" id="y-input-label">Y Position</label><br>
+					<input type="number" value="0" size="3" name="y-input" id="y-input">
+				</div>
+				<div class="form-element">
+					<label for="w-input" id="w-input-label">Width %</label><br>
+					<input type="number" min="10" value="100" max="500" size="3" name="w-input" id="w-input">
+				</div>
+				<div class="form-element">
+					<label for="h-input" id="h-input-label">Height %</label><br>
+					<input type="number" min="10" value="100" max="500" size="3" name="h-input" id="h-input">
+				</div>
+				<div class="form-element">
+					<label for="ratio-toggle" id="ratio-toggle-label">Keep Ratio</label><br>
+					<input type="checkbox" checked name="ratio-toggle" id="ratio-toggle">
+				</div>
 			</div>
-			<div class="form-element">
-				<label for="w-slider" id="w-slider-label">W: </label><br>
-				<input type="range" min="1" max="2.7" value="2" step="0.01" name="w-slider" id="w-slider" class="scale-slider">
-			</div>
-			<div class="form-element">
-				<label for="h-slider" id="h-slider-label">H: </label><br>
-				<input type="range" min="1" max="2.7" value="2" step="0.01" name="h-slider" id="h-slider" class="scale-slider">
-			</div>
-			<div class="form-element">
-				<label for="ratio-toggle" id="ratio-toggle-label">Keep Ratio</label><br>
-				<input type="checkbox" checked name="ratio-toggle" id="ratio-toggle">
-			</div>
-			<div class="form-element">
-				<button id="reset-btn" class="label-btn" onclick="resetImageValues()">Reset Image</button>
-			</div>
-			<!-- only from downloads for now -->
-			<div class="form-element">
-				<label for="img-upload" class="label-btn img-upload-btn" id="img-upload-btn">Upload Image</label>
-				<input type="file" name="img-upload" id="img-upload" onchange="uploadImg(event)">
-			</div>
-			<div class="form-element">
-				<button id="download-btn" class="label-btn" onclick="downloadImg()">Download Image</button>
+			<div class="multi-form-element">
+				<div class="form-element">
+					<button class="label-btn" id="show-img-upload-modal" onclick="openUploadModal()">Upload Image</button>
+					<!-- <input type="file" name="img-upload" id="img-upload" onchange="uploadImg(event)"> -->
+				</div>
+				<div class="form-element">
+					<button id="reset-btn" class="label-btn" onclick="resetImageValues()">Reset Image</button>
+				</div>
+				<div class="form-element">
+					<button id="download-btn" class="label-btn" onclick="downloadImg()">Download Image</button>
+				</div>
 			</div>
 		</div>
-	<!-- col 2/2 -->
-	<!-- positions card container -->
-		<div class="card-two-col two-col-item">
+		<!-- col 2/2 -->
+		<!-- positions card container -->
+		<div class="card-two-col two-col-item" id="card-justifier">
 			<!-- contains card and surroundings; gets screenshotted -->
 			<div class="card-container" id="card-container">
 				<!-- contains card main box; some of it is cut off as elements hang from box -->
@@ -155,15 +209,63 @@
 					<img class="hero-pin" id="hero-pin" src="src/img/HeroPin/None.png">
 					<img class="class-pin" id="class-pin" src="src/img/ClassPin/None.png">
 					<!-- card text -->
-					<p class="title-text bold-text" id="title-text"></p>
-					<span class="class-text bold-text" id="class-text"></span>
-					<span class="cost-text bold-text" id="cost-text"></span>
-					<span class="damage-text bold-text" id="damage-text"></span>
-					<span class="ammo-text bold-text" id="ammo-text"></span>
-					<span class="delay-text bold-text" id="delay-text"></span>
-					<span class="flavor-text no-outline" id="flavor-text"></span>
+					<div class="title-text-container">
+						<span class="bold-text" id="title-text"></span>
+						<span class="thick-stroke" id="title-text-stroke"></span>
+					</div>
+					<div class="class-text-container">
+						<span class="bold-text" id="class-text"></span>
+						<span class="thick-stroke" id="class-text-stroke"></span>
+					</div>
+					<div class="cost-text-container">
+						<span class="bold-text" id="cost-text"></span>
+						<span class="thicker-stroke" id="cost-text-stroke"></span>
+					</div>
+					<div class="damage-text-container" id="damage-text-container">
+						<span class="bold-text" id="damage-text"></span>
+						<span class="thicker-stroke" id="damage-text-stroke"></span>
+					</div>
+					<div class="ammo-text-container" id="ammo-text-container">
+						<span class="bold-text" id="ammo-text"></span>
+						<span class="thicker-stroke" id="ammo-text-stroke"></span>
+					</div>
+					<div class="delay-text-container" id="delay-text-container">
+						<span class="bold-text" id="delay-text"></span>
+						<span class="thicker-stroke" id="delay-text-stroke"></span>
+					</div>
+					<!-- old flavor text -->
+					<!-- <span class="flavor-text no-outline" id="flavor-text"></span> -->
 					<span class="description-text no-outline" id="description-text"></span>
 				</div>
+				<div class="detail-box" id="detail-box">
+					<div id="keyword-list">
+						<div class="keyword-element" id="keyword-element">
+							<img src="src/img/Keyword/Defender.png" class="keyword-img" id="keyword-img">
+							<div class="keyword-text-container" id="keyword-text-container">
+								<span class="bold-text" id="keyword-title" style="display: inline;">Defender +10</span>
+								<span class="thicker-stroke" id="keyword-title-stroke"
+									style="top: 3px; left: -2px;">Defender +10</span>
+							</div>
+							<span class="no-outline" id="keyword-description" style="display: block;"></span>
+						</div>
+					</div>
+					<span class="flavor-text-keyword no-outline" id="flavor-text-keyword"></span>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="uploadImgModal" class="modal">
+		<div class="modal-box">
+			<span class="close" onclick="closeUploadModal()">&times;</span>
+			<div class="uploader" id="img-uploader">
+				<label class="label-btn" for="img-upload">Browse Local Files</label>
+				<input type="file" name="img-upload" id="img-upload" onchange="uploadImg(event)" accept="image/*">
+				<div class="url-input">
+					<input type="text" id="url-input" placeholder="Paste image URL here">
+					<button class="label-btn" onclick="uploadImgFromURL()">Add</button>
+				</div>
+				<p>Image Preview</p>
+				<img src="data:," class="thumbnail" id="img-thumbnail">
 			</div>
 		</div>
 	</div>
@@ -172,4 +274,5 @@
 	<!-- main script -->
 	<script src="cardeditor.js"></script>
 </body>
+
 </html>
