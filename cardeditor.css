@@ -25,7 +25,7 @@
 	height: fit-content;
 	display: flex;
 	flex-wrap: wrap;
-	border: 2px solid black;
+	border: var(--border-default);
 	background-color: var(--bg-card-form);
 	border-radius: 5%;
 }
@@ -53,7 +53,7 @@
 }
 
 .img-border {
-	border: 1px solid black;
+	border: var(--border-default);
 }
 
 label {
@@ -66,7 +66,7 @@ select {
 	font-family: 'Source Sans 3 SemiBold';
 	padding: 0;
 	background-color: var(--accent-card-form);
-	border: 1px solid black;
+	border: var(--border-default);
 	border-radius: 10px;
 	width: 200px;
 	height: 38.25px;
@@ -87,20 +87,16 @@ input[type="checkbox"] {
 	font-size: 1.5em;
 	outline: 1px solid black;
 	accent-color: var(--accent-card-form);
+	outline: var(--border-default);
 }
 
 
 input[type="number"] {
-	/* background-color: var(--accent-card-form);
-	margin: 1em 0em;
-	color: var(--text-main);
-	border: 0px;
-	width: 5em; */
 	font-size: 1.5em;
 	font-family: 'Source Sans 3 SemiBold';
 	padding: 0;
 	background-color: var(--accent-card-form);
-	border: 1px solid black;
+	border: var(--border-default);
 	border-radius: 10px;
 	color: var(--text-main);
 }
@@ -110,7 +106,7 @@ input[type="text"] {
 	font-family: 'Source Sans 3 SemiBold';
 	padding: 0;
 	background-color: var(--accent-card-form);
-	border: 1px solid black;
+	border: var(--border-default);
 	border-radius: 10px;
 	color: var(--text-main);
 }
@@ -120,7 +116,7 @@ textarea {
 	font-size: 1.5em;
 	font-family: 'Source Sans 3 SemiBold';
 	background-color: var(--accent-card-form);
-	border: 1px solid black;
+	border: var(--border-default);
 	border-radius: 10px;
 	color: var(--text-main);
 }
@@ -130,7 +126,7 @@ input[type="file"] {
 }
 
 .label-btn {
-	border: 1px solid #000;
+	border: var(--border-default);
 	margin: 0;
 	font-size: 1.5em;
 	padding: 0.25em 0.5em;
@@ -434,9 +430,9 @@ input[type="file"] {
 	background-color: var(--bg-main);
 	/* center stuff in modal box */
 	padding: 20px;
-	border: 1px solid #888;
-	width: 70%;
-	height: 70%;
+	border: var(--border-default);
+	width: 50%;
+	height: 50%;
 	border-radius: 50px;
 }
 
@@ -486,8 +482,8 @@ input[type="file"] {
 .detail-box {
 	width: 375px;
 	height: 435px;
-	border: 2px solid #1F2228;
-	background-color: #4c4c4c;
+	border: var(--border-default);
+	background-color: var(--bg-detail-box);
 	border-radius: 3%;
 	position: relative;
 	left: 375px;
@@ -505,9 +501,13 @@ h1 {
 	text-shadow: 0em 0.10em black;
 }
 
+p {
+	font-size: 1.5em;
+}
+
 body {
 	font-family: 'Source Sans 3 SemiBold';
-	background-color: #3C3C3C;
+	background-color: var(--bg-main);
 	color: var(--text-main);
 	-webkit-text-stroke: 0.07em black;
 	paint-order: stroke fill;
@@ -516,8 +516,10 @@ body {
 :root {
 	--bg-main: #3C3C3C;
 	--bg-card-form: #36343C;
+	--bg-detail-box: #4c4c4c;
 	--accent-card-form: #44425A;
 	--disabled-card-form: #383838;
 	--text-main: white;
 	--text-disabled: #999;
+	--border-default: 2px solid #1F2228;
 }
