@@ -94,7 +94,7 @@ const editImagePositionEvent = (ID, variable) => {
     const positionInput = document.getElementById(`${ID}`)
     positionInput.value = 0
     positionInput.addEventListener("input", function (event) {
-        imageValues[variable] = positionInput.value
+        imageValues[variable] = parseFloat(positionInput.value)
         updateImage()
     })
 }
@@ -102,7 +102,7 @@ const editImagePositionEvent = (ID, variable) => {
 const editImageScaleEvent = (ID, variable) => {
     const scaleInput = document.getElementById(`${ID}`)
     scaleInput.addEventListener("input", function (event) {
-        imageValues[variable] = scaleInput.value
+        imageValues[variable] = parseFloat(scaleInput.value * imgSize / 100)
         updateImage()
     })
 }
@@ -119,16 +119,12 @@ const toggleKeepRatio = () => {
 const resetImageValues = () => {
     imageValues.x = 0
     imageValues.y = 0
-    imageValues.w = 512
-    imageValues.h = 512
+    imageValues.w = imgSize
+    imageValues.h = imgSize
     document.getElementById(`x-input`).value = 0
     document.getElementById(`y-input`).value = 0
-    // document.getElementById(`w-slider`).value = 2
-    // document.getElementById(`h-slider`).value = 2
-    // document.getElementById(`x-input-label`).textContent = "X: 0"
-    // document.getElementById(`y-input-label`).textContent = "Y: 0"
-    // document.getElementById(`w-input-label`).textContent = "W: 100.00%"
-    // document.getElementById(`h-input-label`).textContent = "H: 100.00%"
+    document.getElementById(`w-input`).value = 100
+    document.getElementById(`h-input`).value = 100
     updateImage()
 }
 
@@ -346,7 +342,7 @@ const updateImage = () => {
     drawTimer = window.setTimeout(function () {
     canvas.width = imageValues.w
     canvas.height = imageValues.h
-
+    console.log(imageValues)
     ctx.drawImage(storedImg, imageValues.x, imageValues.y, imageValues.w, imageValues.h)
     cardImg.src = canvas.toDataURL()
     drawTimer = null
@@ -484,8 +480,10 @@ var drawTimer = null
 
 // const imgUploadElement = document.getElementById("img-upload")
 const cardImg = document.getElementById("card-img")
-// const flavorText = document.getElementById("flavor-text")
-const imageValues = { x: 0, y: 0, w: 512, h: 512 }
+
+// img size in pixels
+const imgSize = 512
+const imageValues = { x: 0, y: 0, w: imgSize, h: imgSize }
 
 // make text editable
 editCardTextEvent("title-text", true)
